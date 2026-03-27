@@ -1,11 +1,12 @@
 import React from 'react';
 import { SITE_URL, absoluteUrl } from '../config/site';
+import { YOUTUBE_PUBLIC_URL } from '../config/social';
 import { JsonLdScript } from './JsonLdScript';
 
 const sameAs = [
   'https://www.instagram.com/dr.serracruz/',
   'https://www.linkedin.com/in/raphael-serra-cruz-md-msc-76089034/',
-  'https://www.youtube.com/@dr.raphaelserracruz',
+  YOUTUBE_PUBLIC_URL,
   'https://scholar.google.com/citations?user=GbnVAdsAAAAJ',
 ];
 

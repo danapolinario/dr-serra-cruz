@@ -37,14 +37,15 @@ const InstagramSection: React.FC = () => {
                   '/imagens/redes-sociais/seguidor-instagram-03.webp',
                   '/imagens/redes-sociais/seguidor-instagram-04.webp',
                   '/imagens/redes-sociais/seguidor-instagram-05.webp',
-                ].map((src) => (
+                ].map((src, i) => (
                   <img
                     key={src}
                     src={src}
                     className="w-12 h-12 rounded-full border-2 border-white shadow-md object-cover"
-                    alt="Membro da comunidade no Instagram"
+                    alt={`Seguidor ${i + 1} da comunidade Instagram @dr.serracruz`}
                     width={48}
                     height={48}
+                    loading="lazy"
                     decoding="async"
                   />
                 ))}

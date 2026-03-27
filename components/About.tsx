@@ -65,15 +65,19 @@ const About: React.FC = () => {
 
           <div className="order-1 lg:order-2">
             <div className="grid grid-cols-2 gap-4">
-              <img 
-                src="/imagens/inicio/explicando-no-consultorio.webp" 
-                alt="Consultório" 
+              <img
+                src="/imagens/inicio/explicando-no-consultorio.webp"
+                alt="Dr. Raphael Serra Cruz explicando exame ao paciente no consultório em Indaiatuba"
                 className="rounded-2xl shadow-lg mt-8"
+                loading="lazy"
+                decoding="async"
               />
-              <img 
-                src="/imagens/inicio/retrato-de-frente.webp" 
-                alt="Dr Raphael" 
+              <img
+                src="/imagens/inicio/retrato-de-frente.webp"
+                alt="Retrato do Dr. Raphael Serra Cruz, ortopedista especialista em joelho"
                 className="rounded-2xl shadow-lg mb-8"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>

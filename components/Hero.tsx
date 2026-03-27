@@ -74,11 +74,14 @@ const Hero: React.FC = () => {
             <div className="relative z-10 w-full">
               <div className="relative aspect-[4/5] lg:aspect-[3/4] xl:aspect-[4/5] overflow-hidden rounded-[2.5rem] shadow-2xl">
                 {images.map((img, index) => (
-                  <img 
+                  <img
                     key={index}
-                    src={img} 
-                    alt={`Dr. Raphael Serra Cruz - Foto ${index + 1}`} 
+                    src={img}
+                    alt={`Dr. Raphael Serra Cruz, ortopedista em Indaiatuba — imagem ${index + 1} de ${images.length}`}
                     className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'}`}
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                    decoding="async"
+                    fetchPriority={index === 0 ? 'high' : undefined}
                   />
                 ))}
                 
