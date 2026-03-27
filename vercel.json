@@ -1,10 +1,17 @@
 {
-  "cleanUrls": true,
   "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [{ "key": "X-Content-Type-Options", "value": "nosniff" }]
+    }
+  ],
   "redirects": [
     { "source": "/index.html", "destination": "/", "statusCode": 301 },
     { "source": "/index.php", "destination": "/", "statusCode": 301 },
     { "source": "/index.htm", "destination": "/", "statusCode": 301 }
   ],
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "rewrites": [
+    { "source": "/((?!assets/).*)", "destination": "/index.html" }
+  ]
 }
