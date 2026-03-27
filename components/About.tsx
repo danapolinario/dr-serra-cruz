@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const About: React.FC = () => {
   return (
@@ -53,9 +54,12 @@ const About: React.FC = () => {
             </div>
 
             <div className="mt-8">
-              <a href="/sobre" className="inline-flex items-center gap-2 text-blue-700 font-bold hover:text-blue-800 transition">
-                Conheça mais sobre a trajetória do Dr. Serra Cruz <i className="fa-solid fa-arrow-right"></i>
-              </a>
+              <Link
+                to="/sobre"
+                className="inline-flex items-center gap-2 text-blue-700 font-bold transition hover:text-blue-800"
+              >
+                Conheça mais sobre a trajetória do Dr. Serra Cruz <i className="fa-solid fa-arrow-right" aria-hidden />
+              </Link>
             </div>
           </div>
 
