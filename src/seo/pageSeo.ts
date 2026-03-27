@@ -7,9 +7,9 @@ export const STATIC_PAGE_SEO: Record<
   { title: string; description: string }
 > = {
   '/': {
-    title: 'Dr. Raphael Serra Cruz | Ortopedista e cirurgião de joelho em Indaiatuba-SP',
+    title: 'Dr. Raphael Serra Cruz | Ortopedista de joelho Indaiatuba',
     description:
-      'Ortopedista e traumatologista especializado em joelho em Indaiatuba. Cirurgia do joelho, lesões esportivas, telemedicina e atendimento na Clínica CITTA.',
+      'Ortopedista e traumatologista especializado em joelho em Indaiatuba-SP. Cirurgia do joelho, lesões esportivas, telemedicina e atendimento na Clínica CITTA.',
   },
   '/sobre': {
     title: 'Sobre o Dr. Raphael Serra Cruz | Ortopedista em Indaiatuba',

@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 
 const Expertise: React.FC = () => {
   const treatments = [
-    { title: 'Ligamentos', icon: 'fa-solid fa-bone', desc: 'Reconstrução de LCA, LCP e lesões complexas multiligamentares.', link: '/lesoes-ligamentares' },
-    { title: 'Meniscos', icon: 'fa-solid fa-wave-square', desc: 'Sutura meniscal e transplantes para preservação articular.', link: '/meniscos' },
-    { title: 'Artrose', icon: 'fa-solid fa-person-walking-with-cane', desc: 'Próteses de última geração e tratamentos biológicos avançados.' },
-    { title: 'Cartilagem', icon: 'fa-solid fa-microscope', desc: 'Procedimentos regenerativos e tratamento de lesões condrais.' },
-    { title: 'Trauma do Esporte', icon: 'fa-solid fa-medal', desc: 'Retorno rápido e seguro para atletas de alto rendimento e amadores.' },
-    { title: 'Femoropatelar', icon: 'fa-solid fa-circle-dot', desc: 'Correção de instabilidades e dores na frente do joelho.' }
+    { title: 'Ligamentos', icon: 'fa-solid fa-bone', desc: 'Reconstrução de LCA, LCP, lesões complexas multiligamentares e canto póstero-lateral do joelho.', link: '/lesoes-ligamentares' },
+    { title: 'Meniscos', icon: 'fa-solid fa-wave-square', desc: 'Sutura meniscal, meniscectomia parcial e transplante de menisco para preservação articular.', link: '/meniscos' },
+    { title: 'Artrose', icon: 'fa-solid fa-person-walking-with-cane', desc: 'Artroplastia total e parcial do joelho, infiltrações e tratamentos biológicos para artrose.' },
+    { title: 'Cartilagem', icon: 'fa-solid fa-microscope', desc: 'Procedimentos regenerativos, microfratura e transplante de cartilagem para lesões condrais.' },
+    { title: 'Trauma do Esporte', icon: 'fa-solid fa-medal', desc: 'Atendimento a atletas profissionais e amadores com retorno seguro à atividade esportiva.' },
+    { title: 'Femoropatelar', icon: 'fa-solid fa-circle-dot', desc: 'Tratamento de instabilidade patelar, condropatia e dores na frente do joelho.' }
   ];
 
   return (

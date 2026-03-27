@@ -32,6 +32,7 @@ const JornadaLyonesaCirurgiaJoelhoSaoPaulo = lazy(
   () => import('./src/pages/blog/JornadaLyonesaCirurgiaJoelhoSaoPaulo'),
 );
 const LesaoDoMeniscoPrecisaOperar = lazy(() => import('./src/pages/blog/LesaoDoMeniscoPrecisaOperar'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 const PageLoader: React.FC = () => (
   <div className="min-h-screen flex items-center justify-center bg-slate-50 text-slate-500 text-sm">Carregando…</div>
@@ -88,6 +89,7 @@ const App: React.FC = () => {
             element={<JornadaLyonesaCirurgiaJoelhoSaoPaulo />}
           />
           <Route path="/blog/lesao-do-menisco-precisa-operar" element={<LesaoDoMeniscoPrecisaOperar />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
     </Router>
