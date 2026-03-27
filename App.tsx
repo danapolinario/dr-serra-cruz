@@ -89,7 +89,6 @@ const App: React.FC = () => {
             element={<JornadaLyonesaCirurgiaJoelhoSaoPaulo />}
           />
           <Route path="/blog/lesao-do-menisco-precisa-operar" element={<LesaoDoMeniscoPrecisaOperar />} />
-          <Route path="/404" element={<NotFound />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
