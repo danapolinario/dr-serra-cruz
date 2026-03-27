@@ -1,0 +1,27 @@
+{
+  "name": "dr.-raphael-serra-cruz---especialista-em-joelho",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "imagens:baixar": "node scripts/otimizar-imagens.mjs",
+    "imagens:aplicar-caminhos": "node scripts/aplicar-caminhos-imagens.mjs",
+    "imagens:seguidores-instagram": "node scripts/processar-seguidores-instagram.mjs",
+    "imagens:logos-instituicoes": "node scripts/processar-logos-instituicoes.mjs"
+  },
+  "dependencies": {
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-router-dom": "^7.13.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "sharp": "^0.34.5",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  }
+}
