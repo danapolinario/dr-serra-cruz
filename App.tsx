@@ -25,10 +25,12 @@ import OInicioDaCarreira from './src/pages/blog/OInicioDaCarreira';
 import ConhecaODrRaphaelSerraCruz from './src/pages/blog/ConhecaODrRaphaelSerraCruz';
 import JornadaLyonesaCirurgiaJoelhoSaoPaulo from './src/pages/blog/JornadaLyonesaCirurgiaJoelhoSaoPaulo';
 import LesaoDoMeniscoPrecisaOperar from './src/pages/blog/LesaoDoMeniscoPrecisaOperar';
+import ScrollToTop from './components/ScrollToTop';
 
 const App: React.FC = () => {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/sobre" element={<Sobre />} />

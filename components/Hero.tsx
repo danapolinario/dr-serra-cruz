@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
   return (
     <section
       id="home"
-      className="pt-24 lg:pt-40 pb-16 lg:pb-32 overflow-hidden scroll-mt-nav bg-gradient-to-t from-slate-300/30 from-0% via-blue-50/25 to-white to-100%"
+      className="pt-24 lg:pt-40 pb-16 lg:pb-32 overflow-x-hidden scroll-mt-nav bg-gradient-to-t from-slate-300/30 from-0% via-blue-50/25 to-white to-100%"
     >
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
@@ -71,41 +71,42 @@ const Hero: React.FC = () => {
           
           <div className="flex-1 lg:flex-[0.9] relative w-full">
             <div className="absolute inset-0 bg-blue-100 rounded-[2.5rem] -rotate-3 scale-105 z-0 lg:translate-x-4"></div>
-            <div className="relative z-10 aspect-[4/5] lg:aspect-[3/4] xl:aspect-[4/5] overflow-hidden rounded-[2.5rem] shadow-2xl">
-              {images.map((img, index) => (
-                <img 
-                  key={index}
-                  src={img} 
-                  alt={`Dr. Raphael Serra Cruz - Foto ${index + 1}`} 
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'}`}
-                />
-              ))}
-              
-              {/* Overlay Gradient for readability of indicators if needed */}
-              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/30 to-transparent"></div>
+            <div className="relative z-10 w-full">
+              <div className="relative aspect-[4/5] lg:aspect-[3/4] xl:aspect-[4/5] overflow-hidden rounded-[2.5rem] shadow-2xl">
+                {images.map((img, index) => (
+                  <img 
+                    key={index}
+                    src={img} 
+                    alt={`Dr. Raphael Serra Cruz - Foto ${index + 1}`} 
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'}`}
+                  />
+                ))}
+                
+                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/30 to-transparent" />
+              </div>
+
+              <div className="absolute bottom-6 right-6 z-20 flex gap-2.5">
+                {images.map((_, index) => (
+                  <button 
+                    key={index}
+                    type="button"
+                    onClick={() => setCurrentImageIndex(index)}
+                    className={`h-2 rounded-full transition-all duration-300 ${index === currentImageIndex ? 'w-8 bg-blue-600 shadow-lg' : 'w-2 bg-white/70 hover:bg-white'}`}
+                    aria-label={`Ver foto ${index + 1}`}
+                  />
+                ))}
+              </div>
             </div>
             
-            {/* Trust badge - Repositioned for better desktop space usage */}
-            <div className="absolute -bottom-6 -left-8 lg:-left-12 z-20 bg-white p-5 rounded-2xl shadow-2xl border border-slate-100 flex items-center gap-4 hidden md:flex transform hover:scale-105 transition-transform cursor-default">
-              <div className="bg-blue-600 w-14 h-14 rounded-full flex items-center justify-center text-white text-2xl shadow-lg shadow-blue-600/30">
-                <i className="fa-solid fa-stethoscope"></i>
+            {/* Trust badge — no fluxo no mobile; absoluto no desktop */}
+            <div className="relative z-20 mt-4 flex w-full max-w-md mx-auto items-center gap-3 rounded-2xl border border-slate-100 bg-white p-4 shadow-2xl sm:gap-4 sm:p-5 md:absolute md:-bottom-6 md:left-auto md:mx-0 md:mt-0 md:w-max md:max-w-none md:-left-8 lg:-left-12 transform cursor-default transition-transform hover:scale-105">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-600 text-xl text-white shadow-lg shadow-blue-600/30 sm:h-14 sm:w-14 sm:text-2xl">
+                <i className="fa-solid fa-stethoscope" aria-hidden />
               </div>
-              <div>
-                <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest mb-0.5">Especialista RQE 107916</p>
-                <p className="text-base font-bold text-slate-800">Ortopedia e Traumatologia</p>
+              <div className="min-w-0 text-left">
+                <p className="mb-0.5 text-[10px] font-bold uppercase tracking-widest text-slate-400">Especialista RQE 107916</p>
+                <p className="text-sm font-bold text-slate-800 sm:text-base">Ortopedia e Traumatologia</p>
               </div>
-            </div>
-
-            {/* Slide Indicators */}
-            <div className="absolute bottom-6 right-6 z-20 flex gap-2.5">
-              {images.map((_, index) => (
-                <button 
-                  key={index}
-                  onClick={() => setCurrentImageIndex(index)}
-                  className={`h-2 rounded-full transition-all duration-300 ${index === currentImageIndex ? 'w-8 bg-blue-600 shadow-lg' : 'w-2 bg-white/70 hover:bg-white'}`}
-                  aria-label={`Ver foto ${index + 1}`}
-                />
-              ))}
             </div>
           </div>
         </div>
