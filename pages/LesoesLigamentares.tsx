@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import FloatingWhatsApp from '../components/FloatingWhatsApp';
+import { SeoHead } from '../src/components/SeoHead';
+import { STATIC_PAGE_SEO } from '../src/seo/pageSeo';
 
 const LesoesLigamentares: React.FC = () => {
   const [activeTab, setActiveTab] = useState<number | null>(1);
@@ -10,8 +12,10 @@ const LesoesLigamentares: React.FC = () => {
     setActiveTab(activeTab === tabIndex ? null : tabIndex);
   };
 
+  const seo = STATIC_PAGE_SEO['/lesoes-ligamentares'];
   return (
     <div className="flex flex-col min-h-screen">
+      <SeoHead title={seo.title} description={seo.description} path="/lesoes-ligamentares" />
       <Header />
       <main className="pt-20 flex-grow bg-slate-50">
         <section 

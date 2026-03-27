@@ -4,6 +4,8 @@ export interface BlogPostMeta {
   excerpt: string;
   image: string;
   date: string;
+  /** ISO 8601 (data publicada) para JSON-LD e metadados */
+  datePublishedIso: string;
 }
 
 /** Ordenado do mais recente ao mais antigo para o índice do blog */
@@ -16,6 +18,7 @@ export const blogPosts: BlogPostMeta[] = [
     image:
       '/imagens/blog/telemedicina-europa-hero.webp',
     date: '15 de Março de 2026',
+    datePublishedIso: '2026-03-15',
   },
   {
     id: 'dr-raphael-serra-cruz-contribuicoes-e-legado',
@@ -24,6 +27,7 @@ export const blogPosts: BlogPostMeta[] = [
       'Mais de 2500 cirurgias, publicações citadas milhares de vezes e ensino: o orgulho de ajudar pacientes e a ciência brasileira.',
     image: '/imagens/blog/legado.webp',
     date: '17 de Setembro de 2025',
+    datePublishedIso: '2025-09-17',
   },
   {
     id: 'experiencia-no-esporte-medico-atp-rio-open-de-tenis',
@@ -32,6 +36,7 @@ export const blogPosts: BlogPostMeta[] = [
       'Da Challenger de Campinas ao Rio Open: certificação ATP, atletas de elite e troca com a equipe médica internacional.',
     image: '/imagens/blog/atp-rio-open.webp',
     date: '8 de Setembro de 2025',
+    datePublishedIso: '2025-09-08',
   },
   {
     id: 'experiencia-no-esporte-clube-de-regatas-do-flamengo',
@@ -40,6 +45,7 @@ export const blogPosts: BlogPostMeta[] = [
       'Passagem pelo futebol de base e profissional, Libertadores 2019 e a escolha pela família em momentos decisivos.',
     image: '/imagens/blog/flamengo.webp',
     date: '25 de Agosto de 2025',
+    datePublishedIso: '2025-08-25',
   },
   {
     id: 'premiacoes-nacionais-e-internacionais-dr-raphael-serra-cruz',
@@ -48,6 +54,7 @@ export const blogPosts: BlogPostMeta[] = [
       'Publicações de alto impacto, H-index, prêmios AOSSM, EFORT, SBOT e trajetória acadêmica internacional.',
     image: '/imagens/blog/premiacoes.webp',
     date: '21 de Agosto de 2025',
+    datePublishedIso: '2025-08-21',
   },
   {
     id: 'international-fellowship-usa-divisor-de-aguas-na-carreira-medica',
@@ -56,6 +63,7 @@ export const blogPosts: BlogPostMeta[] = [
       'Steadman-Philippon, Dr. LaPrade, Excellence in Research e conexões que moldaram a carreira em joelho esportivo.',
     image: '/imagens/blog/fellowship-usa.webp',
     date: '17 de Agosto de 2025',
+    datePublishedIso: '2025-08-17',
   },
   {
     id: 'o-inicio-da-carreira-do-dr-raphael-serra-cruz',
@@ -64,6 +72,7 @@ export const blogPosts: BlogPostMeta[] = [
       'UERJ, INTO, grupo de joelho, mestrado UFRJ e quase 15 anos de referência antes de Indaiatuba.',
     image: '/imagens/blog/inicio-carreira-formacao.webp',
     date: '6 de Agosto de 2025',
+    datePublishedIso: '2025-08-06',
   },
   {
     id: 'conheca-o-dr-raphael-serra-cruz-medico-ortopedista-especialista-em-joelho',
@@ -72,6 +81,7 @@ export const blogPosts: BlogPostMeta[] = [
       'Resumo da trajetória: INTO, fellowships nos EUA e Europa, Olimpíadas, ATP, Flamengo e reconhecimento científico.',
     image: '/imagens/blog/conheca-apresentacao.webp',
     date: '4 de Agosto de 2025',
+    datePublishedIso: '2025-08-04',
   },
   {
     id: 'dr-raphael-serra-cruz-jornada-lyonesa-cirurgia-do-joelho-sao-paulo',
@@ -81,6 +91,7 @@ export const blogPosts: BlogPostMeta[] = [
       'Participação como debatedor na Jornada Lyonesa e trajetória com a escola francesa em lesões meniscais.',
     image: '/imagens/blog/jornada-lyonesa-cartaz.webp',
     date: '28 de Julho de 2025',
+    datePublishedIso: '2025-07-28',
   },
   {
     id: 'lesao-do-menisco-precisa-operar',
@@ -89,6 +100,7 @@ export const blogPosts: BlogPostMeta[] = [
       'Quando a lesão meniscal pode cicatrizar sem cirurgia, o que avaliar com o especialista e opções de sutura ou meniscectomia.',
     image: '/imagens/blog/lesao-menisco-hero.webp',
     date: '1 de Junho de 2022',
+    datePublishedIso: '2022-06-01',
   },
   {
     id: 'o-que-e-lesao-de-menisco',
@@ -98,6 +110,7 @@ export const blogPosts: BlogPostMeta[] = [
     image:
       '/imagens/inicio/examinando-paciente.webp',
     date: '15 de Março de 2024',
+    datePublishedIso: '2024-03-15',
   },
   {
     id: 'tratamentos-para-artrose-no-joelho',
@@ -106,6 +119,7 @@ export const blogPosts: BlogPostMeta[] = [
       'Descubra as abordagens mais modernas e eficazes para o tratamento da artrose no joelho, desde opções conservadoras até cirúrgicas.',
     image: '/imagens/inicio/mostrando-exame-na-tela.webp',
     date: '2 de Abril de 2024',
+    datePublishedIso: '2024-04-02',
   },
   {
     id: 'quando-procurar-um-ortopedista',
@@ -115,5 +129,6 @@ export const blogPosts: BlogPostMeta[] = [
     image:
       '/imagens/blog/retrato-braco-cruzado.webp',
     date: '20 de Abril de 2024',
+    datePublishedIso: '2024-04-20',
   },
 ];

@@ -1,9 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
 import FloatingWhatsApp from '../../../components/FloatingWhatsApp';
 import RelatedPosts from '../../components/RelatedPosts';
 import BlogConsultationCta from '../../components/BlogConsultationCta';
+import { SeoHead } from '../../components/SeoHead';
+import { JsonLdScript } from '../../components/JsonLdScript';
+import { blogPosts } from '../../data/blogPosts';
+import { SITE_URL, absoluteUrl, truncateMeta } from '../../config/site';
 
 interface BlogPostLayoutProps {
   category: string;
@@ -28,8 +32,72 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
     window.scrollTo(0, 0);
   }, []);
 
+  const meta = useMemo(() => blogPosts.find((p) => p.id === postId), [postId]);
+  const path = `/blog/${postId}`;
+  const description = truncateMeta(meta?.excerpt ?? title);
+  const publishedIso = meta?.datePublishedIso
+    ? `${meta.datePublishedIso}T12:00:00-03:00`
+    : undefined;
+  const heroPath = meta?.image ?? heroImage;
+
+  const articleLd = useMemo(
+    () => ({
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: title,
+      description,
+      datePublished: publishedIso,
+      dateModified: publishedIso,
+      image: absoluteUrl(heroPath),
+      author: {
+        '@type': 'Person',
+        name: 'Dr. Raphael Serra Cruz',
+        url: SITE_URL,
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Dr. Raphael Serra Cruz',
+        url: SITE_URL,
+      },
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': `${SITE_URL}${path}`,
+      },
+    }),
+    [title, description, publishedIso, heroPath, path],
+  );
+
+  const breadcrumbLd = useMemo(
+    () => ({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Início', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: title,
+          item: `${SITE_URL}${path}`,
+        },
+      ],
+    }),
+    [title, path],
+  );
+
   return (
     <div className="min-h-screen flex flex-col font-sans text-slate-800">
+      <SeoHead
+        title={`${title} | Dr. Raphael Serra Cruz`}
+        description={description}
+        path={path}
+        ogType="article"
+        ogImagePath={heroPath}
+        articlePublishedTime={publishedIso}
+        articleModifiedTime={publishedIso}
+      />
+      <JsonLdScript id={`ld-article-${postId}`} data={articleLd} />
+      <JsonLdScript id={`ld-breadcrumb-${postId}`} data={breadcrumbLd} />
       <Header />
       <main className="pt-20 flex-grow bg-slate-50">
         <article className="py-16 md:py-24">

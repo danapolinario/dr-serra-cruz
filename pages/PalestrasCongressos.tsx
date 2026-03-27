@@ -2,10 +2,14 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import FloatingWhatsApp from '../components/FloatingWhatsApp';
+import { SeoHead } from '../src/components/SeoHead';
+import { STATIC_PAGE_SEO } from '../src/seo/pageSeo';
 
 const PalestrasCongressos: React.FC = () => {
+  const seo = STATIC_PAGE_SEO['/palestras-e-congressos'];
   return (
     <div className="flex flex-col min-h-screen">
+      <SeoHead title={seo.title} description={seo.description} path="/palestras-e-congressos" />
       <Header />
       <main className="pt-20 flex-grow bg-slate-50">
         <section className="bg-blue-900 text-white py-20 text-center">

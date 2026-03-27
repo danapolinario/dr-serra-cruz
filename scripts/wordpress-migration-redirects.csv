@@ -1,0 +1,41 @@
+source_path,destination_path,redirect,notes
+/,/,301,Home; também cobrir index.php se existir
+/index.php,/,301,Entrada alternativa WordPress
+/sobre/,/sobre,301,Alinhado a App.tsx
+/premiacoes/,/premiacoes,301,
+/premiacoes,/premiacoes,301,Sem barra final
+/artigos/,/artigos,301,
+/artigos,/artigos,301,
+/capitulos-de-livros/,/capitulos-de-livros,301,
+/palestras-e-congressos/,/palestras-e-congressos,301,
+/materiais-para-pacientes/,/materiais-para-pacientes,301,
+/links/,/links,301,WP pode ter sido links-uteis; confirmar no Search Console
+/links-uteis/,/links,301,Se existir slug antigo
+/tendinopatias/,/meniscos,301,Sem página equivalente; hub clínico (rever conteúdo)
+/artrose/,/blog/tratamentos-para-artrose-no-joelho,301,Artrose → post existente no app
+/resumos/,/artigos,301,Resumos próximos de listagens científicas
+/galeria-dr-serra-cruz/,/sobre,301,Galeria biográfica → sobre
+/category/noticias/,/blog,301,Arquivo de notícias → índice blog
+/lesoes-e-tratamentos/,/meniscos,301,Hub antigo; ajustar se criar página dedicada
+/lesoes-e-tratamentos/lesoes-ligamentares/,/lesoes-ligamentares,301,
+/lesoes-e-tratamentos/lesoes-meniscais/,/meniscos,301,
+/lesoes-e-tratamentos/lesoes-de-cartilagem/,/blog/tratamentos-para-artrose-no-joelho,301,Cartilagem/artrose; revisar se preferir /meniscos
+/lesoes-e-tratamentos/lesoes-ligamentares-complexas/,/lesoes-ligamentares,301,
+/lesoes-e-tratamentos/lesoes-patelo-femorais/,/meniscos,301,Rever destino se houver página específica futura
+/dr-raphael-serra-cruz-contribuicoes-e-legado/,/blog/dr-raphael-serra-cruz-contribuicoes-e-legado,301,Slug WP na raiz → blog React
+/premiacoes-nacionais-e-internacionais-dr-raphael-serra-cruz/,/blog/premiacoes-nacionais-e-internacionais-dr-raphael-serra-cruz,301,
+/experiencia-no-esporte-clube-de-regatas-do-flamengo/,/blog/experiencia-no-esporte-clube-de-regatas-do-flamengo,301,
+/experiencia-no-esporte-medico-atp-rio-open-de-tenis/,/blog/experiencia-no-esporte-medico-atp-rio-open-de-tenis,301,
+/afinal-o-que-e-a-condropatia-patelar/,/blog/tratamentos-para-artrose-no-joelho,301,Condropatia patelar → artrose/cartilagem (revisar)
+/3-dicas-para-prevenir-lesoes/,/blog/quando-procurar-um-ortopedista,301,Prevenção; destino aproximado (revisar)
+/lesao-do-menisco-precisa-operar/,/blog/lesao-do-menisco-precisa-operar,301,
+/conheca-o-dr-raphael-serra-cruz-medico-ortopedista-especialista-em-joelho/,/blog/conheca-o-dr-raphael-serra-cruz-medico-ortopedista-especialista-em-joelho,301,
+/o-inicio-da-carreira-do-dr-raphael-serra-cruz/,/blog/o-inicio-da-carreira-do-dr-raphael-serra-cruz,301,
+/dr-raphael-serra-cruz-confirma-presenca-na-jornada-lyonesa-de-cirurgia-do-joelho-em-sao-paulo/,/blog/dr-raphael-serra-cruz-jornada-lyonesa-cirurgia-do-joelho-sao-paulo,301,Slug WP longo → slug curto no app
+/ortopedista-de-indaiatuba-cuidara-dos-atletas-do-rio-open-torneio-internacional-de-tenis-no-rio-de-janeiro/,/blog/experiencia-no-esporte-medico-atp-rio-open-de-tenis,301,Notícia Rio Open → post ATP
+/flamengo-bate-palmeiras-nos-penalties-e-e-bi-campeao-da-libertadores-sub-20/,/blog,301,Sem post dedicado no app
+/joao-fonseca-e-campeao-em-phoenix-e-passa-a-60-do-ranking-atp/,/blog,301,Sem post dedicado no app
+/um-privilegio-no-mundo-do-tenis-alcaraz-e-joao-fonseca-de-promessas-a-idolos/,/blog,301,Sem post dedicado no app
+/?p=4457,/blog/ortopedista-brasileiro-na-europa-telemedicina,301,Query WordPress telemedicina; configurar redirect por query no hosting
+/wp-content/uploads/2025/08/MANUAL-FIFA-11-PORTUGUES.pdf,/materiais-para-pacientes,301,Após hospedar PDF no novo site ou manter URL estática equivalente
+/wp-content/uploads/2021/09/Vertical-Continuous-Meniscal-Suture-Technique.pdf,/artigos,301,PDF científico → lista artigos até URL ficheiro definitiva

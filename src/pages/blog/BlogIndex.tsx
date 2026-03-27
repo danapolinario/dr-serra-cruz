@@ -4,10 +4,14 @@ import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
 import FloatingWhatsApp from '../../../components/FloatingWhatsApp';
 import { blogPosts } from '../../data/blogPosts';
+import { SeoHead } from '../../components/SeoHead';
+import { STATIC_PAGE_SEO } from '../../seo/pageSeo';
 
 const BlogIndex: React.FC = () => {
+  const seo = STATIC_PAGE_SEO['/blog'];
   return (
     <div className="min-h-screen flex flex-col font-sans text-slate-800">
+      <SeoHead title={seo.title} description={seo.description} path="/blog" />
       <Header />
       <main className="pt-20 flex-grow bg-slate-50">
         <section className="bg-blue-900 text-white py-20">

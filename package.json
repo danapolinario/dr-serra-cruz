@@ -5,7 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "sitemap": "node scripts/gerar-sitemap.mjs && node scripts/gerar-url-manifest.mjs",
+    "url-manifest": "node scripts/gerar-url-manifest.mjs",
+    "validate:routes": "node scripts/validate-blog-routes.mjs",
+    "build": "npm run sitemap && npm run validate:routes && vite build",
     "preview": "vite preview",
     "imagens:baixar": "node scripts/otimizar-imagens.mjs",
     "imagens:aplicar-caminhos": "node scripts/aplicar-caminhos-imagens.mjs",
@@ -15,6 +18,7 @@
   "dependencies": {
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
+    "react-helmet-async": "^3.0.0",
     "react-router-dom": "^7.13.2"
   },
   "devDependencies": {
