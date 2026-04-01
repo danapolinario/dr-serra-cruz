@@ -25,7 +25,15 @@ const Footer: React.FC = () => {
           Dr. Raphael Serra Cruz | CRM-SP 239793 | RQE: 107916
         </p>
         <p className="text-slate-500 text-xs">
-          &copy; {new Date().getFullYear()} Dr. Raphael Serra Cruz. Todos os direitos reservados.
+          &copy; {new Date().getFullYear()} Dr. Raphael Serra Cruz. Todos os direitos reservados.{' '}
+          <a
+            href="https://www.docpage.com.br"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-400 underline-offset-2 hover:text-slate-300 hover:underline"
+          >
+            Powered by DocPage AI
+          </a>
         </p>
       </div>
     </footer>

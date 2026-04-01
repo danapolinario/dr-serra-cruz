@@ -6,6 +6,16 @@ const baseImg =
 
 const logos: { src: string; alt: string; imgClass: string }[] = [
   {
+    src: '/imagens/instituicoes-excelencia/instituicao-uerj.webp',
+    alt: 'UERJ — Universidade do Estado do Rio de Janeiro',
+    imgClass: `${baseImg} h-14 md:h-16 max-w-[min(100%,280px)]`,
+  },
+  {
+    src: '/imagens/instituicoes-excelencia/instituicao-into.webp',
+    alt: 'INTO — Instituto Nacional de Traumatologia e Ortopedia',
+    imgClass: `${baseImg} h-[4.5rem] md:h-20 max-w-[min(100%,320px)]`,
+  },
+  {
     src: '/imagens/instituicoes-excelencia/instituicao-sbrate.webp',
     alt: 'SBRATE — Sociedade Brasileira de Artroscopia e Traumatologia do Esporte',
     imgClass: `${baseImg} h-[4.5rem] md:h-20 max-w-[min(100%,320px)]`,
@@ -19,16 +29,6 @@ const logos: { src: string; alt: string; imgClass: string }[] = [
     src: '/imagens/instituicoes-excelencia/instituicao-amb.webp',
     alt: 'AMB — Associação Médica Brasileira',
     imgClass: `${baseImg} h-10 md:h-12 max-w-[min(100%,200px)]`,
-  },
-  {
-    src: '/imagens/instituicoes-excelencia/instituicao-uerj.webp',
-    alt: 'UERJ — Universidade do Estado do Rio de Janeiro',
-    imgClass: `${baseImg} h-14 md:h-16 max-w-[min(100%,280px)]`,
-  },
-  {
-    src: '/imagens/instituicoes-excelencia/instituicao-into.webp',
-    alt: 'INTO — Instituto Nacional de Traumatologia e Ortopedia',
-    imgClass: `${baseImg} h-[4.5rem] md:h-20 max-w-[min(100%,320px)]`,
   },
   {
     src: '/imagens/instituicoes-excelencia/instituicao-fifa-centro-medico-excelencia.webp',
@@ -59,7 +59,7 @@ const Certificates: React.FC = () => {
     <section className="py-12 bg-white border-y border-slate-200">
       <div className="container mx-auto px-4">
         <p className="text-center text-sm font-semibold text-slate-400 uppercase tracking-widest mb-8">
-          Formação em Instituições de Excelência Nacionais e Internacionais
+          Formação, Premiações e Filiações em Instituições de Excelência Nacionais e Internacionais
         </p>
         <div className="relative overflow-hidden py-2" aria-label="Logos de instituições de formação">
           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-white to-transparent md:w-20" />

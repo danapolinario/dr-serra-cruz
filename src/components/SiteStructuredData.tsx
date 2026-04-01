@@ -26,19 +26,37 @@ export const SiteStructuredData: React.FC = () => {
   const clinic = {
     '@context': 'https://schema.org',
     '@type': 'MedicalClinic',
-    name: 'Clínica CITTA — Dr. Raphael Serra Cruz',
+    name: 'Dr. Raphael Serra Cruz — Ortopedia',
     url: SITE_URL,
     image: absoluteUrl('/imagens/inicio/retrato-de-frente.webp'),
     telephone: '+551998321140',
     email: 'contato@drserracruz.com.br',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Rua Estados Unidos, 317 – Parque Boa Esperança',
-      addressLocality: 'Indaiatuba',
-      addressRegion: 'SP',
-      postalCode: '13339-230',
-      addressCountry: 'BR',
-    },
+    location: [
+      {
+        '@type': 'Place',
+        name: 'IMAP Life',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'R. Cerqueira César, 315 – Jd. Feris',
+          addressLocality: 'Indaiatuba',
+          addressRegion: 'SP',
+          addressCountry: 'BR',
+        },
+        hasMap: 'https://share.google/6uUlFHzRUhApxCocG',
+      },
+      {
+        '@type': 'Place',
+        name: 'Indacor',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'R. Sebastião Nicolau, 54 – Vila Nossa Sra. Aparecida',
+          addressLocality: 'Indaiatuba',
+          addressRegion: 'SP',
+          addressCountry: 'BR',
+        },
+        hasMap: 'https://maps.app.goo.gl/ih4nsf2hExBhs4SR9',
+      },
+    ],
     areaServed: [
       { '@type': 'City', name: 'Indaiatuba' },
       { '@type': 'AdministrativeArea', name: 'Região de Campinas' },

@@ -55,3 +55,24 @@ body {
     margin-right: auto;
   }
 }
+
+@keyframes about-award-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-award-slide-active {
+  animation: about-award-enter 0.55s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-award-slide-active {
+    animation: none;
+  }
+}

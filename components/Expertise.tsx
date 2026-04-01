@@ -7,9 +7,9 @@ const Expertise: React.FC = () => {
     { title: 'Ligamentos', icon: 'fa-solid fa-bone', desc: 'Reconstrução de LCA, LCP, lesões complexas multiligamentares e canto póstero-lateral do joelho.', link: '/lesoes-ligamentares' },
     { title: 'Meniscos', icon: 'fa-solid fa-wave-square', desc: 'Sutura meniscal, meniscectomia parcial e transplante de menisco para preservação articular.', link: '/meniscos' },
     { title: 'Artrose', icon: 'fa-solid fa-person-walking-with-cane', desc: 'Artroplastia total e parcial do joelho, infiltrações e tratamentos biológicos para artrose.' },
-    { title: 'Cartilagem', icon: 'fa-solid fa-microscope', desc: 'Procedimentos regenerativos, microfratura e transplante de cartilagem para lesões condrais.' },
+    { title: 'Cartilagem', icon: 'fa-solid fa-microscope', desc: 'Procedimentos restaurativos, microfratura, transplante autólogo de cartilagem, hidrogel e viscosuplementação (ácido hialurônico).' },
     { title: 'Trauma do Esporte', icon: 'fa-solid fa-medal', desc: 'Atendimento a atletas profissionais e amadores com retorno seguro à atividade esportiva.' },
-    { title: 'Femoropatelar', icon: 'fa-solid fa-circle-dot', desc: 'Tratamento de instabilidade patelar, condropatia e dores na frente do joelho.' }
+    { title: 'Condromalácia patelar', icon: 'fa-solid fa-circle-dot', desc: 'Tratamento de instabilidade patelar, condropatia e dores na frente do joelho.' }
   ];
 
   return (
