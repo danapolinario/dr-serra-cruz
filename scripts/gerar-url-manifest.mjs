@@ -22,6 +22,10 @@ const STATIC_PATHS = [
   '/links',
   '/lesoes-ligamentares',
   '/meniscos',
+  '/artrose',
+  '/cartilagem',
+  '/trauma-do-esporte',
+  '/condromalacia-patelar',
   '/blog',
 ];
 

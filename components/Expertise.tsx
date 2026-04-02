@@ -6,10 +6,10 @@ const Expertise: React.FC = () => {
   const treatments = [
     { title: 'Ligamentos', icon: 'fa-solid fa-bone', desc: 'Reconstrução de LCA, LCP, lesões complexas multiligamentares e canto póstero-lateral do joelho.', link: '/lesoes-ligamentares' },
     { title: 'Meniscos', icon: 'fa-solid fa-wave-square', desc: 'Sutura meniscal, meniscectomia parcial e transplante de menisco para preservação articular.', link: '/meniscos' },
-    { title: 'Artrose', icon: 'fa-solid fa-person-walking-with-cane', desc: 'Artroplastia total e parcial do joelho, infiltrações e tratamentos biológicos para artrose.' },
-    { title: 'Cartilagem', icon: 'fa-solid fa-microscope', desc: 'Procedimentos restaurativos, microfratura, transplante autólogo de cartilagem, hidrogel e viscosuplementação (ácido hialurônico).' },
-    { title: 'Trauma do Esporte', icon: 'fa-solid fa-medal', desc: 'Atendimento a atletas profissionais e amadores com retorno seguro à atividade esportiva.' },
-    { title: 'Condromalácia patelar', icon: 'fa-solid fa-circle-dot', desc: 'Tratamento de instabilidade patelar, condropatia e dores na frente do joelho.' }
+    { title: 'Artrose', icon: 'fa-solid fa-person-walking-with-cane', desc: 'Artroplastia total e parcial do joelho, infiltrações e tratamentos biológicos para artrose.', link: '/artrose' },
+    { title: 'Cartilagem', icon: 'fa-solid fa-microscope', desc: 'Procedimentos restaurativos, microfratura, transplante autólogo de cartilagem, hidrogel e viscosuplementação (ácido hialurônico).', link: '/cartilagem' },
+    { title: 'Trauma do Esporte', icon: 'fa-solid fa-medal', desc: 'Atendimento a atletas profissionais e amadores com retorno seguro à atividade esportiva.', link: '/trauma-do-esporte' },
+    { title: 'Condromalácia patelar', icon: 'fa-solid fa-circle-dot', desc: 'Tratamento de instabilidade patelar, condropatia e dores na frente do joelho.', link: '/condromalacia-patelar' }
   ];
 
   return (
@@ -54,15 +54,6 @@ const Expertise: React.FC = () => {
           })}
         </div>
         
-        <div className="mt-16 text-center">
-          <a 
-            href="https://wa.me/5519998321140" 
-            target="_blank"
-            className="inline-flex items-center gap-2 text-blue-400 font-bold hover:text-white transition"
-          >
-            Ver todos os tratamentos <i className="fa-solid fa-arrow-right"></i>
-          </a>
-        </div>
       </div>
     </section>
   );

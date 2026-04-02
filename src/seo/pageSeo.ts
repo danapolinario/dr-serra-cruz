@@ -56,6 +56,26 @@ export const STATIC_PAGE_SEO: Record<
     description:
       'Menisco medial e lateral, sutura meniscal e lesões associadas. Especialista em joelho em Indaiatuba-SP.',
   },
+  '/artrose': {
+    title: 'Artrose do joelho | Tratamento e artroplastia | Dr. Raphael Serra Cruz',
+    description:
+      'Osteoartrite do joelho: sintomas, diagnóstico, infiltrações, viscosuplementação e artroplastia total ou parcial. Ortopedista em Indaiatuba-SP.',
+  },
+  '/cartilagem': {
+    title: 'Lesões de cartilagem do joelho | Microfratura e transplante | Dr. Raphael Serra Cruz',
+    description:
+      'Tratamento de lesões de cartilagem: procedimentos restaurativos, microfratura, transplante autólogo, hidrogel e viscosuplementação. Indaiatuba-SP.',
+  },
+  '/trauma-do-esporte': {
+    title: 'Trauma esportivo no joelho | Ortopedista | Dr. Raphael Serra Cruz',
+    description:
+      'Atendimento a atletas com lesões do joelho, diagnóstico, tratamento e retorno seguro ao esporte. Especialista em Indaiatuba-SP.',
+  },
+  '/condromalacia-patelar': {
+    title: 'Condromalácia patelar | Dor anterior do joelho | Dr. Raphael Serra Cruz',
+    description:
+      'Instabilidade patelar, condropatia e dor na frente do joelho: avaliação e tratamento com ortopedista em Indaiatuba-SP.',
+  },
   '/blog': {
     title: 'Blog | Ortopedia e joelho | Dr. Raphael Serra Cruz',
     description:

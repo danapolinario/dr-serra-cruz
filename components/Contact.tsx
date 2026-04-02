@@ -16,7 +16,7 @@ const locais = [
     nome: 'IMAP Life',
     endereco: 'R. Cerqueira César, 315 — Jd. Feris — Indaiatuba — SP',
     enderecoEmbed: 'R. Cerqueira César, 315, Jardim Feris, Indaiatuba, SP, Brasil',
-    mapaUrl: 'https://share.google/6uUlFHzRUhApxCocG',
+    mapaUrl: 'https://maps.app.goo.gl/1GsAABKuEans7qUk9',
     imagem: '/imagens/localizacoes/imap.webp',
     imagemAlt:
       'Fachada da clínica IMAP Life em Indaiatuba, com parede branca perfurada, logotipo azul, cactos decorativos e placa listando especialidades médicas como Ortopedia e Fisioterapia.',

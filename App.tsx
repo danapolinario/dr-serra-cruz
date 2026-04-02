@@ -12,6 +12,10 @@ const Premiacoes = lazy(() => import('./pages/Premiacoes'));
 const LinksUteis = lazy(() => import('./pages/LinksUteis'));
 const LesoesLigamentares = lazy(() => import('./pages/LesoesLigamentares'));
 const Meniscos = lazy(() => import('./pages/Meniscos'));
+const Artrose = lazy(() => import('./pages/Artrose'));
+const Cartilagem = lazy(() => import('./pages/Cartilagem'));
+const TraumaDoEsporte = lazy(() => import('./pages/TraumaDoEsporte'));
+const CondromalaciaPatelar = lazy(() => import('./pages/CondromalaciaPatelar'));
 const BlogIndex = lazy(() => import('./src/pages/blog/BlogIndex'));
 const OQueELesaoDeMenisco = lazy(() => import('./src/pages/blog/OQueELesaoDeMenisco'));
 const TratamentosParaArtroseNoJoelho = lazy(() => import('./src/pages/blog/TratamentosParaArtroseNoJoelho'));
@@ -54,6 +58,10 @@ const App: React.FC = () => {
           <Route path="/links" element={<LinksUteis />} />
           <Route path="/lesoes-ligamentares" element={<LesoesLigamentares />} />
           <Route path="/meniscos" element={<Meniscos />} />
+          <Route path="/artrose" element={<Artrose />} />
+          <Route path="/cartilagem" element={<Cartilagem />} />
+          <Route path="/trauma-do-esporte" element={<TraumaDoEsporte />} />
+          <Route path="/condromalacia-patelar" element={<CondromalaciaPatelar />} />
           <Route path="/blog" element={<BlogIndex />} />
           <Route path="/blog/o-que-e-lesao-de-menisco" element={<OQueELesaoDeMenisco />} />
           <Route path="/blog/tratamentos-para-artrose-no-joelho" element={<TratamentosParaArtroseNoJoelho />} />
