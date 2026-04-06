@@ -139,17 +139,18 @@ const About: React.FC = () => {
 
           <div className="order-1 lg:order-2 grid grid-cols-2 gap-3 sm:gap-4 lg:gap-4">
             <div className="relative col-span-2 mt-8 min-h-0 lg:contents">
+              {/* Mobile: retrato à direita em fluxo; consultório ~58% à esquerda, por cima na zona de sobreposição */}
               <img
-                src="/imagens/inicio/explicando-no-consultorio.webp"
-                alt="Dr. Raphael Serra Cruz explicando exame ao paciente no consultório em Indaiatuba"
-                className="w-full min-w-0 rounded-2xl shadow-lg lg:col-start-1 lg:row-start-1 lg:mt-8"
+                src="/imagens/inicio/retrato-de-frente.webp"
+                alt="Retrato do Dr. Raphael Serra Cruz, ortopedista especialista em joelho"
+                className="relative z-0 ml-auto block w-[46%] max-w-[240px] min-w-0 shrink-0 rounded-2xl object-cover shadow-lg lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-8 lg:ml-0 lg:w-full lg:max-w-none lg:self-start lg:object-contain lg:shadow-lg"
                 loading="lazy"
                 decoding="async"
               />
               <img
-                src="/imagens/inicio/retrato-de-frente.webp"
-                alt="Retrato do Dr. Raphael Serra Cruz, ortopedista especialista em joelho"
-                className="absolute right-0 top-1/2 z-10 w-[44%] max-w-[200px] -translate-x-3 -translate-y-1/2 rounded-2xl object-cover shadow-xl ring-2 ring-white/95 lg:relative lg:right-auto lg:top-auto lg:z-auto lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-8 lg:w-full lg:max-w-none lg:translate-x-0 lg:translate-y-0 lg:self-start lg:object-contain lg:ring-0 lg:shadow-lg"
+                src="/imagens/inicio/explicando-no-consultorio.webp"
+                alt="Dr. Raphael Serra Cruz explicando exame ao paciente no consultório em Indaiatuba"
+                className="absolute left-0 top-1/2 z-10 w-[58%] min-w-0 max-w-[calc(100%-4rem)] -translate-y-1/2 rounded-2xl object-cover shadow-xl ring-2 ring-white/90 lg:static lg:col-start-1 lg:row-start-1 lg:top-auto lg:z-auto lg:mt-8 lg:w-full lg:max-w-none lg:translate-y-0 lg:ring-0 lg:shadow-lg"
                 loading="lazy"
                 decoding="async"
               />
