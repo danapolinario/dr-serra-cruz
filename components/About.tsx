@@ -137,7 +137,7 @@ const About: React.FC = () => {
             </div>
           </div>
 
-          <div className="order-1 lg:order-2 grid grid-cols-2 gap-4">
+          <div className="order-1 lg:order-2 grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-4">
             <div className="flex min-w-0 flex-col gap-4">
               <img
                 src="/imagens/inicio/explicando-no-consultorio.webp"
@@ -148,7 +148,7 @@ const About: React.FC = () => {
               />
 
               <div
-                className="flex w-full items-stretch gap-1 rounded-2xl border border-slate-200 bg-white/90 py-4 pl-1 pr-1 shadow-sm backdrop-blur-sm sm:gap-2 sm:py-5 sm:pl-2 sm:pr-2 md:py-6 md:pl-3 md:pr-3"
+                className="flex w-full min-w-0 max-w-full items-stretch gap-0 rounded-2xl border border-slate-200 bg-white/90 py-4 pl-3 pr-3 shadow-sm backdrop-blur-sm sm:gap-1 sm:py-5 sm:pl-2 sm:pr-2 md:py-6 md:pl-3 md:pr-3 lg:gap-2"
                 aria-roledescription={reduceMotion ? undefined : 'slideshow'}
                 aria-label="Premiações e reconhecimentos"
               >
@@ -157,17 +157,17 @@ const About: React.FC = () => {
                   alt=""
                   loading="lazy"
                   decoding="async"
-                  className="h-[7.5rem] w-auto max-w-[min(100%,4rem)] shrink-0 scale-x-[-1] object-contain object-center sm:h-[8.5rem] sm:max-w-[4rem]"
+                  className="hidden h-[7.5rem] w-auto max-w-[4rem] shrink-0 scale-x-[-1] object-contain object-center sm:block sm:h-[8.5rem]"
                   aria-hidden
                 />
-                <div className="min-w-1 flex-1 px-1 text-center sm:px-1">
+                <div className="min-w-0 flex-1 px-1 text-center sm:px-1">
                   {reduceMotion ? (
-                    <div className="space-y-6 text-sm">
+                    <div className="space-y-6 text-left text-sm sm:text-sm">
                       <div>
                         <p className="text-[0.65rem] font-bold uppercase tracking-wider text-blue-700">Prêmios internacionais</p>
-                        <ul className="mt-2 list-inside list-disc space-y-2 text-slate-700">
+                        <ul className="mt-2 list-outside list-disc space-y-2 pl-4 text-slate-700 marker:text-blue-600">
                           {AWARD_SLIDES.filter((s) => s.group === 'internacional').map((s) => (
-                            <li key={s.acronym + s.fullName} className="text-balance">
+                            <li key={s.acronym + s.fullName} className="text-pretty pl-1">
                               <span className="font-semibold text-slate-900">{s.acronym}</span>
                               {' — '}
                               {s.fullName}
@@ -177,9 +177,9 @@ const About: React.FC = () => {
                       </div>
                       <div>
                         <p className="text-[0.65rem] font-bold uppercase tracking-wider text-blue-700">Prêmios nacionais</p>
-                        <ul className="mt-2 list-inside list-disc space-y-2 text-slate-700">
+                        <ul className="mt-2 list-outside list-disc space-y-2 pl-4 text-slate-700 marker:text-blue-600">
                           {AWARD_SLIDES.filter((s) => s.group === 'nacional').map((s) => (
-                            <li key={s.acronym + s.fullName} className="text-balance">
+                            <li key={s.acronym + s.fullName} className="text-pretty pl-1">
                               <span className="font-semibold text-slate-900">{s.acronym}</span>
                               {' — '}
                               {s.fullName}
@@ -191,14 +191,14 @@ const About: React.FC = () => {
                   ) : (
                     <>
                       <p className="text-[0.65rem] font-bold uppercase tracking-wider text-blue-700">{slide.groupLabel}</p>
-                      <div className="mt-3 min-h-[5.5rem] md:min-h-[5rem]" aria-live="polite">
+                      <div className="mt-3 min-h-[4.25rem] sm:min-h-[5.5rem] lg:min-h-[5rem]" aria-live="polite">
                         <div key={slideIndex} className="about-award-slide-active">
-                          <p className="text-lg font-bold text-balance text-slate-900">{slide.acronym}</p>
-                          <p className="mt-2 text-sm leading-snug text-balance text-slate-600">{slide.fullName}</p>
+                          <p className="text-base font-bold text-pretty text-slate-900 sm:text-lg">{slide.acronym}</p>
+                          <p className="mt-2 text-xs leading-snug text-pretty text-slate-600 sm:text-sm">{slide.fullName}</p>
                         </div>
                       </div>
                       <div
-                        className="mt-4 flex justify-center gap-1.5"
+                        className="mt-4 flex flex-wrap justify-center gap-x-2 gap-y-2 px-1 sm:gap-1.5"
                         role="tablist"
                         aria-label="Indicadores do slideshow de premiações"
                       >
@@ -209,11 +209,15 @@ const About: React.FC = () => {
                             role="tab"
                             aria-selected={i === slideIndex}
                             aria-label={`Prêmio ${i + 1} de ${AWARD_SLIDES.length}`}
-                            className={`h-1.5 rounded-full transition-all ${
-                              i === slideIndex ? 'w-6 bg-blue-700' : 'w-1.5 bg-slate-300 hover:bg-slate-400'
-                            }`}
+                            className="group flex min-h-[44px] min-w-[44px] items-center justify-center p-2 touch-manipulation"
                             onClick={() => setSlideIndex(i)}
-                          />
+                          >
+                            <span
+                              className={`block h-1.5 rounded-full transition-all ${
+                                i === slideIndex ? 'w-6 bg-blue-700' : 'w-1.5 bg-slate-300 group-hover:bg-slate-400'
+                              }`}
+                            />
+                          </button>
                         ))}
                       </div>
                     </>
@@ -224,7 +228,7 @@ const About: React.FC = () => {
                   alt=""
                   loading="lazy"
                   decoding="async"
-                  className="h-[7.5rem] w-auto max-w-[min(100%,4rem)] shrink-0 object-contain object-center sm:h-[8.5rem] sm:max-w-[4rem]"
+                  className="hidden h-[7.5rem] w-auto max-w-[4rem] shrink-0 object-contain object-center sm:block sm:h-[8.5rem]"
                   aria-hidden
                 />
               </div>
