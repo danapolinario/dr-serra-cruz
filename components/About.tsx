@@ -138,21 +138,22 @@ const About: React.FC = () => {
           </div>
 
           <div className="order-1 lg:order-2 grid grid-cols-2 gap-3 sm:gap-4 lg:gap-4">
-            <img
-              src="/imagens/inicio/explicando-no-consultorio.webp"
-              alt="Dr. Raphael Serra Cruz explicando exame ao paciente no consultório em Indaiatuba"
-              className="col-start-1 row-start-1 mt-8 w-full min-w-0 rounded-2xl shadow-lg"
-              loading="lazy"
-              decoding="async"
-            />
-
-            <img
-              src="/imagens/inicio/retrato-de-frente.webp"
-              alt="Retrato do Dr. Raphael Serra Cruz, ortopedista especialista em joelho"
-              className="col-start-2 row-start-1 mt-8 w-full min-w-0 self-start rounded-2xl shadow-lg lg:row-span-2 lg:row-start-1 lg:col-start-2"
-              loading="lazy"
-              decoding="async"
-            />
+            <div className="relative col-span-2 mt-8 min-h-0 lg:contents">
+              <img
+                src="/imagens/inicio/explicando-no-consultorio.webp"
+                alt="Dr. Raphael Serra Cruz explicando exame ao paciente no consultório em Indaiatuba"
+                className="w-full min-w-0 rounded-2xl shadow-lg lg:col-start-1 lg:row-start-1 lg:mt-8"
+                loading="lazy"
+                decoding="async"
+              />
+              <img
+                src="/imagens/inicio/retrato-de-frente.webp"
+                alt="Retrato do Dr. Raphael Serra Cruz, ortopedista especialista em joelho"
+                className="absolute right-0 top-1/2 z-10 w-[44%] max-w-[200px] -translate-x-3 -translate-y-1/2 rounded-2xl object-cover shadow-xl ring-2 ring-white/95 lg:relative lg:right-auto lg:top-auto lg:z-auto lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-8 lg:w-full lg:max-w-none lg:translate-x-0 lg:translate-y-0 lg:self-start lg:object-contain lg:ring-0 lg:shadow-lg"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
 
             <div
               className="col-span-2 row-start-2 flex w-full min-w-0 max-w-full items-stretch gap-0.5 self-start rounded-2xl border border-slate-200 bg-white/90 py-3 pl-2 pr-2 shadow-sm backdrop-blur-sm sm:gap-1 sm:py-5 sm:pl-2 sm:pr-2 md:py-6 md:pl-3 md:pr-3 lg:col-span-1 lg:row-start-2 lg:col-start-1 lg:gap-2 lg:py-6"
@@ -205,7 +206,7 @@ const About: React.FC = () => {
                       </div>
                     </div>
                     <div
-                      className="mt-3 flex flex-wrap justify-center gap-x-1.5 gap-y-2 px-0.5 sm:mt-4 sm:gap-x-2"
+                      className="mt-3 flex flex-nowrap justify-center gap-0.5 px-0 sm:mt-4 sm:gap-1.5 md:gap-2"
                       role="tablist"
                       aria-label="Indicadores do slideshow de premiações"
                     >
@@ -216,7 +217,7 @@ const About: React.FC = () => {
                           role="tab"
                           aria-selected={i === slideIndex}
                           aria-label={`Prêmio ${i + 1} de ${AWARD_SLIDES.length}`}
-                          className="group flex min-h-[44px] min-w-[44px] items-center justify-center p-2 touch-manipulation"
+                          className="group flex h-9 w-8 shrink-0 items-center justify-center p-1 touch-manipulation sm:h-11 sm:w-11 sm:p-2"
                           onClick={() => setSlideIndex(i)}
                         >
                           <span
