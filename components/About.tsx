@@ -137,110 +137,106 @@ const About: React.FC = () => {
             </div>
           </div>
 
-          <div className="order-1 lg:order-2 grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-4">
-            <div className="flex min-w-0 flex-col gap-4">
+          <div className="order-1 lg:order-2 grid grid-cols-2 gap-3 sm:gap-4 lg:gap-4">
+            <img
+              src="/imagens/inicio/explicando-no-consultorio.webp"
+              alt="Dr. Raphael Serra Cruz explicando exame ao paciente no consultório em Indaiatuba"
+              className="col-start-1 row-start-1 mt-8 w-full min-w-0 rounded-2xl shadow-lg"
+              loading="lazy"
+              decoding="async"
+            />
+
+            <img
+              src="/imagens/inicio/retrato-de-frente.webp"
+              alt="Retrato do Dr. Raphael Serra Cruz, ortopedista especialista em joelho"
+              className="col-start-2 row-start-1 mt-8 w-full min-w-0 self-start rounded-2xl shadow-lg lg:row-span-2 lg:row-start-1 lg:col-start-2"
+              loading="lazy"
+              decoding="async"
+            />
+
+            <div
+              className="col-span-2 row-start-2 flex w-full min-w-0 max-w-full items-stretch gap-0.5 self-start rounded-2xl border border-slate-200 bg-white/90 py-3 pl-2 pr-2 shadow-sm backdrop-blur-sm sm:gap-1 sm:py-5 sm:pl-2 sm:pr-2 md:py-6 md:pl-3 md:pr-3 lg:col-span-1 lg:row-start-2 lg:col-start-1 lg:gap-2 lg:py-6"
+              aria-roledescription={reduceMotion ? undefined : 'slideshow'}
+              aria-label="Premiações e reconhecimentos"
+            >
               <img
-                src="/imagens/inicio/explicando-no-consultorio.webp"
-                alt="Dr. Raphael Serra Cruz explicando exame ao paciente no consultório em Indaiatuba"
-                className="mt-8 w-full rounded-2xl shadow-lg"
+                src={AWARD_SIDE_DECOR_SRC}
+                alt=""
                 loading="lazy"
                 decoding="async"
+                className="h-[6.25rem] w-auto max-w-[2.35rem] shrink-0 scale-x-[-1] object-contain object-center min-[380px]:max-w-[2.75rem] sm:h-[8rem] sm:max-w-[3.5rem] md:h-[8.5rem] md:max-w-[4rem]"
+                aria-hidden
               />
-
-              <div
-                className="flex w-full min-w-0 max-w-full items-stretch gap-0 rounded-2xl border border-slate-200 bg-white/90 py-4 pl-3 pr-3 shadow-sm backdrop-blur-sm sm:gap-1 sm:py-5 sm:pl-2 sm:pr-2 md:py-6 md:pl-3 md:pr-3 lg:gap-2"
-                aria-roledescription={reduceMotion ? undefined : 'slideshow'}
-                aria-label="Premiações e reconhecimentos"
-              >
-                <img
-                  src={AWARD_SIDE_DECOR_SRC}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                  className="hidden h-[7.5rem] w-auto max-w-[4rem] shrink-0 scale-x-[-1] object-contain object-center sm:block sm:h-[8.5rem]"
-                  aria-hidden
-                />
-                <div className="min-w-0 flex-1 px-1 text-center sm:px-1">
-                  {reduceMotion ? (
-                    <div className="space-y-6 text-left text-sm sm:text-sm">
-                      <div>
-                        <p className="text-[0.65rem] font-bold uppercase tracking-wider text-blue-700">Prêmios internacionais</p>
-                        <ul className="mt-2 list-outside list-disc space-y-2 pl-4 text-slate-700 marker:text-blue-600">
-                          {AWARD_SLIDES.filter((s) => s.group === 'internacional').map((s) => (
-                            <li key={s.acronym + s.fullName} className="text-pretty pl-1">
-                              <span className="font-semibold text-slate-900">{s.acronym}</span>
-                              {' — '}
-                              {s.fullName}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div>
-                        <p className="text-[0.65rem] font-bold uppercase tracking-wider text-blue-700">Prêmios nacionais</p>
-                        <ul className="mt-2 list-outside list-disc space-y-2 pl-4 text-slate-700 marker:text-blue-600">
-                          {AWARD_SLIDES.filter((s) => s.group === 'nacional').map((s) => (
-                            <li key={s.acronym + s.fullName} className="text-pretty pl-1">
-                              <span className="font-semibold text-slate-900">{s.acronym}</span>
-                              {' — '}
-                              {s.fullName}
-                            </li>
-                          ))}
-                        </ul>
+              <div className="min-w-0 flex-1 px-0.5 text-center sm:px-1">
+                {reduceMotion ? (
+                  <div className="space-y-6 text-left text-sm sm:text-sm">
+                    <div>
+                      <p className="text-[0.65rem] font-bold uppercase tracking-wider text-blue-700">Prêmios internacionais</p>
+                      <ul className="mt-2 list-outside list-disc space-y-2 pl-4 text-slate-700 marker:text-blue-600">
+                        {AWARD_SLIDES.filter((s) => s.group === 'internacional').map((s) => (
+                          <li key={s.acronym + s.fullName} className="text-pretty pl-1">
+                            <span className="font-semibold text-slate-900">{s.acronym}</span>
+                            {' — '}
+                            {s.fullName}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <p className="text-[0.65rem] font-bold uppercase tracking-wider text-blue-700">Prêmios nacionais</p>
+                      <ul className="mt-2 list-outside list-disc space-y-2 pl-4 text-slate-700 marker:text-blue-600">
+                        {AWARD_SLIDES.filter((s) => s.group === 'nacional').map((s) => (
+                          <li key={s.acronym + s.fullName} className="text-pretty pl-1">
+                            <span className="font-semibold text-slate-900">{s.acronym}</span>
+                            {' — '}
+                            {s.fullName}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    <p className="text-[0.65rem] font-bold uppercase tracking-wider text-blue-700">{slide.groupLabel}</p>
+                    <div className="mt-2 min-h-[4rem] sm:mt-3 sm:min-h-[5.5rem] lg:min-h-[5rem]" aria-live="polite">
+                      <div key={slideIndex} className="about-award-slide-active">
+                        <p className="text-sm font-bold text-pretty text-slate-900 sm:text-base md:text-lg">{slide.acronym}</p>
+                        <p className="mt-1.5 text-[0.7rem] leading-snug text-pretty text-slate-600 sm:mt-2 sm:text-xs md:text-sm">{slide.fullName}</p>
                       </div>
                     </div>
-                  ) : (
-                    <>
-                      <p className="text-[0.65rem] font-bold uppercase tracking-wider text-blue-700">{slide.groupLabel}</p>
-                      <div className="mt-3 min-h-[4.25rem] sm:min-h-[5.5rem] lg:min-h-[5rem]" aria-live="polite">
-                        <div key={slideIndex} className="about-award-slide-active">
-                          <p className="text-base font-bold text-pretty text-slate-900 sm:text-lg">{slide.acronym}</p>
-                          <p className="mt-2 text-xs leading-snug text-pretty text-slate-600 sm:text-sm">{slide.fullName}</p>
-                        </div>
-                      </div>
-                      <div
-                        className="mt-4 flex flex-wrap justify-center gap-x-2 gap-y-2 px-1 sm:gap-1.5"
-                        role="tablist"
-                        aria-label="Indicadores do slideshow de premiações"
-                      >
-                        {AWARD_SLIDES.map((_, i) => (
-                          <button
-                            key={i}
-                            type="button"
-                            role="tab"
-                            aria-selected={i === slideIndex}
-                            aria-label={`Prêmio ${i + 1} de ${AWARD_SLIDES.length}`}
-                            className="group flex min-h-[44px] min-w-[44px] items-center justify-center p-2 touch-manipulation"
-                            onClick={() => setSlideIndex(i)}
-                          >
-                            <span
-                              className={`block h-1.5 rounded-full transition-all ${
-                                i === slideIndex ? 'w-6 bg-blue-700' : 'w-1.5 bg-slate-300 group-hover:bg-slate-400'
-                              }`}
-                            />
-                          </button>
-                        ))}
-                      </div>
-                    </>
-                  )}
-                </div>
-                <img
-                  src={AWARD_SIDE_DECOR_SRC}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                  className="hidden h-[7.5rem] w-auto max-w-[4rem] shrink-0 object-contain object-center sm:block sm:h-[8.5rem]"
-                  aria-hidden
-                />
+                    <div
+                      className="mt-3 flex flex-wrap justify-center gap-x-1.5 gap-y-2 px-0.5 sm:mt-4 sm:gap-x-2"
+                      role="tablist"
+                      aria-label="Indicadores do slideshow de premiações"
+                    >
+                      {AWARD_SLIDES.map((_, i) => (
+                        <button
+                          key={i}
+                          type="button"
+                          role="tab"
+                          aria-selected={i === slideIndex}
+                          aria-label={`Prêmio ${i + 1} de ${AWARD_SLIDES.length}`}
+                          className="group flex min-h-[44px] min-w-[44px] items-center justify-center p-2 touch-manipulation"
+                          onClick={() => setSlideIndex(i)}
+                        >
+                          <span
+                            className={`block h-1.5 rounded-full transition-all ${
+                              i === slideIndex ? 'w-6 bg-blue-700' : 'w-1.5 bg-slate-300 group-hover:bg-slate-400'
+                            }`}
+                          />
+                        </button>
+                      ))}
+                    </div>
+                  </>
+                )}
               </div>
-            </div>
-
-            <div className="min-w-0">
               <img
-                src="/imagens/inicio/retrato-de-frente.webp"
-                alt="Retrato do Dr. Raphael Serra Cruz, ortopedista especialista em joelho"
-                className="mb-8 w-full rounded-2xl shadow-lg"
+                src={AWARD_SIDE_DECOR_SRC}
+                alt=""
                 loading="lazy"
                 decoding="async"
+                className="h-[6.25rem] w-auto max-w-[2.35rem] shrink-0 object-contain object-center min-[380px]:max-w-[2.75rem] sm:h-[8rem] sm:max-w-[3.5rem] md:h-[8.5rem] md:max-w-[4rem]"
+                aria-hidden
               />
             </div>
           </div>

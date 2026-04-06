@@ -13,7 +13,8 @@
     "imagens:baixar": "node scripts/otimizar-imagens.mjs",
     "imagens:aplicar-caminhos": "node scripts/aplicar-caminhos-imagens.mjs",
     "imagens:seguidores-instagram": "node scripts/processar-seguidores-instagram.mjs",
-    "imagens:logos-instituicoes": "node scripts/processar-logos-instituicoes.mjs"
+    "imagens:logos-instituicoes": "node scripts/processar-logos-instituicoes.mjs",
+    "imagens:cards-tratamentos": "node scripts/gerar-cards-tratamentos-webp.mjs"
   },
   "dependencies": {
     "react": "^19.2.3",
