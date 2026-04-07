@@ -6,7 +6,7 @@
  * Saltar: SKIP_PRERENDER=1
  */
 import { spawn } from 'child_process';
-import { existsSync, mkdirSync, writeFileSync } from 'fs';
+import { existsSync, mkdirSync, rmSync, writeFileSync } from 'fs';
 import net from 'net';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
@@ -16,10 +16,38 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
 const dist = join(root, 'dist');
 
-/** Na Vercel (Linux sem NSS do sistema), forçar o mesmo caminho que AL2023 Lambda para extrair .so em /tmp. */
+/**
+ * Na Vercel o ambiente pode trazer AWS_EXECUTION_ENV que não inclui "20.x", o que faz o
+ * @sparticuz/chromium usar AL2 ou não extrair al2023 — o binário em /tmp/chromium precisa
+ * de /tmp/al2023/lib (libnss3.so, etc.). Forçamos sempre o perfil Node 20 / AL2023 no build.
+ */
 function ensureSparticuzVercelEnv() {
-  if (process.env.VERCEL === '1' && !process.env.AWS_EXECUTION_ENV) {
+  if (process.env.VERCEL === '1') {
     process.env.AWS_EXECUTION_ENV = 'AWS_Lambda_nodejs20.x';
+  }
+}
+
+const SPARTICUZ_CHROMIUM_PATH = '/tmp/chromium';
+const SPARTICUZ_AL2023_LIB = '/tmp/al2023/lib';
+
+/** Garante LD_LIBRARY_PATH com as .so extraídas (setup do pacote corre no load, mas reforçamos após inflate). */
+function reinforceAl2023LdLibraryPath() {
+  if (!existsSync(SPARTICUZ_AL2023_LIB)) return;
+  const prev = process.env.LD_LIBRARY_PATH ?? '';
+  const parts = prev.split(':').filter(Boolean);
+  if (parts.includes(SPARTICUZ_AL2023_LIB)) return;
+  process.env.LD_LIBRARY_PATH = [SPARTICUZ_AL2023_LIB, ...parts].join(':');
+}
+
+/** Se /tmp/chromium existe mas as libs AL2023 não, o executablePath() do pacote retorna cedo e não extrai al2023. */
+function removeStaleSparticuzChromiumIfLibsMissing() {
+  if (process.env.VERCEL !== '1') return;
+  const nss = join(SPARTICUZ_AL2023_LIB, 'libnss3.so');
+  if (!existsSync(SPARTICUZ_CHROMIUM_PATH) || existsSync(nss)) return;
+  try {
+    rmSync(SPARTICUZ_CHROMIUM_PATH, { recursive: true, force: true });
+  } catch {
+    /* ignore */
   }
 }
 
@@ -92,12 +120,15 @@ async function launchBrowser() {
   const extraArgs = ['--disable-dev-shm-usage'];
 
   if (process.env.VERCEL === '1') {
+    removeStaleSparticuzChromiumIfLibsMissing();
+
     const chromiumMod = await import('@sparticuz/chromium');
     const Chromium = chromiumMod.default;
     const puppeteerCore = await import('puppeteer-core');
     const puppeteer = puppeteerCore.default;
 
     const executablePath = await Chromium.executablePath();
+    reinforceAl2023LdLibraryPath();
     return puppeteer.launch({
       args: [...Chromium.args, ...extraArgs],
       defaultViewport: Chromium.defaultViewport,
