@@ -1,15 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { SeoHead } from '../src/components/SeoHead';
 
-const NotFound: React.FC = () => (
+const NotFound: React.FC = () => {
+  const { pathname } = useLocation();
+  return (
   <div className="flex flex-col min-h-screen">
     <SeoHead
       title="Página não encontrada | Dr. Raphael Serra Cruz"
       description="A página que você procura não existe ou foi movida."
-      path="/404"
+      path={pathname}
       noindex
     />
     <Header />
@@ -30,6 +32,7 @@ const NotFound: React.FC = () => (
     </main>
     <Footer />
   </div>
-);
+  );
+};
 
 export default NotFound;

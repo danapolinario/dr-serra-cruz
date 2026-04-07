@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Certificates from '../components/Certificates';
@@ -18,6 +19,15 @@ const Home: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <SeoHead title={seo.title} description={seo.description} path="/" />
+      <Helmet>
+        <link
+          rel="preload"
+          as="image"
+          href="/imagens/inicio/retrato-de-frente.webp"
+          type="image/webp"
+          fetchPriority="high"
+        />
+      </Helmet>
       <SiteStructuredData />
       <Header />
       <main>

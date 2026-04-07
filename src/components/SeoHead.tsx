@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
 import { absoluteUrl, DEFAULT_OG_IMAGE_PATH, SITE_URL, truncateMeta } from '../config/site';
 
 export interface SeoHeadProps {
@@ -17,6 +18,12 @@ export interface SeoHeadProps {
 
 const ensurePath = (p: string) => (p.startsWith('/') ? p : `/${p}`);
 
+/** Só injeta meta se a URL atual bate com `path` (reduz lixo no head em pré-render/navegação). */
+function normalizePathname(p: string) {
+  if (!p || p === '/') return '/';
+  return p.endsWith('/') ? p.replace(/\/+$/, '') || '/' : p;
+}
+
 export const SeoHead: React.FC<SeoHeadProps> = ({
   title,
   description,
@@ -27,7 +34,11 @@ export const SeoHead: React.FC<SeoHeadProps> = ({
   articleModifiedTime,
   noindex,
 }) => {
+  const location = useLocation();
   const pathname = ensurePath(path);
+  if (normalizePathname(location.pathname) !== normalizePathname(pathname)) {
+    return null;
+  }
   const canonical = `${SITE_URL}${pathname}`;
   const desc = truncateMeta(description);
   const ogImage = absoluteUrl(ogImagePath);

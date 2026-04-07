@@ -5,6 +5,7 @@
  * - Local: Google Chrome/Chromium no sistema ou CHROME_PATH.
  * Saltar: SKIP_PRERENDER=1
  */
+import { load } from 'cheerio';
 import { spawn } from 'child_process';
 import { existsSync, mkdirSync, rmSync, writeFileSync } from 'fs';
 import net from 'net';
@@ -15,6 +16,104 @@ import { getAllPrerenderPaths } from './static-site-paths.mjs';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
 const dist = join(root, 'dist');
+
+const DEFAULT_SITE_URL = 'https://www.drserracruz.com.br';
+/** Alinhar a STATIC_PAGE_SEO['/'] — removemos duplicados da home no <head> (artefacto Helmet/Vite em rotas internas). */
+const HOME_HEAD_TITLE = 'Dr. Raphael Serra Cruz | Ortopedista de joelho Indaiatuba';
+const HOME_DESC_PREFIX = 'Ortopedista e traumatologista especializado em joelho em Indaiatuba-SP';
+
+function publicSiteUrl() {
+  return (process.env.VITE_SITE_URL ?? DEFAULT_SITE_URL).replace(/\/$/, '');
+}
+
+/**
+ * Garante um único conjunto de meta por URL: o react-helmet-async + preload Vite às vezes deixa
+ * no DOM tags da home (título genérico, canonical /, OG da raiz) junto com as do post/página.
+ */
+function stripConflictingHomeHead(html, routePath) {
+  if (routePath === '/') return html;
+
+  const base = publicSiteUrl();
+  const rootWithSlash = `${base}/`;
+  const defaultOgImage = `${base}/imagens/inicio/retrato-de-frente.webp`;
+
+  const $ = load(html);
+
+  $('head title').each((_, el) => {
+    if ($(el).text().trim() === HOME_HEAD_TITLE) $(el).remove();
+  });
+
+  $('head link[rel="canonical"]').each((_, el) => {
+    const href = $(el).attr('href') || '';
+    const norm = href.replace(/\/$/, '') || '/';
+    if (norm === base || href === rootWithSlash) $(el).remove();
+  });
+
+  $('head link[rel="preload"][href="/imagens/inicio/retrato-de-frente.webp"]').remove();
+
+  const hasArticle = $('head meta[property="og:type"][content="article"]').length > 0;
+  if (hasArticle) {
+    $('head meta[property="og:type"][content="website"]').remove();
+  }
+
+  $('head meta[property="og:url"]').each((_, el) => {
+    const c = ($(el).attr('content') || '').replace(/\/$/, '');
+    if (c === base) $(el).remove();
+  });
+
+  $('head meta[property="og:title"]').each((_, el) => {
+    if ($(el).attr('content') === HOME_HEAD_TITLE) $(el).remove();
+  });
+
+  $('head meta[name="twitter:title"]').each((_, el) => {
+    if ($(el).attr('content') === HOME_HEAD_TITLE) $(el).remove();
+  });
+
+  if ($('head meta[name="description"]').length > 1) {
+    $('head meta[name="description"]').each((_, el) => {
+      const c = $(el).attr('content') || '';
+      if (c.startsWith(HOME_DESC_PREFIX)) $(el).remove();
+    });
+  }
+
+  if ($('head meta[property="og:description"]').length > 1) {
+    $('head meta[property="og:description"]').each((_, el) => {
+      const c = $(el).attr('content') || '';
+      if (c.startsWith(HOME_DESC_PREFIX)) $(el).remove();
+    });
+  }
+
+  if ($('head meta[name="twitter:description"]').length > 1) {
+    $('head meta[name="twitter:description"]').each((_, el) => {
+      const c = $(el).attr('content') || '';
+      if (c.startsWith(HOME_DESC_PREFIX)) $(el).remove();
+    });
+  }
+
+  if ($('head meta[property="og:image"]').length > 1) {
+    $(`head meta[property="og:image"][content="${defaultOgImage}"]`).remove();
+  }
+
+  if ($('head meta[name="twitter:image"]').length > 1) {
+    $(`head meta[name="twitter:image"][content="${defaultOgImage}"]`).remove();
+  }
+
+  $('head meta[property="og:image:alt"]').each((_, el) => {
+    if ($(el).attr('content') === HOME_HEAD_TITLE) $(el).remove();
+  });
+
+  const dedupeKeepLast = (sel) => {
+    while ($(`head ${sel}`).length > 1) {
+      $(`head ${sel}`).first().remove();
+    }
+  };
+  dedupeKeepLast('meta[name="robots"]');
+  dedupeKeepLast('meta[property="og:locale"]');
+  dedupeKeepLast('meta[property="og:site_name"]');
+  dedupeKeepLast('meta[name="twitter:card"]');
+
+  return $.html();
+}
 
 /**
  * Na Vercel o ambiente pode trazer AWS_EXECUTION_ENV que não inclui "20.x", o que faz o
@@ -209,7 +308,8 @@ async function main() {
             { timeout: 90000 },
           );
           await wait(250);
-          const html = await page.content();
+          const raw = await page.content();
+          const html = stripConflictingHomeHead(raw, routePath);
           const outFile = distFileForRoute(routePath);
           mkdirSync(dirname(outFile), { recursive: true });
           writeFileSync(outFile, html, 'utf8');
