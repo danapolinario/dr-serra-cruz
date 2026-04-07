@@ -1,19 +1,27 @@
 /**
  * Pré-renderiza cada rota conhecida para HTML estático em dist/ (SEO, OG, crawlers).
- * Requer: vite build prévio. Usa Puppeteer (Chromium descarregado em npm install).
+ * Requer: vite build prévio.
+ * - Vercel / Linux mínimo: @sparticuz/chromium + puppeteer-core (com libs AL2023).
+ * - Local: Google Chrome/Chromium no sistema ou CHROME_PATH.
  * Saltar: SKIP_PRERENDER=1
  */
 import { spawn } from 'child_process';
 import { existsSync, mkdirSync, writeFileSync } from 'fs';
 import net from 'net';
 import { dirname, join } from 'path';
-import puppeteer from 'puppeteer';
 import { fileURLToPath } from 'url';
 import { getAllPrerenderPaths } from './static-site-paths.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
 const dist = join(root, 'dist');
+
+/** Na Vercel (Linux sem NSS do sistema), forçar o mesmo caminho que AL2023 Lambda para extrair .so em /tmp. */
+function ensureSparticuzVercelEnv() {
+  if (process.env.VERCEL === '1' && !process.env.AWS_EXECUTION_ENV) {
+    process.env.AWS_EXECUTION_ENV = 'AWS_Lambda_nodejs20.x';
+  }
+}
 
 function findFreePort() {
   return new Promise((resolve, reject) => {
@@ -27,7 +35,6 @@ function findFreePort() {
   });
 }
 
-/** Caminho do ficheiro em dist para uma rota (ex.: /sobre → dist/sobre/index.html). */
 function distFileForRoute(routePath) {
   if (routePath === '/') return join(dist, 'index.html');
   const clean = routePath.replace(/^\//, '');
@@ -50,6 +57,70 @@ async function waitForServer(base, maxMs = 120000) {
     await wait(300);
   }
   throw new Error('Timeout à espera do servidor vite preview.');
+}
+
+function resolveLocalChromeExecutable() {
+  const candidates = [
+    process.env.CHROME_PATH,
+    process.platform === 'darwin' && '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+    process.platform === 'darwin' && '/Applications/Chromium.app/Contents/MacOS/Chromium',
+    process.platform === 'linux' && '/usr/bin/google-chrome-stable',
+    process.platform === 'linux' && '/usr/bin/google-chrome',
+    process.platform === 'linux' && '/usr/bin/chromium',
+    process.platform === 'linux' && '/usr/bin/chromium-browser',
+    process.platform === 'win32' &&
+      join(process.env.PROGRAMFILES || 'C:\\Program Files', 'Google', 'Chrome', 'Application', 'chrome.exe'),
+    process.platform === 'win32' &&
+      join(
+        process.env['PROGRAMFILES(X86)'] || 'C:\\Program Files (x86)',
+        'Google',
+        'Chrome',
+        'Application',
+        'chrome.exe',
+      ),
+  ].filter((p) => typeof p === 'string' && p.length > 0);
+
+  for (const p of candidates) {
+    if (p && existsSync(p)) return p;
+  }
+  return null;
+}
+
+async function launchBrowser() {
+  ensureSparticuzVercelEnv();
+
+  const extraArgs = ['--disable-dev-shm-usage'];
+
+  if (process.env.VERCEL === '1') {
+    const chromiumMod = await import('@sparticuz/chromium');
+    const Chromium = chromiumMod.default;
+    const puppeteerCore = await import('puppeteer-core');
+    const puppeteer = puppeteerCore.default;
+
+    const executablePath = await Chromium.executablePath();
+    return puppeteer.launch({
+      args: [...Chromium.args, ...extraArgs],
+      defaultViewport: Chromium.defaultViewport,
+      executablePath,
+      headless: Chromium.headless,
+    });
+  }
+
+  const chromePath = resolveLocalChromeExecutable();
+  if (!chromePath) {
+    throw new Error(
+      'Chrome/Chromium não encontrado para pré-render local. Instale o Google Chrome ou defina CHROME_PATH. Na Vercel usa-se @sparticuz/chromium automaticamente.',
+    );
+  }
+
+  const puppeteerCore = await import('puppeteer-core');
+  const puppeteer = puppeteerCore.default;
+
+  return puppeteer.launch({
+    executablePath: chromePath,
+    headless: true,
+    args: ['--no-sandbox', '--disable-setuid-sandbox', ...extraArgs],
+  });
 }
 
 async function main() {
@@ -89,10 +160,7 @@ async function main() {
   try {
     await waitForServer(base);
 
-    const browser = await puppeteer.launch({
-      headless: true,
-      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
-    });
+    const browser = await launchBrowser();
 
     try {
       for (const routePath of paths) {
@@ -146,6 +214,6 @@ async function main() {
 
 main().catch((e) => {
   console.error(e);
-  console.error('\nDica: confirme que o Puppeteer instalou o Chromium (npm install sem PUPPETEER_SKIP_DOWNLOAD).');
+  console.error('\nVercel: confirme Node 20+ no projeto. Local: instale Chrome ou defina CHROME_PATH.');
   process.exit(1);
 });
