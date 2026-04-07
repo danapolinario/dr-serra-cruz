@@ -10,8 +10,5 @@
     { "source": "/index.html", "destination": "/", "statusCode": 301 },
     { "source": "/index.php", "destination": "/", "statusCode": 301 },
     { "source": "/index.htm", "destination": "/", "statusCode": 301 }
-  ],
-  "rewrites": [
-    { "source": "/((?!assets/).*)", "destination": "/index.html" }
   ]
 }
