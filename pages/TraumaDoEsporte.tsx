@@ -15,7 +15,7 @@ const TraumaDoEsporte: React.FC = () => {
   const seo = STATIC_PAGE_SEO['/trauma-do-esporte'];
   return (
     <div className="flex flex-col min-h-screen">
-      <SeoHead title={seo.title} description={seo.description} path="/trauma-do-esporte" />
+      <SeoHead title={seo.title} description={seo.description} path="/trauma-do-esporte" ogImagePath={seo.ogImagePath} />
       <Header />
       <main className="pt-20 flex-grow bg-slate-50">
         <section

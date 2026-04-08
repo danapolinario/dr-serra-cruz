@@ -18,7 +18,7 @@ const Home: React.FC = () => {
   const seo = STATIC_PAGE_SEO['/'];
   return (
     <div className="flex flex-col min-h-screen">
-      <SeoHead title={seo.title} description={seo.description} path="/" />
+      <SeoHead title={seo.title} description={seo.description} path="/" ogImagePath={seo.ogImagePath} />
       <Helmet>
         <link
           rel="preload"

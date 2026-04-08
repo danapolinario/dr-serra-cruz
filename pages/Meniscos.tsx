@@ -15,7 +15,7 @@ const Meniscos: React.FC = () => {
   const seo = STATIC_PAGE_SEO['/meniscos'];
   return (
     <div className="flex flex-col min-h-screen">
-      <SeoHead title={seo.title} description={seo.description} path="/meniscos" />
+      <SeoHead title={seo.title} description={seo.description} path="/meniscos" ogImagePath={seo.ogImagePath} />
       <Header />
       <main className="pt-20 flex-grow bg-slate-50">
         <section 

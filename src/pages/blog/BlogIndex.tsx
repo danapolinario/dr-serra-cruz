@@ -11,7 +11,12 @@ const BlogIndex: React.FC = () => {
   const seo = STATIC_PAGE_SEO['/blog'];
   return (
     <div className="min-h-screen flex flex-col font-sans text-slate-800">
-      <SeoHead title={seo.title} description={seo.description} path="/blog" />
+      <SeoHead
+        title={seo.title}
+        description={seo.description}
+        path="/blog"
+        ogImagePath={blogPosts[0]?.image ?? seo.ogImagePath}
+      />
       <Header />
       <main className="pt-20 flex-grow bg-slate-50">
         <section className="bg-blue-900 text-white py-20">

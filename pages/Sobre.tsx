@@ -10,7 +10,7 @@ const Sobre: React.FC = () => {
   const seo = STATIC_PAGE_SEO['/sobre'];
   return (
     <div className="flex flex-col min-h-screen">
-      <SeoHead title={seo.title} description={seo.description} path="/sobre" />
+      <SeoHead title={seo.title} description={seo.description} path="/sobre" ogImagePath={seo.ogImagePath} />
       <Header />
       <main className="pt-20">
         {/* Hero Section */}

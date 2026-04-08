@@ -15,7 +15,7 @@ const CondromalaciaPatelar: React.FC = () => {
   const seo = STATIC_PAGE_SEO['/condromalacia-patelar'];
   return (
     <div className="flex flex-col min-h-screen">
-      <SeoHead title={seo.title} description={seo.description} path="/condromalacia-patelar" />
+      <SeoHead title={seo.title} description={seo.description} path="/condromalacia-patelar" ogImagePath={seo.ogImagePath} />
       <Header />
       <main className="pt-20 flex-grow bg-slate-50">
         <section
