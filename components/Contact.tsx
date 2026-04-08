@@ -1,9 +1,5 @@
-
 import React from 'react';
-
-const WHATSAPP_AGENDAR =
-  'https://wa.me/5519998321140?text=' +
-  encodeURIComponent('Olá! Gostaria de agendar uma consulta com o Dr. Raphael Serra Cruz.');
+import { WHATSAPP_AGENDAR_HREF } from '../src/config/whatsapp';
 
 /** Consulta no Google Maps (embed sem API key; alinha o pin ao endereço). */
 function mapEmbedSrc(enderecoParaBusca: string): string {
@@ -125,7 +121,7 @@ const Contact: React.FC = () => {
             </div>
             <div className="mt-auto border-t border-slate-100 pt-8">
               <a
-                href={WHATSAPP_AGENDAR}
+                href={WHATSAPP_AGENDAR_HREF}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-blue-700 px-6 py-4 text-center text-base font-bold text-white shadow-lg shadow-blue-900/20 transition hover:bg-blue-800"

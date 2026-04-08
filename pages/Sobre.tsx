@@ -5,6 +5,7 @@ import FloatingWhatsApp from '../components/FloatingWhatsApp';
 import CertificatesGallery from '../components/CertificatesGallery';
 import { SeoHead } from '../src/components/SeoHead';
 import { STATIC_PAGE_SEO } from '../src/seo/pageSeo';
+import { WHATSAPP_AGENDAR_HREF } from '../src/config/whatsapp';
 
 const Sobre: React.FC = () => {
   const seo = STATIC_PAGE_SEO['/sobre'];
@@ -98,7 +99,7 @@ const Sobre: React.FC = () => {
               <a href="/#contato" className="bg-slate-800 text-white px-8 py-3 rounded-full text-center hover:bg-slate-700 transition font-medium">
                 Locais de Atendimento
               </a>
-              <a href="https://api.whatsapp.com/send?phone=5519998321140&text=Ol%C3%A1%20Dr.%20Raphael%20Serra%20Cruz!%20Tudo%20bem%3F%20Gostaria%20de%20agendar%20uma%20consulta!" target="_blank" rel="noreferrer" className="bg-blue-700 text-white px-8 py-3 rounded-full text-center hover:bg-blue-800 transition font-medium">
+              <a href={WHATSAPP_AGENDAR_HREF} target="_blank" rel="noopener noreferrer" className="bg-blue-700 text-white px-8 py-3 rounded-full text-center hover:bg-blue-800 transition font-medium">
                 Agende uma Consulta
               </a>
             </div>

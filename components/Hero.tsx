@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { WHATSAPP_AGENDAR_HREF } from '../src/config/whatsapp';
 
 const HERO_SLIDE_MS = 5000;
 
@@ -41,8 +42,9 @@ const Hero: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-12">
               <a
-                href="https://wa.me/5519998321140"
+                href={WHATSAPP_AGENDAR_HREF}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white px-10 py-5 rounded-full text-lg font-bold flex items-center justify-center gap-3 transition-all transform hover:scale-105 shadow-xl shadow-green-600/20"
               >
                 <i className="fa-brands fa-whatsapp text-2xl"></i>

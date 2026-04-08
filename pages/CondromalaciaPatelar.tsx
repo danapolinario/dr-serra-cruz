@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import FloatingWhatsApp from '../components/FloatingWhatsApp';
 import { SeoHead } from '../src/components/SeoHead';
 import { STATIC_PAGE_SEO } from '../src/seo/pageSeo';
+import { WHATSAPP_AGENDAR_HREF } from '../src/config/whatsapp';
 
 const CondromalaciaPatelar: React.FC = () => {
   const [activeTab, setActiveTab] = useState<number | null>(1);
@@ -182,7 +183,7 @@ const CondromalaciaPatelar: React.FC = () => {
             <h2 className="text-3xl font-bold text-slate-800 mb-6">Agende sua consulta com o Dr. Raphael Serra Cruz</h2>
             <p className="text-slate-600 mb-8 text-lg">Especialista em Cirurgia do Joelho e Traumatologia Esportiva em Indaiatuba-SP.</p>
             <a
-              href="https://api.whatsapp.com/send?phone=5519998321140&text=Ol%C3%A1%20Dr.%20Raphael%20Serra%20Cruz!%20Tudo%20bem%3F%20Gostaria%20de%20agendar%20uma%20consulta!"
+              href={WHATSAPP_AGENDAR_HREF}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-green-600 text-white px-8 py-4 rounded-full hover:bg-green-700 transition font-medium text-lg shadow-lg shadow-green-600/20"

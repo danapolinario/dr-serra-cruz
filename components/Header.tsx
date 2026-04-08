@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { WHATSAPP_AGENDAR_HREF } from '../src/config/whatsapp';
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,8 +44,9 @@ const Header: React.FC = () => {
           <Link to="/#avaliacoes" className="hover:text-blue-600 transition">Avaliações</Link>
           <Link to="/#contato" className="hover:text-blue-600 transition">Contato</Link>
           <a 
-            href="https://wa.me/5519998321140" 
-            target="_blank" 
+            href={WHATSAPP_AGENDAR_HREF}
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-blue-700 text-white px-6 py-2.5 rounded-full hover:bg-blue-800 transition shadow-lg shadow-blue-900/20"
           >
             Agendar Consulta
@@ -83,8 +85,9 @@ const Header: React.FC = () => {
           <Link to="/#avaliacoes" onClick={() => setIsOpen(false)} className="py-2 border-b border-slate-50">Avaliações</Link>
           <Link to="/#contato" onClick={() => setIsOpen(false)} className="py-2 border-b border-slate-50">Contato</Link>
           <a 
-            href="https://wa.me/5519998321140" 
-            target="_blank" 
+            href={WHATSAPP_AGENDAR_HREF}
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-green-600 text-white px-6 py-3 rounded-xl text-center mt-2 flex items-center justify-center gap-2"
           >
             <i className="fa-brands fa-whatsapp"></i> WhatsApp
