@@ -1,11 +1,9 @@
 
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
-  const isHome = location.pathname === '/';
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-slate-200">
@@ -40,10 +38,10 @@ const Header: React.FC = () => {
             </div>
           </div>
 
-          <a href={isHome ? "#tratamentos" : "/#tratamentos"} className="hover:text-blue-600 transition">Tratamentos</a>
+          <Link to="/#tratamentos" className="hover:text-blue-600 transition">Tratamentos</Link>
           <Link to="/blog" className="hover:text-blue-600 transition">Blog</Link>
-          <a href={isHome ? "#avaliacoes" : "/#avaliacoes"} className="hover:text-blue-600 transition">Avaliações</a>
-          <a href={isHome ? "#contato" : "/#contato"} className="hover:text-blue-600 transition">Contato</a>
+          <Link to="/#avaliacoes" className="hover:text-blue-600 transition">Avaliações</Link>
+          <Link to="/#contato" className="hover:text-blue-600 transition">Contato</Link>
           <a 
             href="https://wa.me/5519998321140" 
             target="_blank" 
@@ -80,10 +78,10 @@ const Header: React.FC = () => {
             </div>
           </div>
 
-          <a href={isHome ? "#tratamentos" : "/#tratamentos"} onClick={() => setIsOpen(false)} className="py-2 border-b border-slate-50">Tratamentos</a>
+          <Link to="/#tratamentos" onClick={() => setIsOpen(false)} className="py-2 border-b border-slate-50">Tratamentos</Link>
           <Link to="/blog" onClick={() => setIsOpen(false)} className="py-2 border-b border-slate-50">Blog</Link>
-          <a href={isHome ? "#avaliacoes" : "/#avaliacoes"} onClick={() => setIsOpen(false)} className="py-2 border-b border-slate-50">Avaliações</a>
-          <a href={isHome ? "#contato" : "/#contato"} onClick={() => setIsOpen(false)} className="py-2 border-b border-slate-50">Contato</a>
+          <Link to="/#avaliacoes" onClick={() => setIsOpen(false)} className="py-2 border-b border-slate-50">Avaliações</Link>
+          <Link to="/#contato" onClick={() => setIsOpen(false)} className="py-2 border-b border-slate-50">Contato</Link>
           <a 
             href="https://wa.me/5519998321140" 
             target="_blank" 
