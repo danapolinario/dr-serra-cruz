@@ -3,12 +3,12 @@ import React from 'react';
 
 const Testimonials: React.FC = () => {
   const reviews = [
-    { name: 'Raquel Iendrick', text: 'O Raphael é um excelente profissional, além de muito qualificado e habilidoso, é extremamente atencioso, explica tudo nos mínimos detalhes deixando nós pacientes mais seguros durante todo o processo.' },
+    { name: 'Raquel Iendrick', text: 'O Dr. Raphael é um excelente profissional, além de muito qualificado e habilidoso, é extremamente atencioso, explica tudo nos mínimos detalhes deixando nós pacientes mais seguros durante todo o processo.' },
     { name: 'Angelo Cataldo', text: 'Operei os dois meniscos com ele e desde então nunca mais tive problemas. Profissional sério, competente, de muita experiência, empático e sempre pronto para atender. Inspira confiança e segurança pelo conhecimento e experiência.' },
-    { name: 'Daniel', text: 'Tive rompimento total do LCA e LCM e sutura do menisco. O Dr. Raphael é um médico atencioso, assertivo, humilde e que transmite total segurança para o paciente. Minha cirurgia foi um sucesso e minha recuperação não poderia estar melhor.' },
-    { name: 'Arthur Pires', text: 'Tive uma lesão complexa no ligamento canto posterolateral há 4 anos lutando jiu jitsu. Seguindo as orientações, minha recuperação foi um sucesso podendo retornar sem sequelas às minhas rotinas esportivas.' },
+    { name: 'Daniel Protógenes', text: 'Tive ruptura total do LCA e LCM e sutura do menisco. O Dr. Raphael é um médico atencioso, assertivo, humilde e que transmite total segurança para o paciente. Minha cirurgia foi um sucesso e minha recuperação não poderia estar melhor.' },
+    { name: 'Arthur Pires', text: 'Tive uma lesão complexa nos ligamentos do canto póstero-lateral do joelho há 4 anos lutando jiu jitsu. Seguindo as orientações, minha recuperação foi um sucesso podendo retornar sem sequelas às minhas rotinas esportivas.' },
     { name: 'Marina Lipkin', text: 'Especialista mais fera da área! Ultra graduado, seguro e experiente, Dr. Raphael me salvou de uma lesão séria no joelho. Meu joelho agradece!' },
-    { name: 'Rafael Pereira', text: 'Raphael foi super claro e sincero desde a primeira consulta, demonstrando um domínio técnico muito grande no assunto. A cirurgia de joelho foi um sucesso. No pós-cirúrgico fez um acompanhamento atento em todas as fases.' },
+    { name: 'Rafael Pereira', text: 'Dr. Raphael foi super claro e sincero desde a primeira consulta, demonstrando um domínio técnico muito grande no assunto. A cirurgia de joelho foi um sucesso. No pós-cirúrgico fez um acompanhamento atento em todas as fases.' },
   ];
 
   return (

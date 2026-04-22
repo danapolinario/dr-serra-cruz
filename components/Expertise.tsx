@@ -12,47 +12,47 @@ const CARD_IMG = {
 const Expertise: React.FC = () => {
   const treatments = [
     {
-      title: 'Ligamentos',
+      title: 'Trauma do Esporte',
+      icon: 'fa-solid fa-medal',
+      desc: 'Atendimento ortopédico geral a atletas profissionais e amadores, focando em prevenção de lesões e no retorno seguro à atividade esportiva.',
+      link: '/trauma-do-esporte',
+      cardImage: CARD_IMG.rioOpen,
+    },
+    {
+      title: 'Lesões Ligamentares',
       icon: 'fa-solid fa-bone',
-      desc: 'Reconstrução de LCA, LCP, lesões complexas multiligamentares e canto póstero-lateral do joelho.',
+      desc: 'De tratamentos não-cirúrgicos a reconstruções complexas de todos os ligamentos do joelho.',
       link: '/lesoes-ligamentares',
       cardImage: CARD_IMG.mostrandoExame,
     },
     {
       title: 'Meniscos',
       icon: 'fa-solid fa-wave-square',
-      desc: 'Sutura meniscal, meniscectomia parcial e transplante de menisco para preservação articular.',
+      desc: 'Foco em preservação meniscal, desde protocolos conservadores a todos os tipos de sutura.',
       link: '/meniscos',
-      cardImage: CARD_IMG.examinando,
-    },
-    {
-      title: 'Artrose',
-      icon: 'fa-solid fa-person-walking-with-cane',
-      desc: 'Artroplastia total e parcial do joelho, infiltrações e tratamentos biológicos para artrose.',
-      link: '/artrose',
       cardImage: CARD_IMG.examinando,
     },
     {
       title: 'Cartilagem',
       icon: 'fa-solid fa-microscope',
-      desc: 'Procedimentos restaurativos, microfratura, transplante autólogo de cartilagem, hidrogel e viscosuplementação (ácido hialurônico).',
+      desc: 'Tratamentos específicos: membrana de colágeno (AMIC - Chondro-Gide), matriz de hidrogel 3D (CareS-1S) transplante osteocondral autólogo e osteotomias.',
       link: '/cartilagem',
       cardImage: CARD_IMG.mostrandoExame,
     },
     {
-      title: 'Trauma do Esporte',
-      icon: 'fa-solid fa-medal',
-      desc: 'Atendimento a atletas profissionais e amadores com retorno seguro à atividade esportiva.',
-      link: '/trauma-do-esporte',
-      cardImage: CARD_IMG.rioOpen,
-    },
-    {
       title: 'Condromalácia patelar',
       icon: 'fa-solid fa-circle-dot',
-      desc: 'Tratamento de instabilidade patelar, condropatia e dores na frente do joelho.',
+      desc: 'Abordagem diferenciada com foco em diagnósticos biomecânicos e protocolos individualizados.',
       link: '/condromalacia-patelar',
       cardImage: CARD_IMG.retrato,
     },
+    {
+      title: 'Artrose',
+      icon: 'fa-solid fa-person-walking-with-cane',
+      desc: 'Viscosuplementação com ácido hialurônico, atroplastias convencionais (unicompartimental e total) e robótica.',
+      link: '/artrose',
+      cardImage: CARD_IMG.examinando,
+    }
   ];
 
   return (

@@ -6,9 +6,11 @@ const HERO_SLIDE_MS = 5000;
 
 const heroSlides: { src: string; badgeLine: string }[] = [
   { src: '/imagens/inicio/retrato-de-frente.webp', badgeLine: 'Ortopedia e Traumatologia' },
-  { src: '/imagens/inicio/examinando-paciente.webp', badgeLine: 'Cirurgia de joelho' },
-  { src: '/imagens/inicio/dr-raphael-serra-cruz-rio-open-tenis.webp', badgeLine: 'Ortopedia esportiva' },
-  { src: '/imagens/inicio/mostrando-exame-na-tela.webp', badgeLine: 'Produção acadêmica' },
+  { src: '/imagens/inicio/mostrando-exame-na-tela.webp', badgeLine: 'Condutas Individualizadas' },
+  { src: '/imagens/inicio/examinando-paciente.webp', badgeLine: 'Tratamentos Conservadores' },
+  { src: '/imagens/inicio/dr-raphael-serra-cruz-rio-open-tenis.webp', badgeLine: 'Experiência no Esporte' },
+  { src: '/imagens/inicio/dr-raphael-serra-cruz-cirugia-joelho.webp', badgeLine: 'Cirugia do Joelho' },
+  { src: '/imagens/inicio/dr-raphael-serra-cruz-palestra.webp', badgeLine: 'Produção acadêmica' }
 ];
 
 const Hero: React.FC = () => {
@@ -38,7 +40,7 @@ const Hero: React.FC = () => {
               Excelência internacional <span className="bg-gradient-to-r from-blue-900 to-blue-500 text-transparent bg-clip-text font-bold">em cirurgia do joelho e ortopedia esportiva</span>
             </h1>
             <p className="text-lg lg:text-xl text-slate-600 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              Atendimento humanizado e especializado em cirurgias complexas de joelho e trauma esportivo pelo <span className="font-semibold text-slate-800 underline decoration-blue-500 underline-offset-4">Dr. Raphael Serra Cruz</span>.
+              Atendimento humanizado e especializado em patologias do joelho e trauma esportivo geral pelo <span className="font-semibold text-slate-800 underline decoration-blue-500 underline-offset-4">Dr. Raphael Serra Cruz</span>.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-12">
               <a
@@ -58,28 +60,33 @@ const Hero: React.FC = () => {
               </a>
             </div>
 
-            <div className="flex flex-wrap justify-center lg:justify-start items-center gap-8 md:gap-12 grayscale opacity-70">
-              <div className="flex flex-col">
-                <span className="text-2xl md:text-3xl font-bold text-slate-800">19+</span>
-                <span className="text-[10px] md:text-xs uppercase tracking-widest font-bold text-slate-500">Anos de Exp.</span>
+            <div className="flex flex-wrap justify-center lg:flex-nowrap lg:justify-start items-center gap-4 md:gap-6 lg:gap-4 xl:gap-5 grayscale opacity-70">
+              <div className="flex shrink-0 flex-col items-center lg:items-start text-center lg:text-left">
+                <span className="text-2xl md:text-2xl font-bold text-slate-800 lg:whitespace-nowrap">20+</span>
+                <span className="text-[10px] md:text-xs uppercase tracking-widest font-bold text-slate-500 lg:whitespace-nowrap">Anos de Formado</span>
               </div>
-              <div className="h-10 w-px bg-slate-200 hidden sm:block"></div>
-              <div className="flex flex-col">
-                <span className="text-2xl md:text-3xl font-bold text-slate-800">2k+</span>
-                <span className="text-[10px] md:text-xs uppercase tracking-widest font-bold text-slate-500">Cirurgias</span>
+              <div className="h-10 w-px shrink-0 bg-slate-200 hidden sm:block"></div>
+              <div className="flex shrink-0 flex-col items-center lg:items-start text-center lg:text-left">
+                <span className="text-2xl md:text-2xl font-bold text-slate-800 lg:whitespace-nowrap">2.5k+</span>
+                <span className="text-[10px] md:text-xs uppercase tracking-widest font-bold text-slate-500 lg:whitespace-nowrap">Cirurgias</span>
               </div>
-              <div className="h-10 w-px bg-slate-200 hidden sm:block"></div>
-              <div className="flex flex-col">
-                <span className="text-2xl md:text-3xl font-bold text-slate-800">UERJ + INTO/UFRJ</span>
-                <span className="text-[10px] md:text-xs uppercase tracking-widest font-bold text-slate-500">Formação</span>
+              <div className="h-10 w-px shrink-0 bg-slate-200 hidden sm:block"></div>
+              <div className="flex shrink-0 flex-col items-center lg:items-start text-center lg:text-left">
+                <span className="text-2xl md:text-2xl font-bold text-slate-800 lg:whitespace-nowrap">UERJ + INTO/UFRJ</span>
+                <span className="text-[10px] md:text-xs uppercase tracking-widest font-bold text-slate-500 lg:whitespace-nowrap">Formação Nacional</span>
+              </div>
+              <div className="h-10 w-px shrink-0 bg-slate-200 hidden sm:block"></div>
+              <div className="flex shrink-0 flex-col items-center lg:items-start text-center lg:text-left">
+                <span className="text-2xl md:text-2xl font-bold text-slate-800 lg:whitespace-nowrap">SPRI (EUA)</span>
+                <span className="text-[10px] md:text-xs uppercase tracking-widest font-bold text-slate-500 lg:whitespace-nowrap">Fellowship Internacional</span>
               </div>
             </div>
           </div>
 
-          <div className="flex-1 lg:flex-[0.9] relative w-full">
+          <div className="flex-1 lg:flex-[0.8] relative w-full">
             <div className="absolute inset-0 bg-blue-100 rounded-[2.5rem] -rotate-3 scale-105 z-0 lg:translate-x-4"></div>
             <div className="relative z-10 w-full">
-              <div className="relative aspect-[4/5] lg:aspect-[3/4] xl:aspect-[4/5] overflow-hidden rounded-[2.5rem] shadow-2xl">
+              <div className="relative aspect-[5/6] lg:aspect-[4/5] xl:aspect-[5/6] overflow-hidden rounded-[2.5rem] shadow-2xl">
                 {heroSlides.map((slide, index) => (
                   <img
                     key={slide.src}

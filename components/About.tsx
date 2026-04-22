@@ -107,7 +107,7 @@ const About: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-800">Carreira Internacional</h4>
-                  <p className="text-slate-600">Fez 1 ano de fellowship nos EUA com o Dr. Robert LaPrade, autoridade mundial em joelho, e passagens por Stanford e Lyon.</p>
+                  <p className="text-slate-600">Fellowship de 1 ano com o Dr. Robert LaPrade, autoridade mundial em joelho, além de passagens por Stanford, Lyon e Oslo (Centro Olímpico).</p>
                 </div>
               </div>
 
@@ -117,13 +117,13 @@ const About: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-800">Vivência no Esporte de Elite</h4>
-                  <p className="text-slate-600">Médico do Boxe nas Olimpíadas Rio 2016, Médico ATP do Rio Open de Tênis e passagens pelo C.R. Flamengo.</p>
+                  <p className="text-slate-600">Atual médico de atletas do ATP Rio Open desde 2023, Ex-médico do C.R. Flamengo e Médico "Field-of-Play" nas Olimpíadas Rio2016.</p>
                 </div>
               </div>
             </div>
 
             <div className="mt-10 p-6 bg-slate-900 rounded-2xl text-white">
-              <p className="italic text-lg mb-4">"Minha missão é trazer o padrão 'world-class' de ortopedia esportiva internacional para cada paciente em Indaiatuba."</p>
+              <p className="italic text-lg mb-4">"Minha missão é trazer o padrão 'world-class' da ortopedia esportiva internacional para cada paciente em Indaiatuba."</p>
               <p className="font-bold">— Dr. Raphael Serra Cruz</p>
             </div>
 
@@ -141,8 +141,8 @@ const About: React.FC = () => {
             <div className="relative col-span-2 mt-8 min-h-0 lg:contents">
               {/* Mobile: retrato à direita em fluxo; consultório ~58% à esquerda, por cima na zona de sobreposição */}
               <img
-                src="/imagens/inicio/retrato-de-frente.webp"
-                alt="Retrato do Dr. Raphael Serra Cruz, ortopedista especialista em joelho"
+                src="/imagens/certificados/certificado-aossm.webp"
+                alt="Dr. Raphael Serra Cruz, ortopedista especialista em joelho"
                 className="relative z-0 ml-auto block w-[46%] max-w-[240px] min-w-0 shrink-0 rounded-2xl object-cover shadow-lg lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-8 lg:ml-0 lg:w-full lg:max-w-none lg:self-start lg:object-contain lg:shadow-lg"
                 loading="lazy"
                 decoding="async"
