@@ -106,13 +106,23 @@ const Artrose: React.FC = () => {
                             </a>
                           </li>
                           <li>
-                            <a href="#cirurgico" className="hover:text-blue-600 transition">
+                            <a href="#infiltracoes" className="hover:text-blue-600 transition">
                               Infiltrações e opções biológicas
                             </a>
                           </li>
                           <li>
-                            <a href="#protese" className="hover:text-blue-600 transition">
-                              Artroplastia do joelho
+                            <a href="#osteotomias" className="hover:text-blue-600 transition">
+                              Osteotomias
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#substituicao-articular" className="hover:text-blue-600 transition">
+                              Substituição articular
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#cirurgia-robotica" className="hover:text-blue-600 transition">
+                              Cirurgia robótica
                             </a>
                           </li>
                         </ul>
@@ -130,14 +140,14 @@ const Artrose: React.FC = () => {
                     <div id="o-que-e" className="mb-8 scroll-mt-24">
                       <h4 className="text-xl font-bold text-slate-800 mb-3">O que é a artrose do joelho?</h4>
                       <p className="text-slate-700 leading-relaxed">
-                        A artrose (osteoartrite) do joelho é uma doença degenerativa da cartilagem articular e das estruturas adjacentes. Com o tempo, a cartilagem que recobre os ossos (fêmur, tíbia e patela) vai perdendo espessura e qualidade, o que pode gerar dor, rigidez, estalos e limitação para caminhar, subir escadas ou agachar. É uma causa muito frequente de incapacidade, especialmente após os 50 anos, mas pode aparecer mais cedo em joelhos com lesões antigas ou sobrecarga repetitiva.
+                        A artrose (osteoartrite) do joelho é uma doença degenerativa e inflamatória crônica das articulações, que envolve a cartilagem articular, as estruturas adjacentes e o líquido sinovial. Com o tempo, a cartilagem que recobre os ossos (fêmur, tíbia e patela) vai perdendo espessura e qualidade, o que pode gerar dor, rigidez, estalos e limitação para caminhar, usar escadas ou agachar. É uma causa muito frequente de incapacidade, especialmente após os 50 anos, mas pode aparecer mais cedo em joelhos com lesões antigas ou sobrecarga repetitiva.
                       </p>
                     </div>
 
                     <div id="causas" className="mb-8 scroll-mt-24">
                       <h4 className="text-xl font-bold text-slate-800 mb-3">Causas e fatores de risco</h4>
                       <p className="text-slate-700 leading-relaxed">
-                        Fatores como idade, sobrepeso, histórico de lesões ligamentares ou meniscais, alinhamento do membro (varo ou valgo), sobrecarga laboral ou esportiva e predisposição genética aumentam o risco. A abordagem do Dr. Raphael Serra Cruz em Indaiatuba-SP considera o seu perfil clínico, exames de imagem e expectativas de vida para definir o melhor plano — conservador ou cirúrgico.
+                        Fatores como idade, sobrepeso, histórico de lesões ligamentares ou meniscais, alinhamento do membro (varo ou valgo), sobrecarga laboral ou esportiva e predisposição genética aumentam o risco. A abordagem do Dr. Raphael Serra Cruz em Indaiatuba-SP considera o seu perfil clínico, exames de imagem, demanda e expectativas para definir o melhor plano — conservador ou cirúrgico.
                       </p>
                     </div>
                   </div>
@@ -155,7 +165,7 @@ const Artrose: React.FC = () => {
                     <div id="diagnostico" className="mb-8 scroll-mt-24">
                       <h4 className="text-xl font-bold text-slate-800 mb-3">Como é feito o diagnóstico?</h4>
                       <p className="text-slate-700 leading-relaxed">
-                        O diagnóstico combina história clínica, exame físico (testes de compartimento patelofemoral e tibiofemoral) e exames de imagem. Radiografias em aparelho ajudam a avaliar o estreitamento do espaço articular, osteófitos e alinhamento. A ressonância magnética pode detalhar cartilagem, meniscos e ligamentos associados, quando necessário para planejar tratamento.
+                        O diagnóstico combina história clínica, exame físico (avaliações dos compartimentos patelofemoral e tibiofemorais) e exames de imagem. Radiografias em incidências especiais ajudam a avaliar o estreitamento do espaço articular, osteófitos e alinhamento. A ressonância magnética pode detalhar cartilagem, meniscos e ligamentos associados, quando necessário para planejar tratamento e descartar outros diagnósticos.
                       </p>
                     </div>
                   </div>
@@ -166,21 +176,35 @@ const Artrose: React.FC = () => {
                     <div id="conservador" className="mb-8 scroll-mt-24">
                       <h4 className="text-xl font-bold text-slate-800 mb-3">Tratamento conservador</h4>
                       <p className="text-slate-700 leading-relaxed">
-                        Educação, controle de peso, atividade física guiada (fortalecimento de quadríceps e glúteos), fisioterapia, uso racional de analgésicos/anti-inflamatórios conforme prescrição e modificações no dia a dia costumam ser a primeira linha. Muitos pacientes ganham alívio significativo e adiam ou evitam cirurgia.
+                        Educação, controle de peso, atividade física guiada (fortalecimento individualizado de determinados grupos musculares), treino de mobilidade, fisioterapia, uso racional de analgésicos/anti-inflamatórios conforme prescrição e modificações no dia a dia costumam ser a primeira linha. Muitos pacientes ganham alívio significativo e adiam ou evitam cirurgia.
                       </p>
                     </div>
 
-                    <div id="cirurgico" className="mb-8 scroll-mt-24">
+                    <div id="infiltracoes" className="mb-8 scroll-mt-24">
                       <h4 className="text-xl font-bold text-slate-800 mb-3">Infiltrações e opções biológicas</h4>
                       <p className="text-slate-700 leading-relaxed">
                         Em casos selecionados, podem ser discutidas infiltrações com corticosteroide (efeito anti-inflamatório), ácido hialurônico (viscosuplementação) ou outras estratégias conforme evidência e perfil do paciente. A decisão é individualizada, com explicação transparente de benefícios e limitações.
                       </p>
                     </div>
 
-                    <div id="protese" className="mb-8 scroll-mt-24">
-                      <h4 className="text-xl font-bold text-slate-800 mb-3">Artroplastia total e parcial do joelho</h4>
+                    <div id="osteotomias" className="mb-8 scroll-mt-24">
+                      <h4 className="text-xl font-bold text-slate-800 mb-3">Osteotomias</h4>
                       <p className="text-slate-700 leading-relaxed">
-                        Quando a dor e a limitação são graves e o tratamento conservador não alcança qualidade de vida aceitável, a cirurgia pode ser indicada. A <strong>artroplastia parcial</strong> substitui apenas o compartimento mais afetado; a <strong>artroplastia total</strong> substitui toda a articulação. O Dr. Raphael Serra Cruz discute indicações, próteses e recuperação com base em protocolos modernos e na sua rotina em Indaiatuba-SP.
+                        Em casos selecionados, em que há alteração do eixo e a artrose acomete exclusivamente um dos compartimentos femorotibiais (especialmente em pacientes mais jovens e ativos), as osteotomias podem ser planejadas, visando a descarga de peso no compartimento afetado. São procedimentos que realinham o membro, poupando o lado sobrecarregado do joelho e costumam ter bons resultados no curto e médio prazo.
+                      </p>
+                    </div>
+
+                    <div id="substituicao-articular" className="mb-8 scroll-mt-24">
+                      <h4 className="text-xl font-bold text-slate-800 mb-3">Substituição articular: artroplastia total e parcial do joelho</h4>
+                      <p className="text-slate-700 leading-relaxed">
+                        Quando a dor e a limitação são graves e o tratamento conservador não alcança qualidade de vida aceitável, a cirurgia pode ser indicada. Em casos selecionados, a <strong>artroplastia parcial</strong> pode ser indicada, substituindo apenas o compartimento mais afetado; já a <strong>artroplastia total</strong> substitui toda a articulação, estando indicada em casos mais avançados em que o acometimento não se restringe a apenas um dos compartimentos. O Dr. Raphael Serra Cruz discute indicações, próteses e recuperação com base em protocolos modernos e na sua rotina em Indaiatuba-SP.
+                      </p>
+                    </div>
+
+                    <div id="cirurgia-robotica" className="mb-8 scroll-mt-24">
+                      <h4 className="text-xl font-bold text-slate-800 mb-3">Cirurgia robótica: a novidade</h4>
+                      <p className="text-slate-700 leading-relaxed">
+                        O Dr. Raphael Serra Cruz está treinado e habilitado para a execução de artroplastias utilizando as técnicas mais modernas de cirurgia robótica. É importante frisar que o robô não realiza a cirurgia sozinho, mas ajuda na execução dos cortes ósseos para a adequação da prótese ao paciente, maximizando a precisão. Esta técnica exige algumas etapas pré-operatórias com planejamento individualizado, de acordo com a anatomia de cada paciente e discutido com especialistas fora do país antes dos dados serem imputados no robô, garantindo um procedimento extremamente personalizado.
                       </p>
                     </div>
                   </div>

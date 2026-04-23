@@ -137,7 +137,7 @@ const Cartilagem: React.FC = () => {
                     <div id="lesoes" className="mb-8 scroll-mt-24">
                       <h4 className="text-xl font-bold text-slate-800 mb-3">Como ocorrem as lesões</h4>
                       <p className="text-slate-700 leading-relaxed">
-                        Podem ser traumáticas (torções, impactos, luxações) ou degenerativas (associadas à artrose). Lesões localizadas em pacientes jovens ou com boa expectativa de demanda física costumam ser avaliadas para tratamentos que visam restaurar a superfície articular; em outros contextos, prioriza-se alívio sintomático e preservação funcional.
+                        Podem ser traumáticas (torções, impactos, luxações) ou degenerativas (associadas à artrose). Existem também lesões "espontâneas" que, em geral, acometem pacientes adolescentes, conhecidas como osteocondrite dissecante. Lesões focais em pacientes jovens ou com boa expectativa de demanda física costumam ser avaliadas para tratamentos que visam restaurar a superfície articular, sempre priorizando o alívio sintomático e preservação funcional.
                       </p>
                     </div>
                   </div>
@@ -166,21 +166,27 @@ const Cartilagem: React.FC = () => {
                     <div id="conservador" className="mb-8 scroll-mt-24">
                       <h4 className="text-xl font-bold text-slate-800 mb-3">Abordagem conservadora</h4>
                       <p className="text-slate-700 leading-relaxed">
-                        Fortalecimento muscular, controle de atividades de impacto, fisioterapia e medicações conforme orientação médica podem melhorar sintomas em lesões leves ou em pacientes em que a cirurgia não é prioridade.
+                        Fortalecimento muscular, controle de atividades de impacto, fisioterapia e medicações conforme orientação médica podem melhorar sintomas em lesões leves ou em pacientes em que a cirurgia não é indicada.
                       </p>
                     </div>
 
                     <div id="cirurgicos" className="mb-8 scroll-mt-24">
                       <h4 className="text-xl font-bold text-slate-800 mb-3">Procedimentos restaurativos</h4>
                       <p className="text-slate-700 leading-relaxed">
-                        Conforme o caso, podem ser discutidas técnicas como <strong>microfratura</strong> (estimular cicatrização com tecido fibrocartilaginoso), <strong>transplante autólogo de cartilagem</strong> (OATS/Mosaicoplastia ou cultura de condrócitos em centros referenciados), enxertos osteocondrais e outras opções. Em algumas situações, <strong>hidrogel</strong> ou implantes associados entram no planejamento individualizado. A escolha depende do tamanho da lesão, localização, idade, nível de atividade e expectativas do paciente.
+                        É importante deixar bem claro que, mesmo com as técnicas mais avançadas e modernas presentes na literatura médica com o mais elevado nível de evidência científica, a cartilagem articular tem potencial mínimo ou quase nulo de <strong>regeneração</strong>. Portanto, pode ser considerado um erro chamar algumas técnicas de "medicina regenerativa". No entanto, existem sim procedimentos capazes de preencher os defeitos, restaurando a superfície articular e melhorando significativamente a qualidade de vida dos pacientes, permitindo inclusive o retorno a práticas esportivas. Estes procedimentos são apresentados ao paciente durante a consulta e, de acordo com algoritmos bem definidos na literatura médica, são indicados conforme o caso. Este é um dos tratamentos mais individualizados que existe na área de cirurgia do joelho, pois depende de muitas variáveis, incluindo a real capacidade do paciente em colaborar com os protocolos pós-operatórios, que podem ser muito restritivos, dependendo da técnica indicada.
+                      </p>
+                      <p className="mt-4 text-slate-700 leading-relaxed">
+                        Estes procedimentos podem incluir desde <strong>microfratura/nanofratura</strong> (técnica desenvolvida pelo Dr. Richard Steadman, no mesmo hospital onde o Dr. Raphael Serra Cruz fez seu Fellowship internacional), <strong>transplante autólogo de cartilagem</strong> (OATS/Mosaicoplastia), enxertos osteocondrais homólogos, matriz de colágeno 3D/Hidrogel (CareS-1S) ou membranas de colágeno (Chondro-Gide), entre outras opções.
+                      </p>
+                      <p className="mt-4 text-slate-700 leading-relaxed">
+                        A escolha depende do tamanho da lesão, localização, idade, nível de atividade e expectativas do paciente.
                       </p>
                     </div>
 
                     <div id="visco" className="mb-8 scroll-mt-24">
                       <h4 className="text-xl font-bold text-slate-800 mb-3">Viscosuplementação (ácido hialurônico)</h4>
                       <p className="text-slate-700 leading-relaxed">
-                        Em determinados quadros, especialmente com componente degenerativo ou dor mecânica, a <strong>viscosuplementação</strong> pode ser considerada como parte do manejo sintomático. A indicação e o número de aplicações são definidos em consulta, com base em evidências e no seu perfil clínico.
+                        Em determinados quadros, especialmente com componente degenerativo ou dor mecânica, a <strong>viscosuplementação</strong> pode ser considerada como parte do manejo clínico. A indicação e o número de aplicações são definidos em consulta, com base em evidências e no seu perfil clínico. Na grande maioria das vezes, uma única aplicação, seguida de um bom plano de reabilitação, é suficiente.
                       </p>
                     </div>
                   </div>

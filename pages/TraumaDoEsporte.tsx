@@ -48,12 +48,12 @@ const TraumaDoEsporte: React.FC = () => {
                         <ul className="space-y-2">
                           <li>
                             <a href="#atleta" className="hover:text-blue-600 transition">
-                              Atletas e lesões do joelho
+                              Atletas profissionais e amadores
                             </a>
                           </li>
                           <li>
                             <a href="#tipos" className="hover:text-blue-600 transition">
-                              Principais tipos de lesão
+                              Principais tipos de lesões relacionadas aos esportes
                             </a>
                           </li>
                         </ul>
@@ -130,15 +130,102 @@ const TraumaDoEsporte: React.FC = () => {
                     <div id="atleta" className="mb-8 scroll-mt-24">
                       <h4 className="text-xl font-bold text-slate-800 mb-3">Atletas profissionais e amadores</h4>
                       <p className="text-slate-700 leading-relaxed">
-                        O joelho é uma das articulações mais exigidas em esportes de corrida, mudanças de direção, saltos e contato. O Dr. Raphael Serra Cruz atende atletas de diferentes níveis em Indaiatuba-SP, com foco em diagnóstico preciso, tratamento alinhado às metas de cada pessoa e planejamento seguro para voltar à atividade — seja competição de alto rendimento ou lazer no fim de semana.
+                        Além de ser um cirurgião de joelho extremamente diferenciado no Brasil, o Dr. Raphael Serra Cruz também foi um dos primeiros fellows (2012) da SBRATE (Sociedade Brasileira de Artroscopia e Trauma do Esporte), oferecendo atendimentos relacionados a lesões esportivas que podem ocorrer em todo o corpo humano, compreendendo a importância biomecânica nos gestos esportivos e as dinâmicas das principais lesões. Sua experiência com atletas de elite é um dos principais diferenciais na cidade de Indaiatuba-SP.
+                      </p>
+                      <p className="mt-4 text-slate-700 leading-relaxed">
+                        O Dr. Raphael Serra Cruz é atual médico responsável pelo atendimento aos atletas da elite mundial do Tênis no maior torneio da ATP na América do Sul (Rio Open), desde 2023. Também atuou por 2 temporadas no C.R. Flamengo e foi médico "field-of-play" nas Olimpíadas Rio 2016, além de ser autor de capítulos de livros, artigos e palestras sobre o tema. Toda essa bagagem faz com que esteja acostumado à pressão e entenda as demandas de quem precisa de uma recuperação rápida, além de adotar estratégias diferenciadas, dentro das possibilidades de cada caso, permitindo um diagnóstico preciso, tratamento alinhado às metas de cada pessoa e planejamento seguro para voltar à atividade — seja competição de alto rendimento ou lazer no fim de semana.
                       </p>
                     </div>
 
                     <div id="tipos" className="mb-8 scroll-mt-24">
-                      <h4 className="text-xl font-bold text-slate-800 mb-3">Principais tipos de lesão</h4>
+                      <h4 className="text-xl font-bold text-slate-800 mb-3">Principais tipos de lesões relacionadas aos esportes</h4>
                       <p className="text-slate-700 leading-relaxed">
-                        Entre as causas mais comuns estão rupturas de <strong>ligamentos</strong> (como o LCA), lesões de <strong>menisco</strong>, contusões ósseas, fraturas por estresse, lesões de <strong>cartilagem</strong> e problemas na patela. Muitas vezes há combinação de estruturas lesionadas; por isso a avaliação completa do joelho é fundamental antes de definir a conduta.
+                        Na prática esportiva, as lesões musculares e as entorses de tornozelo estão entre as causas mais comuns, sendo muitas vezes subestimadas e podendo gerar sequelas caso não identificadas e tratadas adequadamente desde o início. Os primeiros dias de tratamento correto são fundamentais para o desfecho nestas lesões, não sendo interessante forçar ou "aguardar para ver se melhora sozinho".
                       </p>
+                      <p className="mt-4 text-slate-700 leading-relaxed">
+                        Cada esporte tem suas particularidades, biomecânicas e gestos específicos. Dependendo da modalidade, alguns sintomas podem estar relacionados a lesões de maior incidência e merecem ser investigados como, por exemplo:
+                      </p>
+
+                      <div className="mt-6 space-y-6">
+                        <div>
+                          <h5 className="text-lg font-bold text-slate-800 mb-2">Futebol e Futsal</h5>
+                          <p className="text-slate-700 leading-relaxed"><strong>Sensação de "falseio" ou instabilidade no joelho:</strong> Costuma indicar uma <strong>ruptura do LCA</strong> (ligamento cruzado anterior) do joelho, ocorrendo tipicamente no mecanismo de <strong>pivô</strong> (rotação sobre o pé fixo) ou no <strong>gingado/cutting</strong> (mudança brusca de direção para desviar do marcador).</p>
+                          <p className="mt-2 text-slate-700 leading-relaxed"><strong>Pontada súbita na face posterior da coxa:</strong> Sinal clássico de <strong>estiramento de isquiotibiais</strong>, gerado no momento da fase de balanço terminal da corrida (desaceleração excêntrica da perna) ou no <strong>arranque explosivo</strong> para o contra-ataque.</p>
+                          <p className="mt-2 text-slate-700 leading-relaxed"><strong>Dor na virilha ao bater na bola:</strong> Pode ser uma <strong>lesão de adutores ou pubalgia</strong>, relacionada ao gesto do <strong>chute de chapa</strong> (passe longo) ou durante um desarme (<strong>carrinho</strong>).</p>
+                        </div>
+
+                        <div>
+                          <h5 className="text-lg font-bold text-slate-800 mb-2">Tênis e Beach Tennis</h5>
+                          <p className="text-slate-700 leading-relaxed"><strong>Dor na face externa do cotovelo:</strong> A famosa <strong>epicondilite lateral</strong>, muito relacionada ao <strong>backhand atrasado</strong> ou ao uso excessivo de punho para gerar spin em raquetes muito rígidas.</p>
+                          <p className="mt-2 text-slate-700 leading-relaxed"><strong>Sensação de "pedrada" na panturrilha:</strong> Sinal de <strong>estiramento do gastrocnêmio medial</strong> (<strong>Tennis Leg</strong>), ocorrendo no <strong>split step</strong> (pequeno salto de prontidão) ou no <strong>arranque</strong> súbito para buscar uma bola curta.</p>
+                          <p className="mt-2 text-slate-700 leading-relaxed"><strong>Dor no ombro durante o saque:</strong> Sugere <strong>tendinopatia do manguito rotador</strong>, gerada na fase de aceleração e impacto da bola acima da cabeça, onde o impacto repetitivo sobrecarrega o supraespinhal.</p>
+                        </div>
+
+                        <div>
+                          <h5 className="text-lg font-bold text-slate-800 mb-2">Crossfit</h5>
+                          <p className="text-slate-700 leading-relaxed"><strong>Dor ou "fisgada" no ombro em movimentos acima da cabeça:</strong> Sugere <strong>tendinopatia do manguito rotador ou lesão de labrum (SLAP)</strong>, agravada por gestos de alta demanda como <strong>Overhead Squat</strong>, <strong>Thrusters</strong> ou na fase de transição de <strong>Butterfly Pull-ups</strong> e <strong>Muscle-ups</strong>.</p>
+                          <p className="mt-2 text-slate-700 leading-relaxed"><strong>Dor lombar aguda ao tirar o peso do chão ou no agachamento:</strong> Pode indicar <strong>hérnia de disco</strong> ou <strong>estiramento muscular</strong>, ocorrendo comumente em séries de <strong>Deadlift</strong> ou <strong>Snatch</strong> com carga elevada.</p>
+                          <p className="mt-2 text-slate-700 leading-relaxed"><strong>Dor na frente do joelho ou sensação de pressão ao agachar:</strong> Sinal de <strong>dor femoropatelar</strong> ou <strong>tendinopatia patelar</strong>, relacionada ao alto volume de <strong>Wall Balls</strong>, <strong>Box Jumps</strong> e esforço unilateral do <strong>Pistol Squat</strong>.</p>
+                          <p className="mt-2 text-slate-700 leading-relaxed"><strong>Dormência ou dor no punho ao sustentar a barra:</strong> Pode significar <strong>impacto dorsal do punho</strong> ou <strong>sinovite</strong>, comum na posição de <strong>Front Rack</strong> ou em exercícios invertidos como o <strong>HSPU (Handstand Push-Up)</strong>.</p>
+                        </div>
+
+                        <div>
+                          <h5 className="text-lg font-bold text-slate-800 mb-2">Corrida de Rua e Trail Run</h5>
+                          <p className="text-slate-700 leading-relaxed"><strong>Dor na sola do pé nos primeiros passos do dia:</strong> Clássico de <strong>fascite plantar</strong>, relacionada à falha na absorção de impacto durante a fase de propulsão da corrida.</p>
+                          <p className="mt-2 text-slate-700 leading-relaxed"><strong>Dor na lateral do joelho em descidas:</strong> Sugere <strong>síndrome da banda iliotibial</strong>, causada pelo atrito repetitivo durante o <strong>heel strike</strong> e exacerbada nas descidas técnicas.</p>
+                          <p className="mt-2 text-slate-700 leading-relaxed"><strong>Dor na canela após aumentar o volume:</strong> Sinal de <strong>estresse tibial medial (canelite)</strong>, comum no gesto de corrida com <strong>overstriding</strong>.</p>
+                        </div>
+
+                        <div>
+                          <h5 className="text-lg font-bold text-slate-800 mb-2">Ciclismo (Estrada e MTB)</h5>
+                          <p className="text-slate-700 leading-relaxed"><strong>Dor na frente do joelho ao subir ladeiras:</strong> Sugere <strong>condromalácia patelar</strong> ou <strong>tendinite patelar</strong>, gerada pela alta carga compressiva durante sprint, <strong>en danseuse</strong> (pedalar em pé) ou com cadência baixa.</p>
+                          <p className="mt-2 text-slate-700 leading-relaxed"><strong>Dores profundas no quadril ao usar o "drop":</strong> Pode ser <strong>impacto femoroacetabular</strong>, causado pela flexão extrema do quadril na posição aerodinâmica.</p>
+                          <p className="mt-2 text-slate-700 leading-relaxed"><strong>Dormência nas mãos ou região perineal:</strong> Sinal de <strong>neuropatia compressiva</strong>, relacionada à empunhadura prolongada no guidão ou pressão excessiva do selim.</p>
+                        </div>
+
+                        <div>
+                          <h5 className="text-lg font-bold text-slate-800 mb-2">Esportes de Montaria (Hipismo e Polo)</h5>
+                          <p className="text-slate-700 leading-relaxed"><strong>Dores na face interna da coxa:</strong> Podem significar <strong>lesão da musculatura adutora</strong>, exigida pela isometria vigorosa na sela e pelo fechamento das pernas.</p>
+                          <p className="mt-2 text-slate-700 leading-relaxed"><strong>Dores nas costas (Lombar):</strong> Geralmente representam sobrecarga mecânica, mas também podem esconder <strong>hérnias de disco</strong>, <strong>espondilólise/espondilolistese</strong>, <strong>artroses facetárias</strong> ou até fraturas.</p>
+                          <p className="mt-2 text-slate-700 leading-relaxed"><strong>Dores nos quadris:</strong> Necessário afastar o <strong>impacto femoroacetabular</strong>, devido à sobrecarga gerada no labrum pela posição prolongada em flexão e abdução.</p>
+                        </div>
+
+                        <div>
+                          <h5 className="text-lg font-bold text-slate-800 mb-2">Voleibol e Basquetebol</h5>
+                          <p className="text-slate-700 leading-relaxed"><strong>Dor abaixo da patela:</strong> O clássico <strong>Jumper's Knee</strong> (<strong>tendinopatia patelar</strong>), resultante do mecanismo de salto e aterrissagem.</p>
+                          <p className="mt-2 text-slate-700 leading-relaxed"><strong>Incapacidade de apoiar o pé após o salto:</strong> Pode indicar <strong>lesão ligamentar do tornozelo</strong>, comum ao aterrissar sobre o pé de outro jogador.</p>
+                          <p className="mt-2 text-slate-700 leading-relaxed"><strong>Dor no ombro em movimentos acima da cabeça:</strong> Pode significar síndrome do impacto do ombro ou <strong>tendinopatia do manguito rotador</strong>.</p>
+                          <p className="mt-2 text-slate-700 leading-relaxed"><strong>Perda de potência no ataque (cortada):</strong> Pode esconder lesão de <strong>labrum</strong>, devido à fase de armada do braço (<strong>cocking</strong>).</p>
+                        </div>
+
+                        <div>
+                          <h5 className="text-lg font-bold text-slate-800 mb-2">Natação</h5>
+                          <p className="text-slate-700 leading-relaxed"><strong>Dor "no fundo" do ombro ao elevar o braço:</strong> Pode significar <strong>síndrome do impacto subacromial</strong>, exacerbada na fase de entrada e tração.</p>
+                          <p className="mt-2 text-slate-700 leading-relaxed"><strong>Estalos ou "cliques" profundos no ombro:</strong> Sinal de alerta para <strong>lesão de labrum (SLAP)</strong>, comum na fase de recuperação aérea do nado crawl.</p>
+                          <p className="mt-2 text-slate-700 leading-relaxed"><strong>Dor lombar ao "golfinhar":</strong> Em nadadores de borboleta, pode esconder <strong>espondilólise</strong>, devido à hiperextensão repetitiva da coluna.</p>
+                        </div>
+
+                        <div>
+                          <h5 className="text-lg font-bold text-slate-800 mb-2">Lutas (Judô e Jiu-Jitsu)</h5>
+                          <p className="text-slate-700 leading-relaxed"><strong>Ombro que "sai do lugar":</strong> Sinal de <strong>instabilidade glenoumeral</strong>, comum ao tentar defender uma queda ou durante alavanca de braço.</p>
+                          <p className="mt-2 text-slate-700 leading-relaxed"><strong>Dor na parte de dentro do joelho:</strong> Pode ser uma <strong>lesão de LCM</strong>, gerada durante entradas de queda ou na manutenção de guarda fechada.</p>
+                          <p className="mt-2 text-slate-700 leading-relaxed"><strong>Dor cervical com irradiação para o braço:</strong> Sugere <strong>hérnia de disco</strong>, decorrente das forças axiais e de torção constantes durante a luta de solo.</p>
+                        </div>
+
+                        <div>
+                          <h5 className="text-lg font-bold text-slate-800 mb-2">Ginástica e Dança (Ballet e Jazz)</h5>
+                          <p className="text-slate-700 leading-relaxed"><strong>Dor na face posterior do tornozelo:</strong> Pode indicar <strong>síndrome do impacto posterior</strong>, comum durante o <em>en pointe</em> (ponta) e no <em>relevé</em> (meia-ponta).</p>
+                          <p className="mt-2 text-slate-700 leading-relaxed"><strong>Dor lombar ao arquear o corpo:</strong> Sinal de alerta para <strong>espondilólise</strong>, decorrente da hiperextensão extrema.</p>
+                          <p className="mt-2 text-slate-700 leading-relaxed"><strong>Estalidos no quadril:</strong> Sugerem <strong>lesão de labrum</strong> ou <strong>tendinopatia do iliopsoas</strong>, relacionadas a amplitudes extremas.</p>
+                        </div>
+
+                        <div>
+                          <h5 className="text-lg font-bold text-slate-800 mb-2">Skate e Patins</h5>
+                          <p className="text-slate-700 leading-relaxed"><strong>Dor no punho após queda:</strong> Pode significar <strong>fratura oculta</strong> do escafoide ou rádio distal.</p>
+                          <p className="mt-2 text-slate-700 leading-relaxed"><strong>Entorses recorrentes do tornozelo:</strong> Comuns ao aterrissar manobras de giro (<em>flip tricks</em>) ou no <em>ollie</em>, com sobrecarga dos ligamentos laterais.</p>
+                          <p className="mt-2 text-slate-700 leading-relaxed"><strong>Dor crônica e inchaço na frente do joelho:</strong> Sugere <strong>bursite pré-patelar</strong> ou <strong>contusão óssea</strong>, gerada por impacto direto em quedas de joelho.</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
@@ -148,7 +235,7 @@ const TraumaDoEsporte: React.FC = () => {
                     <div id="urgencia" className="mb-8 scroll-mt-24">
                       <h4 className="text-xl font-bold text-slate-800 mb-3">Quando procurar ajuda</h4>
                       <p className="text-slate-700 leading-relaxed">
-                        Dor intensa após trauma, incapacidade de apoiar o membro, joelho “que saiu do lugar”, inchaço importante em poucas horas ou sensação de instabilidade merecem avaliação ortopédica. Em lesões agudas, o tempo entre o evento e o diagnóstico pode influenciar opções de tratamento e recuperação.
+                        Dor intensa após um estiramento ou trauma, incapacidade de apoiar o membro, inchaço importante em poucas horas ou sensação de instabilidade (como uma sensação de joelho "que saiu do lugar") merecem avaliação ortopédica, especialmente, se não houver melhora dos sintomas em até 48 horas. Em lesões agudas, o tempo entre o evento e o diagnóstico pode influenciar opções de tratamento e recuperação.
                       </p>
                     </div>
 
@@ -173,7 +260,7 @@ const TraumaDoEsporte: React.FC = () => {
                     <div id="reabilitacao" className="mb-8 scroll-mt-24">
                       <h4 className="text-xl font-bold text-slate-800 mb-3">Reabilitação</h4>
                       <p className="text-slate-700 leading-relaxed">
-                        A reabilitação é parte central do tratamento do trauma esportivo no joelho. Fortalecimento progressivo, controle de carga, trabalho de propriocepção e retorno gradual aos gestos do esporte reduzem o risco de nova lesão e melhoram o desempenho.
+                        A reabilitação é parte fundamental do tratamento em qualquer trauma esportivo. Fortalecimento progressivo, controle de carga, trabalho de propriocepção e retorno gradual aos gestos do esporte reduzem o risco de nova lesão e melhoram o desempenho.
                       </p>
                     </div>
 
