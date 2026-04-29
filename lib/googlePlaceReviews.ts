@@ -19,6 +19,16 @@ type PlacesDetailsResponse = {
   };
 };
 
+export class GooglePlacesRequestError extends Error {
+  constructor(
+    message: string,
+    public readonly googleStatus: string,
+  ) {
+    super(message);
+    this.name = 'GooglePlacesRequestError';
+  }
+}
+
 export async function fetchGooglePlaceReviewSummary(options: {
   apiKey: string;
   placeId: string;
@@ -30,13 +40,19 @@ export async function fetchGooglePlaceReviewSummary(options: {
 
   const res = await fetch(url.toString());
   if (!res.ok) {
-    throw new Error(`Places HTTP ${res.status}`);
+    throw new GooglePlacesRequestError(
+      `Places HTTP ${res.status}`,
+      'HTTP_ERROR',
+    );
   }
 
   const data = (await res.json()) as PlacesDetailsResponse;
 
   if (data.status !== 'OK' || !data.result) {
-    throw new Error(data.error_message || data.status || 'Places API error');
+    throw new GooglePlacesRequestError(
+      data.error_message || data.status || 'Places API error',
+      data.status || 'UNKNOWN',
+    );
   }
 
   const rating = typeof data.result.rating === 'number' ? data.result.rating : 0;

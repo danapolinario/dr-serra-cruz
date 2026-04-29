@@ -3,7 +3,10 @@ import type { IncomingMessage, ServerResponse } from 'http';
 import { defineConfig, loadEnv, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
-import { fetchGooglePlaceReviewSummary } from './src/lib/googlePlaceReviews';
+import {
+  fetchGooglePlaceReviewSummary,
+  GooglePlacesRequestError,
+} from './lib/googlePlaceReviews';
 
 /**
  * Em `npm run dev` e em `vite preview`, expõe GET /api/google-reviews (mesmo contrato da Vercel).
@@ -47,9 +50,19 @@ function googleReviewsDevApi(): Plugin {
           res.end(JSON.stringify(summary));
         } catch (e) {
           console.error('[google-reviews dev]', e);
-          res.statusCode = 502;
+          res.statusCode = e instanceof GooglePlacesRequestError ? 502 : 500;
           res.setHeader('Content-Type', 'application/json');
-          res.end(JSON.stringify({ error: 'Failed to fetch Google Place details' }));
+          res.end(
+            JSON.stringify(
+              e instanceof GooglePlacesRequestError
+                ? {
+                    error: 'Failed to fetch Google Place details',
+                    googleStatus: e.googleStatus,
+                    message: e.message,
+                  }
+                : { error: 'Internal server error' },
+            ),
+          );
         }
       },
     );

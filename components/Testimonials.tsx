@@ -55,10 +55,8 @@ const Testimonials: React.FC = () => {
     let cancelled = false;
     (async () => {
       try {
-        const apiUrl = new URL(
-          'api/google-reviews',
-          `${window.location.origin}${import.meta.env.BASE_URL}`,
-        ).href;
+        // A API na Vercel fica na raiz do domínio (/api/...), não sob o base path do Vite.
+        const apiUrl = new URL('/api/google-reviews', window.location.origin).href;
         const res = await fetch(apiUrl);
         const bodyText = await res.text();
         if (cancelled) return;
