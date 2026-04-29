@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import FloatingWhatsApp from '../components/FloatingWhatsApp';
@@ -7,12 +7,6 @@ import { STATIC_PAGE_SEO } from '../src/seo/pageSeo';
 import { WHATSAPP_AGENDAR_HREF } from '../src/config/whatsapp';
 
 const TraumaDoEsporte: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<number | null>(1);
-
-  const toggleTab = (tabIndex: number) => {
-    setActiveTab(activeTab === tabIndex ? null : tabIndex);
-  };
-
   const seo = STATIC_PAGE_SEO['/trauma-do-esporte'];
   return (
     <div className="flex flex-col min-h-screen">
@@ -20,7 +14,7 @@ const TraumaDoEsporte: React.FC = () => {
       <Header />
       <main className="pt-20 flex-grow bg-slate-50">
         <section
-          style={{ backgroundImage: 'url(/imagens/inicio/dr-raphael-serra-cruz-rio-open-tenis.webp)' }}
+          style={{ backgroundImage: 'url(/imagens/inicio/cards/trauma-do-esporte-dr-raphael-serra-cruz.jpg)' }}
           className="relative bg-blue-900 text-white py-40 bg-cover bg-center flex items-center"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-blue-900 via-blue-900/80 to-transparent"></div>
@@ -33,93 +27,30 @@ const TraumaDoEsporte: React.FC = () => {
           <div className="container mx-auto px-4 max-w-5xl">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
               <div className="lg:col-span-1">
-                <div className="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden sticky top-28">
-                  <div className="border-b border-slate-100 last:border-0">
-                    <button
-                      type="button"
-                      onClick={() => toggleTab(1)}
-                      className={`w-full text-left px-6 py-4 font-bold flex justify-between items-center transition-colors ${activeTab === 1 ? 'bg-blue-50 text-blue-700' : 'text-slate-700 hover:bg-slate-50'}`}
-                    >
-                      Visão geral
-                      <i className={`fas fa-caret-${activeTab === 1 ? 'up' : 'right'} transition-transform`}></i>
-                    </button>
-                    {activeTab === 1 && (
-                      <div className="px-6 py-4 bg-white text-sm text-slate-600">
-                        <ul className="space-y-2">
-                          <li>
-                            <a href="#atleta" className="hover:text-blue-600 transition">
-                              Atletas profissionais e amadores
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#tipos" className="hover:text-blue-600 transition">
-                              Principais tipos de lesões relacionadas aos esportes
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    )}
+                <aside className="bg-white rounded-xl shadow-sm border border-slate-100 sticky top-28 p-6">
+                  <div className="mb-6">
+                    <h3 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-3">Visão geral</h3>
+                    <ul className="space-y-2 text-sm text-slate-600">
+                      <li><a href="#atleta" className="hover:text-blue-600 transition">Atletas profissionais e amadores</a></li>
+                      <li><a href="#tipos" className="hover:text-blue-600 transition">Principais tipos de lesões relacionadas aos esportes</a></li>
+                    </ul>
                   </div>
-
-                  <div className="border-b border-slate-100 last:border-0">
-                    <button
-                      type="button"
-                      onClick={() => toggleTab(2)}
-                      className={`w-full text-left px-6 py-4 font-bold flex justify-between items-center transition-colors ${activeTab === 2 ? 'bg-blue-50 text-blue-700' : 'text-slate-700 hover:bg-slate-50'}`}
-                    >
-                      Avaliação
-                      <i className={`fas fa-caret-${activeTab === 2 ? 'up' : 'right'} transition-transform`}></i>
-                    </button>
-                    {activeTab === 2 && (
-                      <div className="px-6 py-4 bg-white text-sm text-slate-600">
-                        <ul className="space-y-2">
-                          <li>
-                            <a href="#urgencia" className="hover:text-blue-600 transition">
-                              Quando procurar ajuda
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#imagem" className="hover:text-blue-600 transition">
-                              Exames de imagem
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    )}
+                  <div className="mb-6">
+                    <h3 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-3">Avaliação</h3>
+                    <ul className="space-y-2 text-sm text-slate-600">
+                      <li><a href="#urgencia" className="hover:text-blue-600 transition">Quando procurar ajuda</a></li>
+                      <li><a href="#imagem" className="hover:text-blue-600 transition">Exames de imagem</a></li>
+                    </ul>
                   </div>
-
-                  <div className="border-b border-slate-100 last:border-0">
-                    <button
-                      type="button"
-                      onClick={() => toggleTab(3)}
-                      className={`w-full text-left px-6 py-4 font-bold flex justify-between items-center transition-colors ${activeTab === 3 ? 'bg-blue-50 text-blue-700' : 'text-slate-700 hover:bg-slate-50'}`}
-                    >
-                      Tratamento e retorno
-                      <i className={`fas fa-caret-${activeTab === 3 ? 'up' : 'right'} transition-transform`}></i>
-                    </button>
-                    {activeTab === 3 && (
-                      <div className="px-6 py-4 bg-white text-sm text-slate-600">
-                        <ul className="space-y-2">
-                          <li>
-                            <a href="#conduta" className="hover:text-blue-600 transition">
-                              Conservador ou cirúrgico
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#reabilitacao" className="hover:text-blue-600 transition">
-                              Reabilitação
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#retorno" className="hover:text-blue-600 transition">
-                              Retorno ao esporte
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    )}
+                  <div>
+                    <h3 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-3">Tratamento e retorno</h3>
+                    <ul className="space-y-2 text-sm text-slate-600">
+                      <li><a href="#conduta" className="hover:text-blue-600 transition">Conservador ou cirúrgico</a></li>
+                      <li><a href="#reabilitacao" className="hover:text-blue-600 transition">Reabilitação</a></li>
+                      <li><a href="#retorno" className="hover:text-blue-600 transition">Retorno ao esporte</a></li>
+                    </ul>
                   </div>
-                </div>
+                </aside>
               </div>
 
               <div className="lg:col-span-2">

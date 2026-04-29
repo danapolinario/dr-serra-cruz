@@ -97,7 +97,7 @@ const About: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-800">Formação Acadêmica de Ponta</h4>
-                  <p className="text-slate-600">Graduado pela UERJ, com especialização e mestrado pelo prestigiado INTO (Instituto Nacional de Traumatologia e Ortopedia).</p>
+                  <p className="text-slate-600">Graduação pela UERJ. Residência, especialização e mestrado pelo maior e mais importante Instituto de Ortopedia da América Latina (INTO).</p>
                 </div>
               </div>
 
@@ -106,8 +106,8 @@ const About: React.FC = () => {
                   <i className="fa-solid fa-earth-americas"></i>
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-800">Carreira Internacional</h4>
-                  <p className="text-slate-600">Fellowship de 1 ano com o Dr. Robert LaPrade, autoridade mundial em joelho, além de passagens por Stanford, Lyon e Oslo (Centro Olímpico).</p>
+                  <h4 className="font-bold text-slate-800">Experiência Internacional</h4>
+                  <p className="text-slate-600">Fellowship de 1 ano com o Dr. Robert LaPrade, autoridade mundial em joelho; Observerships com Dr. Bertrand Sonnery-Cottet em Lyon (FRA), Marc Safran em Stanford (EUA) e Gilbert Moatshe/ Lars Engebretsen em Oslo (Centro Olímpico).</p>
                 </div>
               </div>
 
@@ -117,7 +117,17 @@ const About: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-800">Vivência no Esporte de Elite</h4>
-                  <p className="text-slate-600">Atual médico de atletas do ATP Rio Open desde 2023, Ex-médico do C.R. Flamengo e Médico "Field-of-Play" nas Olimpíadas Rio2016.</p>
+                  <p className="text-slate-600">Médico dos atletas do ATP Rio Open desde 2023, Ex-médico do C.R. Flamengo e Médico "Field-of-Play" nas Olimpíadas Rio2016.</p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="bg-blue-50 w-12 h-12 flex-shrink-0 rounded-lg flex items-center justify-center text-blue-600">
+                  <i className="fa-solid fa-briefcase-medical"></i>
+                </div>
+                <div>
+                  <h4 className="font-bold text-slate-800">Experiência, Habilidade Cirúrgica e Ensino</h4>
+                  <p className="text-slate-600">Em seus quase 15 anos no INTO, realizou mais de 2 mil cirurgias, tornando-se um cirurgião respeitado no Brasil e participando da formação de cerca de 180 residentes e fellows.</p>
                 </div>
               </div>
             </div>
@@ -148,7 +158,7 @@ const About: React.FC = () => {
                 decoding="async"
               />
               <img
-                src="/imagens/inicio/explicando-no-consultorio.webp"
+                src="/imagens/inicio/dr-raphael-serra-cruz-consultorio.webp"
                 alt="Dr. Raphael Serra Cruz explicando exame ao paciente no consultório em Indaiatuba"
                 className="absolute left-0 top-1/2 z-10 w-[58%] min-w-0 max-w-[calc(100%-4rem)] -translate-y-1/2 rounded-2xl object-cover shadow-xl ring-2 ring-white/90 lg:static lg:col-start-1 lg:row-start-1 lg:top-auto lg:z-auto lg:mt-8 lg:w-full lg:max-w-none lg:translate-y-0 lg:ring-0 lg:shadow-lg"
                 loading="lazy"

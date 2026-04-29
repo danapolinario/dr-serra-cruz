@@ -21,6 +21,11 @@ const logos: { src: string; alt: string; imgClass: string }[] = [
     imgClass: `${baseImg} h-[4.5rem] md:h-20 max-w-[min(100%,320px)]`,
   },
   {
+    src: '/imagens/instituicoes-excelencia/Logo_Einstein_Horizontal.webp',
+    alt: 'EINSTEIN — Hospital Israelita Albert Einstein',
+    imgClass: `${baseImg} h-[4.5rem] md:h-14 max-w-[min(100%,280px)]`,
+  },
+  {
     src: '/imagens/instituicoes-excelencia/instituicao-sbcj.webp',
     alt: 'SBCJ — Sociedade Brasileira de Cirurgia do Joelho',
     imgClass: `${baseImg} h-[4.5rem] md:h-20 max-w-[min(100%,320px)]`,

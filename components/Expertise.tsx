@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const CARD_IMG = {
   mostrandoExame: '/imagens/inicio/cards/card-mostrando-exame-na-tela.webp',
   examinando: '/imagens/inicio/cards/card-examinando-paciente.webp',
-  rioOpen: '/imagens/inicio/cards/card-rio-open-tenis.webp',
+  rioOpen: '/imagens/inicio/cards/trauma-do-esporte-dr-raphael-serra-cruz.jpg',
   retrato: '/imagens/inicio/cards/card-retrato-de-frente.webp',
 } as const;
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import FloatingWhatsApp from '../components/FloatingWhatsApp';
@@ -7,12 +7,6 @@ import { STATIC_PAGE_SEO } from '../src/seo/pageSeo';
 import { WHATSAPP_AGENDAR_HREF } from '../src/config/whatsapp';
 
 const Artrose: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<number | null>(1);
-
-  const toggleTab = (tabIndex: number) => {
-    setActiveTab(activeTab === tabIndex ? null : tabIndex);
-  };
-
   const seo = STATIC_PAGE_SEO['/artrose'];
   return (
     <div className="flex flex-col min-h-screen">
@@ -33,103 +27,32 @@ const Artrose: React.FC = () => {
           <div className="container mx-auto px-4 max-w-5xl">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
               <div className="lg:col-span-1">
-                <div className="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden sticky top-28">
-                  <div className="border-b border-slate-100 last:border-0">
-                    <button
-                      type="button"
-                      onClick={() => toggleTab(1)}
-                      className={`w-full text-left px-6 py-4 font-bold flex justify-between items-center transition-colors ${activeTab === 1 ? 'bg-blue-50 text-blue-700' : 'text-slate-700 hover:bg-slate-50'}`}
-                    >
-                      Entendendo a artrose
-                      <i className={`fas fa-caret-${activeTab === 1 ? 'up' : 'right'} transition-transform`}></i>
-                    </button>
-                    {activeTab === 1 && (
-                      <div className="px-6 py-4 bg-white text-sm text-slate-600">
-                        <ul className="space-y-2">
-                          <li>
-                            <a href="#o-que-e" className="hover:text-blue-600 transition">
-                              O que é a artrose do joelho?
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#causas" className="hover:text-blue-600 transition">
-                              Causas e fatores de risco
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    )}
+                <aside className="bg-white rounded-xl shadow-sm border border-slate-100 sticky top-28 p-6">
+                  <div className="mb-6">
+                    <h3 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-3">Entendendo a artrose</h3>
+                    <ul className="space-y-2 text-sm text-slate-600">
+                      <li><a href="#o-que-e" className="hover:text-blue-600 transition">O que é a artrose do joelho?</a></li>
+                      <li><a href="#causas" className="hover:text-blue-600 transition">Causas e fatores de risco</a></li>
+                    </ul>
                   </div>
-
-                  <div className="border-b border-slate-100 last:border-0">
-                    <button
-                      type="button"
-                      onClick={() => toggleTab(2)}
-                      className={`w-full text-left px-6 py-4 font-bold flex justify-between items-center transition-colors ${activeTab === 2 ? 'bg-blue-50 text-blue-700' : 'text-slate-700 hover:bg-slate-50'}`}
-                    >
-                      Sintomas e diagnóstico
-                      <i className={`fas fa-caret-${activeTab === 2 ? 'up' : 'right'} transition-transform`}></i>
-                    </button>
-                    {activeTab === 2 && (
-                      <div className="px-6 py-4 bg-white text-sm text-slate-600">
-                        <ul className="space-y-2">
-                          <li>
-                            <a href="#sintomas" className="hover:text-blue-600 transition">
-                              Principais sintomas
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#diagnostico" className="hover:text-blue-600 transition">
-                              Como é feito o diagnóstico?
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    )}
+                  <div className="mb-6">
+                    <h3 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-3">Sintomas e diagnóstico</h3>
+                    <ul className="space-y-2 text-sm text-slate-600">
+                      <li><a href="#sintomas" className="hover:text-blue-600 transition">Principais sintomas</a></li>
+                      <li><a href="#diagnostico" className="hover:text-blue-600 transition">Como é feito o diagnóstico?</a></li>
+                    </ul>
                   </div>
-
-                  <div className="border-b border-slate-100 last:border-0">
-                    <button
-                      type="button"
-                      onClick={() => toggleTab(3)}
-                      className={`w-full text-left px-6 py-4 font-bold flex justify-between items-center transition-colors ${activeTab === 3 ? 'bg-blue-50 text-blue-700' : 'text-slate-700 hover:bg-slate-50'}`}
-                    >
-                      Tratamentos
-                      <i className={`fas fa-caret-${activeTab === 3 ? 'up' : 'right'} transition-transform`}></i>
-                    </button>
-                    {activeTab === 3 && (
-                      <div className="px-6 py-4 bg-white text-sm text-slate-600">
-                        <ul className="space-y-2">
-                          <li>
-                            <a href="#conservador" className="hover:text-blue-600 transition">
-                              Tratamento conservador
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#infiltracoes" className="hover:text-blue-600 transition">
-                              Infiltrações e opções biológicas
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#osteotomias" className="hover:text-blue-600 transition">
-                              Osteotomias
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#substituicao-articular" className="hover:text-blue-600 transition">
-                              Substituição articular
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#cirurgia-robotica" className="hover:text-blue-600 transition">
-                              Cirurgia robótica
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    )}
+                  <div>
+                    <h3 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-3">Tratamentos</h3>
+                    <ul className="space-y-2 text-sm text-slate-600">
+                      <li><a href="#conservador" className="hover:text-blue-600 transition">Tratamento conservador</a></li>
+                      <li><a href="#infiltracoes" className="hover:text-blue-600 transition">Infiltrações e opções biológicas</a></li>
+                      <li><a href="#osteotomias" className="hover:text-blue-600 transition">Osteotomias</a></li>
+                      <li><a href="#substituicao-articular" className="hover:text-blue-600 transition">Substituição articular</a></li>
+                      <li><a href="#cirurgia-robotica" className="hover:text-blue-600 transition">Cirurgia robótica</a></li>
+                    </ul>
                   </div>
-                </div>
+                </aside>
               </div>
 
               <div className="lg:col-span-2">

@@ -6,8 +6,8 @@ const HERO_SLIDE_MS = 5000;
 
 const heroSlides: { src: string; badgeLine: string }[] = [
   { src: '/imagens/inicio/retrato-de-frente.webp', badgeLine: 'Ortopedia e Traumatologia' },
-  { src: '/imagens/inicio/mostrando-exame-na-tela.webp', badgeLine: 'Condutas Individualizadas' },
-  { src: '/imagens/inicio/examinando-paciente.webp', badgeLine: 'Tratamentos Conservadores' },
+  { src: '/imagens/inicio/examinando-paciente.webp', badgeLine: 'Condutas Individualizadas' },
+  { src: '/imagens/inicio/mostrando-exame-na-tela.webp', badgeLine: 'Tratamentos Conservadores' },
   { src: '/imagens/inicio/dr-raphael-serra-cruz-rio-open-tenis.webp', badgeLine: 'Experiência no Esporte' },
   { src: '/imagens/inicio/dr-raphael-serra-cruz-cirugia-joelho.webp', badgeLine: 'Cirugia do Joelho' },
   { src: '/imagens/inicio/dr-raphael-serra-cruz-palestra.webp', badgeLine: 'Produção acadêmica' }
