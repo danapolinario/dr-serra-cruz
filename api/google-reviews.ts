@@ -3,7 +3,7 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 import {
   fetchGooglePlaceReviewSummary,
   GooglePlacesRequestError,
-} from '../lib/googlePlaceReviews';
+} from './lib/googlePlaceReviews';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {

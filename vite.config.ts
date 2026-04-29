@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 import {
   fetchGooglePlaceReviewSummary,
   GooglePlacesRequestError,
-} from './lib/googlePlaceReviews';
+} from './api/lib/googlePlaceReviews';
 
 /**
  * Em `npm run dev` e em `vite preview`, expõe GET /api/google-reviews (mesmo contrato da Vercel).
