@@ -15,3 +15,27 @@ export function truncateMeta(text: string, max = 158): string {
   if (t.length <= max) return t;
   return `${t.slice(0, max - 1).trimEnd()}…`;
 }
+
+/** MIME type a partir da extensão do path da imagem OG. */
+export function imageMimeType(path: string): string {
+  const ext = path.split('.').pop()?.toLowerCase() ?? '';
+  switch (ext) {
+    case 'webp':
+      return 'image/webp';
+    case 'png':
+      return 'image/png';
+    case 'jpg':
+    case 'jpeg':
+      return 'image/jpeg';
+    case 'gif':
+      return 'image/gif';
+    case 'svg':
+      return 'image/svg+xml';
+    default:
+      return 'image/jpeg';
+  }
+}
+
+/** Dimensões padrão recomendadas para previews sociais. */
+export const OG_IMAGE_WIDTH = 1200;
+export const OG_IMAGE_HEIGHT = 630;

@@ -39,7 +39,7 @@ const Artigos: React.FC = () => {
                       <td className="p-4 border-b">2020</td>
                     </tr>
                     <tr className="hover:bg-slate-50 transition">
-                      <td className="p-4 border-b"><a href="https://www.drserracruz.com.br/wp-content/uploads/2021/09/Vertical-Continuous-Meniscal-Suture-Technique.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Vertical Continuous Meniscal Suture of the Knee*</a></td>
+                      <td className="p-4 border-b"><a href="/documentos/vertical-continuous-meniscal-suture-technique.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Vertical Continuous Meniscal Suture of the Knee*</a></td>
                       <td className="p-4 border-b">Arthroscopy Techniques</td>
                       <td className="p-4 border-b">2020</td>
                     </tr>
@@ -49,7 +49,7 @@ const Artigos: React.FC = () => {
                       <td className="p-4 border-b">2019</td>
                     </tr>
                     <tr className="hover:bg-slate-50 transition">
-                      <td className="p-4 border-b"><a href="https://www.drserracruz.com.br/wp-content/uploads/2021/09/Serra-Cruz-R_Arthroscopy-Techniques_2019_Surgical-Technique-for-Chronic-Proximal-Patellar-Tendinopathy-Jumpers-Knee_AT_2019.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Surgical Technique for Chronic Proximal Patellar Tendinopathy (Jumper's Knee)*</a></td>
+                      <td className="p-4 border-b"><a href="/documentos/surgical-technique-chronic-proximal-patellar-tendinopathy-jumpers-knee.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Surgical Technique for Chronic Proximal Patellar Tendinopathy (Jumper's Knee)*</a></td>
                       <td className="p-4 border-b">Arthroscopy Techniques</td>
                       <td className="p-4 border-b">2019</td>
                     </tr>
@@ -69,7 +69,7 @@ const Artigos: React.FC = () => {
                       <td className="p-4 border-b">2016</td>
                     </tr>
                     <tr className="hover:bg-slate-50 transition">
-                      <td className="p-4 border-b"><a href="https://www.drserracruz.com.br/wp-content/uploads/2021/09/Serra-Cruz-R_OJSM_2016_Concentrated-Bone-MArrow-Aspirtate-Concentrate-for-the-treatment-of-Chondral-Injuries-and-OA-of-the-Knee.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Concentrated Bone Marrow Aspirate for the Treatment of Chondral Injuries and Osteoarthritis of the Knee: A Systematic Review of Outcomes *</a></td>
+                      <td className="p-4 border-b"><a href="/documentos/concentrated-bone-marrow-aspirate-chondral-injuries-knee.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Concentrated Bone Marrow Aspirate for the Treatment of Chondral Injuries and Osteoarthritis of the Knee: A Systematic Review of Outcomes *</a></td>
                       <td className="p-4 border-b">Orthopaedics Journal of Sports Medicine</td>
                       <td className="p-4 border-b">2016</td>
                     </tr>
@@ -79,12 +79,12 @@ const Artigos: React.FC = () => {
                       <td className="p-4 border-b">2016</td>
                     </tr>
                     <tr className="hover:bg-slate-50 transition">
-                      <td className="p-4 border-b"><a href="https://www.drserracruz.com.br/wp-content/uploads/2021/09/Serra-Cruz-R_Arthroscopy-Techniques_2016_Inside-Out-Meniscal-Repair_Medial-and-Lateral-Approach.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Inside-Out Meniscal Repair: Medial and Lateral Approach *</a></td>
+                      <td className="p-4 border-b"><a href="/documentos/inside-out-meniscal-repair.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Inside-Out Meniscal Repair: Medial and Lateral Approach *</a></td>
                       <td className="p-4 border-b">Arthroscopy Techniques</td>
                       <td className="p-4 border-b">2016</td>
                     </tr>
                     <tr className="hover:bg-slate-50 transition">
-                      <td className="p-4 border-b"><a href="https://www.drserracruz.com.br/wp-content/uploads/2021/09/Serra-Cruz-R_Arthroscopy-Techniques_2016_Fresh-Osteochondral-Allograft-Transplantation-for-Treatment-of-Articular-Cartilage-Defects-of-the-Knee.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Fresh Osteochondral Allograft Transplantation for Treatment of Articular Cartilage Defects of the Knee *</a></td>
+                      <td className="p-4 border-b"><a href="/documentos/fresh-osteochondral-allograft-transplantation.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Fresh Osteochondral Allograft Transplantation for Treatment of Articular Cartilage Defects of the Knee *</a></td>
                       <td className="p-4 border-b">Arthroscopy Techniques</td>
                       <td className="p-4 border-b">2016</td>
                     </tr>
@@ -94,32 +94,32 @@ const Artigos: React.FC = () => {
                       <td className="p-4 border-b">2016</td>
                     </tr>
                     <tr className="hover:bg-slate-50 transition">
-                      <td className="p-4 border-b"><a href="https://www.drserracruz.com.br/wp-content/uploads/2021/09/Serra-Cruz-R_Arthroscopy-Techniques_2016_Anatomic-Fibular-Collateral-Ligament-Reconstruction.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Anatomic Fibular Collateral Ligament Reconstruction *</a></td>
+                      <td className="p-4 border-b"><a href="/documentos/anatomic-fibular-collateral-ligament-reconstruction.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Anatomic Fibular Collateral Ligament Reconstruction *</a></td>
                       <td className="p-4 border-b">Arthroscopy Techniques</td>
                       <td className="p-4 border-b">2016</td>
                     </tr>
                     <tr className="hover:bg-slate-50 transition">
-                      <td className="p-4 border-b"><a href="https://www.drserracruz.com.br/wp-content/uploads/2021/09/Serra-Cruz-R_Arthroscopy-Techniques_2016_Medial-Meniscal-Allograft-Transplantation_the-bone-plug-technique.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Medial Meniscal Allograft Transplantation: The Bone Plug Technique *</a></td>
+                      <td className="p-4 border-b"><a href="/documentos/medial-meniscal-allograft-bone-plug.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Medial Meniscal Allograft Transplantation: The Bone Plug Technique *</a></td>
                       <td className="p-4 border-b">Arthroscopy Techniques</td>
                       <td className="p-4 border-b">2016</td>
                     </tr>
                     <tr className="hover:bg-slate-50 transition">
-                      <td className="p-4 border-b"><a href="https://www.drserracruz.com.br/wp-content/uploads/2021/09/Serra-Cruz-R_Arthroscopy-Techniques_2016_Superficial-Medial-Collateral-Ligament-of-the-Knee_Anatomic-Augmentation-With-Semitendinosus-and-Gracilis-Tendon-Autografts.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Superficial Medial Collateral Ligament of the Knee: Anatomic Augmentation With Semitendinosus and Gracilis Tendon Autografts *</a></td>
+                      <td className="p-4 border-b"><a href="/documentos/superficial-medial-collateral-ligament-augmentation.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Superficial Medial Collateral Ligament of the Knee: Anatomic Augmentation With Semitendinosus and Gracilis Tendon Autografts *</a></td>
                       <td className="p-4 border-b">Arthroscopy Techniques</td>
                       <td className="p-4 border-b">2016</td>
                     </tr>
                     <tr className="hover:bg-slate-50 transition">
-                      <td className="p-4 border-b"><a href="https://www.drserracruz.com.br/wp-content/uploads/2021/09/Serra-Cruz-R_Arthroscopy-Techniques_2016_Lateral-Meniscal-Allograft-Transplantation_The-Bone-Trough-Technique.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Lateral Meniscal Allograft Transplantation: The Bone Trough Technique *</a></td>
+                      <td className="p-4 border-b"><a href="/documentos/lateral-meniscal-allograft-bone-trough.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Lateral Meniscal Allograft Transplantation: The Bone Trough Technique *</a></td>
                       <td className="p-4 border-b">Arthroscopy Techniques</td>
                       <td className="p-4 border-b">2016</td>
                     </tr>
                     <tr className="hover:bg-slate-50 transition">
-                      <td className="p-4 border-b"><a href="https://www.drserracruz.com.br/wp-content/uploads/2021/09/Serra-Cruz-R_Arthroscopy-Techniques_2016_Anterolateral-Biplanar-Proximal-Tibial-Opening-Wedge-Osteotomy.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Anterolateral Biplanar Proximal Tibial Opening-Wedge Osteotomy *</a></td>
+                      <td className="p-4 border-b"><a href="/documentos/anterolateral-biplanar-proximal-tibial-opening-wedge-osteotomy.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Anterolateral Biplanar Proximal Tibial Opening-Wedge Osteotomy *</a></td>
                       <td className="p-4 border-b">Arthroscopy Techniques</td>
                       <td className="p-4 border-b">2016</td>
                     </tr>
                     <tr className="hover:bg-slate-50 transition">
-                      <td className="p-4 border-b"><a href="https://www.drserracruz.com.br/wp-content/uploads/2021/09/Serra-Cruz-R_Arthroscopy-Techniques_2016_Anatomic-Posterolateral-Corner-Reconstruction.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Anatomic Posterolateral Corner Reconstruction *</a></td>
+                      <td className="p-4 border-b"><a href="/documentos/anatomic-posterolateral-corner-reconstruction.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Anatomic Posterolateral Corner Reconstruction *</a></td>
                       <td className="p-4 border-b">Arthroscopy Techniques</td>
                       <td className="p-4 border-b">2016</td>
                     </tr>
@@ -129,7 +129,7 @@ const Artigos: React.FC = () => {
                       <td className="p-4 border-b">2016</td>
                     </tr>
                     <tr className="hover:bg-slate-50 transition">
-                      <td className="p-4 border-b"><a href="https://www.drserracruz.com.br/wp-content/uploads/2021/09/Serra-Cruz-R_Arthroscopy-Techniques_2016_Medial-Opening-Wedge-Proximal-Tibial-Osteotomy.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Medial Opening Wedge Proximal Tibial Osteotomy *</a></td>
+                      <td className="p-4 border-b"><a href="/documentos/medial-opening-wedge-proximal-tibial-osteotomy.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Medial Opening Wedge Proximal Tibial Osteotomy *</a></td>
                       <td className="p-4 border-b">Arthroscopy Techniques</td>
                       <td className="p-4 border-b">2016</td>
                     </tr>
@@ -139,12 +139,12 @@ const Artigos: React.FC = () => {
                       <td className="p-4 border-b">2016</td>
                     </tr>
                     <tr className="hover:bg-slate-50 transition">
-                      <td className="p-4 border-b"><a href="https://www.drserracruz.com.br/wp-content/uploads/2021/09/Serra-Cruz-R_RBO_2016_Compreendendo-as-lesoes-das-raizes-posteriores-dos-meniscos.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Compreendendo as lesões das raízes posteriores dos meniscos: da ciência básica ao tratamento *</a></td>
+                      <td className="p-4 border-b"><a href="/documentos/compreendendo-lesoes-raizes-posteriores-meniscos.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Compreendendo as lesões das raízes posteriores dos meniscos: da ciência básica ao tratamento *</a></td>
                       <td className="p-4 border-b">Revista Brasileira de Ortopedia</td>
                       <td className="p-4 border-b">2016</td>
                     </tr>
                     <tr className="hover:bg-slate-50 transition">
-                      <td className="p-4 border-b"><a href="https://www.drserracruz.com.br/wp-content/uploads/2021/09/Serra-Cruz-R_Tecnicas-em-Ortopedia_2016_Reparo-de-lesoes-das-raizes-posteriores-dos-meniscos_TO_2016.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Reparo de lesões das raízes posteriores dos meniscos *</a></td>
+                      <td className="p-4 border-b"><a href="/documentos/reparo-lesoes-raizes-posteriores-meniscos.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Reparo de lesões das raízes posteriores dos meniscos *</a></td>
                       <td className="p-4 border-b">Técnicas em Ortopedia - HSPE</td>
                       <td className="p-4 border-b">2016</td>
                     </tr>

@@ -56,12 +56,13 @@ const CertificatesGallery: React.FC = () => {
             className="cursor-pointer overflow-hidden rounded-xl border border-slate-200 hover:shadow-xl transition-all bg-white flex items-center justify-center p-4 hover:border-blue-300 group"
             onClick={() => setSelectedIndex(idx)}
           >
-            <img 
-              src={cert.thumb} 
-              alt={cert.name} 
-              className="w-full h-auto object-contain max-h-40 group-hover:scale-105 transition-transform duration-300" 
+            <img
+              src={cert.thumb}
+              alt={cert.name}
+              loading="lazy"
+              decoding="async"
+              className="w-full h-auto object-contain max-h-40 group-hover:scale-105 transition-transform duration-300"
               onError={(e) => {
-                // Fallback to thumb if original is not found
                 (e.target as HTMLImageElement).src = cert.thumb;
               }}
             />
@@ -89,13 +90,13 @@ const CertificatesGallery: React.FC = () => {
           </button>
 
           <div className="relative max-w-5xl w-full flex items-center justify-center h-full max-h-[85vh]">
-            <img 
-              src={certs[selectedIndex].src} 
-              alt={certs[selectedIndex].name} 
+            <img
+              src={certs[selectedIndex].src}
+              alt={certs[selectedIndex].name}
+              decoding="async"
               className="max-w-full max-h-full object-contain rounded shadow-2xl animate-in zoom-in-95 duration-200"
               onClick={(e) => e.stopPropagation()}
               onError={(e) => {
-                // Fallback to thumb if original is not found
                 (e.target as HTMLImageElement).src = certs[selectedIndex].thumb;
               }}
             />

@@ -23,14 +23,23 @@ export const SiteStructuredData: React.FC = () => {
     sameAs,
   };
 
+  const weekdaysHours = (opens: string, closes: string) => ({
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens,
+    closes,
+  });
+
   const clinic = {
     '@context': 'https://schema.org',
     '@type': 'MedicalClinic',
     name: 'Dr. Raphael Serra Cruz — Ortopedia',
     url: SITE_URL,
     image: absoluteUrl('/imagens/inicio/retrato-de-frente.webp'),
-    telephone: '+551998321140',
+    telephone: '+5519998321140',
     email: 'contato@drserracruz.com.br',
+    priceRange: '$$',
+    medicalSpecialty: 'Orthopedic',
     location: [
       {
         '@type': 'Place',
@@ -42,7 +51,13 @@ export const SiteStructuredData: React.FC = () => {
           addressRegion: 'SP',
           addressCountry: 'BR',
         },
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: -23.0900,
+          longitude: -47.2173,
+        },
         hasMap: 'https://share.google/6uUlFHzRUhApxCocG',
+        openingHoursSpecification: [weekdaysHours('07:00', '19:30')],
       },
       {
         '@type': 'Place',
@@ -54,7 +69,13 @@ export const SiteStructuredData: React.FC = () => {
           addressRegion: 'SP',
           addressCountry: 'BR',
         },
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: -23.0826,
+          longitude: -47.2156,
+        },
         hasMap: 'https://maps.app.goo.gl/ih4nsf2hExBhs4SR9',
+        openingHoursSpecification: [weekdaysHours('08:00', '18:00')],
       },
     ],
     areaServed: [

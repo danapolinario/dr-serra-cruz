@@ -39,17 +39,21 @@ const Sobre: React.FC = () => {
               <p className="text-slate-700 leading-relaxed mb-8">
                 Dr. Raphael Serra Cruz é Médico concursado do Ministério da Saúde, membro do Centro de Cirurgia de Joelho do Instituto Nacional de Traumatologia e Ortopedia desde 2013. Também é Mestre em Ciências do Aparelho Musculoesquelético pelo INTO/UFRJ. Fez 1 ano de fellowship nos Estados Unidos com uma das maiores autoridades mundiais em lesões esportivas de joelho (Dr. Robert LaPrade). Atuou por duas temporadas no Clube de Regatas do Flamengo e nos jogos olímpicos Rio 2016. Capacitado para realização de transplante de tecidos musculoesqueléticos como meniscos e cartilagem.
               </p>
-              <img 
-                src="/imagens/inicio/explicando-no-consultorio.webp" 
-                alt="Dr. Raphael Serra Cruz explicando no consultório" 
+              <img
+                src="/imagens/inicio/explicando-no-consultorio.webp"
+                alt="Dr. Raphael Serra Cruz explicando no consultório"
+                width={1536}
+                height={1024}
+                decoding="async"
+                fetchPriority="high"
                 className="w-full rounded-xl shadow-lg mb-8"
               />
-              
+
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
-                <img src="/imagens/sobre/palestrando-no-hsvp.webp" alt="Palestrando" className="w-full h-48 object-cover rounded-lg shadow" />
-                <img src="/imagens/sobre/mostrando-exame-pequeno.webp" alt="Mostrando exame" className="w-full h-48 object-cover rounded-lg shadow" />
-                <img src="/imagens/sobre/examinando-paciente-pequeno.webp" alt="Examinando paciente" className="w-full h-48 object-cover rounded-lg shadow" />
-                <img src="/imagens/sobre/banner-3.webp" alt="Banner" className="w-full h-48 object-cover rounded-lg shadow" />
+                <img src="/imagens/sobre/palestrando-no-hsvp.webp" alt="Palestrando" width={300} height={225} loading="lazy" decoding="async" className="w-full h-48 object-cover rounded-lg shadow" />
+                <img src="/imagens/sobre/mostrando-exame-pequeno.webp" alt="Mostrando exame" width={200} height={300} loading="lazy" decoding="async" className="w-full h-48 object-cover rounded-lg shadow" />
+                <img src="/imagens/sobre/examinando-paciente-pequeno.webp" alt="Examinando paciente" width={300} height={192} loading="lazy" decoding="async" className="w-full h-48 object-cover rounded-lg shadow" />
+                <img src="/imagens/sobre/banner-3.webp" alt="Banner" width={300} height={133} loading="lazy" decoding="async" className="w-full h-48 object-cover rounded-lg shadow" />
               </div>
             </div>
 
@@ -116,9 +120,9 @@ const Sobre: React.FC = () => {
                   O Dr. Raphael Serra Cruz graduou-se em Medicina pela prestigiada Universidade do Estado do Rio de Janeiro em 2006. Cursou residência médica no Instituto Nacional de Traumatologia e Ortopedia (INTO), instituição ortopédica mais importante do Brasil, onde também realizou a sub-especialização em cirurgia do joelho. Ainda residente, foi aprovado no concurso público do Ministério da Saúde e, logo após concluir sua formação, passou a integrar o corpo clínico deste mesmo instituto.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <img src="/imagens/sobre/enfermaria-uerj.webp" alt="Enfermaria UERJ" className="w-full h-48 object-cover rounded-lg shadow" />
-                  <img src="/imagens/sobre/cadeira-formatura.webp" alt="Formatura" className="w-full h-48 object-cover rounded-lg shadow" />
-                  <img src="/imagens/sobre/formacao-into-01.webp" alt="INTO" className="w-full h-48 object-cover rounded-lg shadow" />
+                  <img src="/imagens/sobre/enfermaria-uerj.webp" alt="Enfermaria UERJ" width={900} height={883} loading="lazy" decoding="async" className="w-full h-48 object-cover rounded-lg shadow" />
+                  <img src="/imagens/sobre/cadeira-formatura.webp" alt="Formatura" width={900} height={889} loading="lazy" decoding="async" className="w-full h-48 object-cover rounded-lg shadow" />
+                  <img src="/imagens/sobre/formacao-into-01.webp" alt="INTO" width={640} height={640} loading="lazy" decoding="async" className="w-full h-48 object-cover rounded-lg shadow" />
                 </div>
               </div>
 
@@ -132,9 +136,9 @@ const Sobre: React.FC = () => {
                   Foi quando aplicou e foi selecionado dentre centenas de candidatos de todo o Brasil para o Fellowship da Sociedade Brasileira de Artroscopia e Trauma do Esporte (<strong>SBRATE</strong>), presidido à época, pelo <strong>Dr. Michael Simoni</strong>, responsável pela entrevista final. Através deste estágio, pode acompanhar os departamentos médicos de <strong>Flamengo, Atlético-MG e Corinthians</strong>, e entrou em contato com os principais nomes da traumatologia desportiva nacional, como <strong>Dr. José Luiz Runco</strong> (CBF e Flamengo) e <strong>Dr. André Pedrinelli</strong> (USP, COB, Fifa), entre outros. Ainda como parte deste Fellowship, fez um estágio de 3 semanas acompanhando o serviço de medicina esportiva da renomada <strong>Universidade de Stanford</strong>, sob supervisão do <strong>Dr. Marc Safran</strong>, ícone da medicina esportiva mundial. Na etapa final deste fellowship, foi para a Europa onde acompanhou o departamento médico do <strong>ATP 1000 de Paris</strong> e pode visitar os centros médicos de <strong>Roland-Garros, Wimbledon e Chelsea Football Club</strong>. A semana final foi no <strong>Centre Ortopédique Santy</strong>, centro de excelência da <strong>Fifa</strong> em Lyon, famosa escola mundial de cirurgia do Joelho, onde conheceu o <strong>Dr. Bertran Sonnery-Cottet</strong>, com quem cultiva uma amizade e discute alguns de seus casos mais complexos até hoje.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <img src="/imagens/sobre/entrada-stanford.webp" alt="Stanford" className="w-full h-48 object-cover rounded-lg shadow" />
-                  <img src="/imagens/sobre/com-bertrand-lyon.webp" alt="Lyon" className="w-full h-48 object-cover rounded-lg shadow" />
-                  <img src="/imagens/sobre/chelsea-estadio.webp" alt="Chelsea" className="w-full h-48 object-cover rounded-lg shadow" />
+                  <img src="/imagens/sobre/entrada-stanford.webp" alt="Stanford" width={900} height={1200} loading="lazy" decoding="async" className="w-full h-48 object-cover rounded-lg shadow" />
+                  <img src="/imagens/sobre/com-bertrand-lyon.webp" alt="Lyon" width={900} height={869} loading="lazy" decoding="async" className="w-full h-48 object-cover rounded-lg shadow" />
+                  <img src="/imagens/sobre/chelsea-estadio.webp" alt="Chelsea" width={698} height={523} loading="lazy" decoding="async" className="w-full h-48 object-cover rounded-lg shadow" />
                 </div>
               </div>
 
@@ -145,8 +149,8 @@ const Sobre: React.FC = () => {
                   Ao retornar do Fellowship, foi surpreendido por um convite do Dr. José Luiz Runco para trabalhar nas categorias de base do futebol do <strong>Clube de Regatas do Flamengo</strong>. Durante esta passagem, pode contribuir com suas experiências adquiridas internacionalmente e aprendeu bastante sobre os bastidores do mundo do futebol. Optou por afastar-se depois de uma temporada, devido à incompatibilidade de horários quando foi convidado a fazer parte do Centro de Cirurgia de Joelho do INTO, onde teria a possibilidade de aprimorar suas habilidades cirúrgicas, devido ao enorme volume de procedimentos de alta complexidade realizados neste hospital.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <img src="/imagens/sobre/com-dr-jose-luis-runco.webp" alt="Com Dr. Runco" className="w-full h-64 object-cover rounded-lg shadow" />
-                  <img src="/imagens/sobre/estadio-morumbi.webp" alt="Estádio do Morumbi" className="w-full h-64 object-cover rounded-lg shadow" />
+                  <img src="/imagens/sobre/com-dr-jose-luis-runco.webp" alt="Com Dr. Runco" width={679} height={509} loading="lazy" decoding="async" className="w-full h-64 object-cover rounded-lg shadow" />
+                  <img src="/imagens/sobre/estadio-morumbi.webp" alt="Estádio do Morumbi" width={659} height={495} loading="lazy" decoding="async" className="w-full h-64 object-cover rounded-lg shadow" />
                 </div>
               </div>
 
@@ -157,8 +161,8 @@ const Sobre: React.FC = () => {
                   Sendo um hospital quaternário, integrar o grupo de cirurgia do joelho do INTO requer do cirurgião treinamentos e atualizações constantes para lidar com casos complexos que não obtêm resolutividade nos níveis mais básicos de assistência da saúde. Por isso, fazer parte deste grupo, é um privilégio e um grande desafio. Somente no INTO, o Dr. Serra Cruz realiza <strong>anualmente</strong> cerca de 140 procedimentos cirúrgicos dos mais variados graus de complexidade (desde artroscopias simples, a reconstruções ligamentares, multiligamentares, suturas de menisco, procedimentos em cartilagem, osteotomias e atroplastias) e 700 atendimentos ambulatoriais. Além disso, por se tratar de um hospital de ensino, contribui para a formação de dezenas de ortopedistas, entre residentes e especializandos em cirurgia do joelho.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <img src="/imagens/sobre/olhando-para-luva-cc.webp" alt="Centro Cirúrgico" className="w-full h-64 object-cover rounded-lg shadow object-top" />
-                  <img src="/imagens/sobre/cirurgia-centro.webp" alt="Cirurgia" className="w-full h-64 object-cover rounded-lg shadow" />
+                  <img src="/imagens/sobre/olhando-para-luva-cc.webp" alt="Centro Cirúrgico" width={225} height={300} loading="lazy" decoding="async" className="w-full h-64 object-cover rounded-lg shadow object-top" />
+                  <img src="/imagens/sobre/cirurgia-centro.webp" alt="Cirurgia" width={300} height={296} loading="lazy" decoding="async" className="w-full h-64 object-cover rounded-lg shadow" />
                 </div>
               </div>
 
@@ -169,9 +173,9 @@ const Sobre: React.FC = () => {
                   Mais uma vez, apesar da experiência já adquirida, uma oportunidade de adquirir mais conhecimentos o tirou da zona de conforto. Em 2014, O <strong>Instituto Brasil de Tecnologias da Saúde (IBTS)</strong>, comandado pelo prestigiado <strong>Dr. Leonardo Metsavaht</strong>, em conjunto com a <strong>Fundação Lemann</strong>, lançava a terceira edição do <strong>Prêmio Jorge Paulo Lemann de Biomecânica e Artroscopia do Joelho</strong> e iria selecionar em todo o Brasil um especialista em joelho e um especialista em quadril para realizar um Fellowship de 1 ano no <strong>Steadman-Philippon Research Institute (SPRI)</strong>, sob supervisão respectivamente dos renomados Drs. <strong>Robert LaPrade</strong> e <strong>Marc Philippon</strong>. Para muitos, o Fellowship do SPRI é considerado o melhor do mundo. Foi selecionado e em 2015 embarcava para a viagem que mudaria para sempre o curso de sua carreira. Em <strong>Vail</strong> (cidade do Colorado onde se localiza o SPRI), o Dr. Serra Cruz teve a oportunidade não somente de acompanhar casos complexos conduzidos pelo especialista mais prestigiado do mundo, lidando com as mais variadas situações tanto de pessoas comuns quanto de atletas do mais alto nível, de diversas modalidades esportivas. Além disso, participou de inúmeros projetos científicos que lhe renderam mais de 20 publicações em revistas internacionais de grande impacto, participações em congressos norte-americanos e europeus e o <strong>prêmio de Excelência em pesquisa da AOSSM (American Orthopaedic Society for Sports Medicine)</strong>, em 2016. Durante esta temporada, estabeleceu diversas amizades que carrega até os dias de hoje e com quem discute os casos mais complexos de sua prática clínica. Dentre os ilustres amigos, estão o <strong>Dr. Jorge Chahla,</strong> (médico do Chicago Bulls, White Sox e professor assistente na Rush University), <strong>Dr.Gilbert Moatsche,</strong> (Oslo Univertity Hospital, Oslo Sports Trauma Research Center, Norwegian Olympic Center) e <strong>Gabriela Bucci</strong> (Texas Health Sports Medicine., FC Dallas).
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <img src="/imagens/sobre/staff-vail.webp" alt="Vail" className="w-full h-48 object-cover rounded-lg shadow" />
-                  <img src="/imagens/sobre/laboratorio-laprace-chahla.webp" alt="Laboratório" className="w-full h-48 object-cover rounded-lg shadow" />
-                  <img src="/imagens/sobre/escritorio-laprace.webp" alt="Escritório LaPrade" className="w-full h-48 object-cover rounded-lg shadow" />
+                  <img src="/imagens/sobre/staff-vail.webp" alt="Vail" width={900} height={655} loading="lazy" decoding="async" className="w-full h-48 object-cover rounded-lg shadow" />
+                  <img src="/imagens/sobre/laboratorio-laprace-chahla.webp" alt="Laboratório" width={900} height={471} loading="lazy" decoding="async" className="w-full h-48 object-cover rounded-lg shadow" />
+                  <img src="/imagens/sobre/escritorio-laprace.webp" alt="Escritório LaPrade" width={900} height={600} loading="lazy" decoding="async" className="w-full h-48 object-cover rounded-lg shadow" />
                 </div>
               </div>
 
@@ -191,8 +195,8 @@ const Sobre: React.FC = () => {
                   Em 2017, recebeu nova proposta do Flamengo, desta vez, sob coordenação do <strong>Dr. Márcio Tannure</strong>, para atuar nas categorias de base do futebol, onde trabalhou por mais uma temporada, tendo tratado de atletas que atualmente se destacam tanto no cenário nacional quanto internacional. Por questões pessoais e familiares, optou novamente por afastar-se do futebol, logo após as vitórias na <strong>Copa São Paulo de Futebol Jr.</strong> e o <strong>campeonato estadual sub-20</strong> de 2018, seus últimos títulos pelo clube.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <img src="/imagens/sobre/entrando-em-campo.webp" alt="Campo" className="w-full h-64 object-cover rounded-lg shadow" />
-                  <img src="/imagens/sobre/olimpiadas-bandeira.webp" alt="Olimpíadas" className="w-full h-64 object-cover rounded-lg shadow" />
+                  <img src="/imagens/sobre/entrando-em-campo.webp" alt="Campo" width={1124} height={1120} loading="lazy" decoding="async" className="w-full h-64 object-cover rounded-lg shadow" />
+                  <img src="/imagens/sobre/olimpiadas-bandeira.webp" alt="Olimpíadas" width={1125} height={669} loading="lazy" decoding="async" className="w-full h-64 object-cover rounded-lg shadow" />
                 </div>
               </div>
 
@@ -209,10 +213,10 @@ const Sobre: React.FC = () => {
                   Desde seu regresso dos Estados Unidos, o Dr. Serra Cruz tem sido convidado a realizar diversas palestras em congressos e sociedades, sobre os mais variados temas, sobretudo na área das lesões ligamentares e meniscais. Recentemente, foi convidado para escrever três capítulos (Lesões no surfe, Lesões no Skate e Síndrome Compartimental) no livro mais completo sobre traumatologia esportiva do Brasil: Beira do Campo – Urgências e Emergências no esporte, sob edição do <strong>Dr. Rodrigo Goes</strong>.
                 </p>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  <img src="/imagens/sobre/lancamento-livro.webp" alt="Lançamento livro" className="w-full h-48 object-cover rounded-lg shadow" />
-                  <img src="/imagens/sobre/aula-residentes-sbot.webp" alt="Aula residentes" className="w-full h-48 object-cover rounded-lg shadow" />
-                  <img src="/imagens/sobre/diretoria-sbrate-congresso.webp" alt="Congresso SBRATE" className="w-full h-48 object-cover rounded-lg shadow" />
-                  <img src="/imagens/sobre/congresso-sbrate.webp" alt="Palestrando" className="w-full h-48 object-cover rounded-lg shadow" />
+                  <img src="/imagens/sobre/lancamento-livro.webp" alt="Lançamento livro" width={150} height={150} loading="lazy" decoding="async" className="w-full h-48 object-cover rounded-lg shadow" />
+                  <img src="/imagens/sobre/aula-residentes-sbot.webp" alt="Aula residentes" width={150} height={150} loading="lazy" decoding="async" className="w-full h-48 object-cover rounded-lg shadow" />
+                  <img src="/imagens/sobre/diretoria-sbrate-congresso.webp" alt="Congresso SBRATE" width={150} height={150} loading="lazy" decoding="async" className="w-full h-48 object-cover rounded-lg shadow" />
+                  <img src="/imagens/sobre/congresso-sbrate.webp" alt="Palestrando" width={150} height={150} loading="lazy" decoding="async" className="w-full h-48 object-cover rounded-lg shadow" />
                 </div>
               </div>
 
@@ -223,10 +227,10 @@ const Sobre: React.FC = () => {
                   Após as passagens pela <strong>Universidade de Stanford (EUA)</strong>, <strong>Centre Ortopédique Santy (FRA)</strong>, <strong>Steadman-Philippon Research Institute (EUA)</strong>, entre outros, passou 10 dias em <strong>Oslo - Noruega</strong>, acompanhando os <strong>Drs. Gilbert Moatshe</strong> e <strong>Lars Engebretsen</strong> (chefe científico do Comitê Olímpico Internacional), com especial interesse no tratamento conservador de lesões do ligamento cruzado anterior e no tratamento cirúrgico de lesões multiligamentares e meniscais. Uma das metas do Dr. Serra Cruz é frequentemente visitar centros de excelência internacionais, a fim de trazer a seus pacientes no Brasil o que há de mais atualizado no mundo.
                 </p>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  <img src="/imagens/sobre/gramado-stanford.webp" alt="Stanford" className="w-full h-48 object-cover rounded-lg shadow" />
-                  <img src="/imagens/sobre/frente-santy-lyon.webp" alt="Santy Lyon" className="w-full h-48 object-cover rounded-lg shadow" />
-                  <img src="/imagens/sobre/cc-com-laprace.webp" alt="LaPrade" className="w-full h-48 object-cover rounded-lg shadow" />
-                  <img src="/imagens/sobre/noruega-olympiatoppen.webp" alt="Noruega" className="w-full h-48 object-cover rounded-lg shadow" />
+                  <img src="/imagens/sobre/gramado-stanford.webp" alt="Stanford" width={150} height={150} loading="lazy" decoding="async" className="w-full h-48 object-cover rounded-lg shadow" />
+                  <img src="/imagens/sobre/frente-santy-lyon.webp" alt="Santy Lyon" width={150} height={150} loading="lazy" decoding="async" className="w-full h-48 object-cover rounded-lg shadow" />
+                  <img src="/imagens/sobre/cc-com-laprace.webp" alt="LaPrade" width={150} height={150} loading="lazy" decoding="async" className="w-full h-48 object-cover rounded-lg shadow" />
+                  <img src="/imagens/sobre/noruega-olympiatoppen.webp" alt="Noruega" width={150} height={150} loading="lazy" decoding="async" className="w-full h-48 object-cover rounded-lg shadow" />
                 </div>
               </div>
 
@@ -237,11 +241,11 @@ const Sobre: React.FC = () => {
                   Nove anos após seu primeiro contato com este esporte, no Challenger de Campinas (2012), Dr. Raphael Serra Cruz foi convidado pelo Dr. Reinaldo Coelho para atuar no Rio Open, em 2023. Desde então, conquistou a confiança de todos, sendo novamente convidado nos anos subsequentes. Durante estes torneios, acompanhou e forneceu suporte médico a diversos atletas da elite do tênis mundial, consolidando-se como médico ATP.
                 </p>
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-                  <img src="/imagens/sobre/tenis-01.webp" alt="Tênis 1" className="w-full h-32 object-cover rounded-lg shadow" />
-                  <img src="/imagens/sobre/tenis-02.webp" alt="Tênis 2" className="w-full h-32 object-cover rounded-lg shadow" />
-                  <img src="/imagens/sobre/tenis-03.webp" alt="Tênis 3" className="w-full h-32 object-cover rounded-lg shadow" />
-                  <img src="/imagens/sobre/tenis-04.webp" alt="Tênis 4" className="w-full h-32 object-cover rounded-lg shadow" />
-                  <img src="/imagens/sobre/tenis-05.webp" alt="Tênis 5" className="w-full h-32 object-cover rounded-lg shadow" />
+                  <img src="/imagens/sobre/tenis-01.webp" alt="Tênis 1" width={150} height={150} loading="lazy" decoding="async" className="w-full h-32 object-cover rounded-lg shadow" />
+                  <img src="/imagens/sobre/tenis-02.webp" alt="Tênis 2" width={150} height={150} loading="lazy" decoding="async" className="w-full h-32 object-cover rounded-lg shadow" />
+                  <img src="/imagens/sobre/tenis-03.webp" alt="Tênis 3" width={150} height={150} loading="lazy" decoding="async" className="w-full h-32 object-cover rounded-lg shadow" />
+                  <img src="/imagens/sobre/tenis-04.webp" alt="Tênis 4" width={150} height={150} loading="lazy" decoding="async" className="w-full h-32 object-cover rounded-lg shadow" />
+                  <img src="/imagens/sobre/tenis-05.webp" alt="Tênis 5" width={150} height={150} loading="lazy" decoding="async" className="w-full h-32 object-cover rounded-lg shadow" />
                 </div>
               </div>
 
@@ -255,9 +259,9 @@ const Sobre: React.FC = () => {
                   O Dr. Raphael Serra Cruz concentra-se em entregar todo este conhecimento e experiência adquiridos em nível <i>world-class</i> a seus pacientes. Seu foco principal é garantir protocolos atualizados tanto de tratamentos conservadores quanto cirúrgicos, em linha com os maiores centros de medicina esportiva do mundo, onde tem grandes amigos.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <img src="/imagens/sobre/indaiatuba-01.webp" alt="Indaiatuba 1" className="w-full h-56 object-cover rounded-lg shadow object-top" />
-                  <img src="/imagens/sobre/indaiatuba-02.webp" alt="Indaiatuba 2" className="w-full h-56 object-cover rounded-lg shadow object-middle" />
-                  <img src="/imagens/sobre/indaiatuba-03.webp" alt="Indaiatuba 3" className="w-full h-56 object-cover rounded-lg shadow object-middle" />
+                  <img src="/imagens/sobre/indaiatuba-01.webp" alt="Indaiatuba 1" width={479} height={481} loading="lazy" decoding="async" className="w-full h-56 object-cover rounded-lg shadow object-top" />
+                  <img src="/imagens/sobre/indaiatuba-02.webp" alt="Indaiatuba 2" width={395} height={527} loading="lazy" decoding="async" className="w-full h-56 object-cover rounded-lg shadow object-middle" />
+                  <img src="/imagens/sobre/indaiatuba-03.webp" alt="Indaiatuba 3" width={362} height={483} loading="lazy" decoding="async" className="w-full h-56 object-cover rounded-lg shadow object-middle" />
                 </div>
               </div>
             </div>

@@ -3,6 +3,8 @@ export type StaticPageSeoEntry = {
   description: string;
   /** Hero / OG por página (caminho no site, ex. /imagens/...). */
   ogImagePath?: string;
+  /** Quando true, emite robots noindex,nofollow tanto em runtime como no prerender. */
+  noindex?: boolean;
 };
 
 /**

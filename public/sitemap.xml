@@ -1,143 +1,284 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.drserracruz.com.br/</loc>
+    <lastmod>2026-04-29T01:29:58.319Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.drserracruz.com.br/imagens/inicio/retrato-de-frente.webp</image:loc>
+      <image:title>Dr. Raphael Serra Cruz | Ortopedista de joelho Indaiatuba</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.drserracruz.com.br/sobre</loc>
+    <lastmod>2026-04-29T01:29:58.319Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.drserracruz.com.br/imagens/sobre/fundo-biografico-sentado.webp</image:loc>
+      <image:title>Sobre o Dr. Raphael Serra Cruz | Ortopedista em Indaiatuba</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.drserracruz.com.br/artigos</loc>
+    <lastmod>2026-04-29T01:29:58.319Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.drserracruz.com.br/imagens/inicio/mostrando-exame-na-tela.webp</image:loc>
+      <image:title>Artigos científicos | Dr. Raphael Serra Cruz</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.drserracruz.com.br/capitulos-de-livros</loc>
+    <lastmod>2026-04-29T01:29:58.319Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.drserracruz.com.br/imagens/inicio/mostrando-exame-na-tela.webp</image:loc>
+      <image:title>Capítulos de livros | Dr. Raphael Serra Cruz</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.drserracruz.com.br/palestras-e-congressos</loc>
+    <lastmod>2026-04-29T01:29:58.319Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.drserracruz.com.br/imagens/sobre/congresso-sbrate.webp</image:loc>
+      <image:title>Palestras e congressos | Dr. Raphael Serra Cruz</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.drserracruz.com.br/materiais-para-pacientes</loc>
+    <lastmod>2026-04-29T01:29:58.319Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.drserracruz.com.br/imagens/materiais-pacientes/capa-manual-fifa-11.webp</image:loc>
+      <image:title>Materiais para pacientes | Dr. Raphael Serra Cruz</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.drserracruz.com.br/premiacoes</loc>
+    <lastmod>2026-04-29T01:29:58.319Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.drserracruz.com.br/imagens/blog/premiacoes.webp</image:loc>
+      <image:title>Premiações | Dr. Raphael Serra Cruz</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.drserracruz.com.br/links</loc>
+    <lastmod>2026-04-29T01:29:58.319Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.drserracruz.com.br/imagens/inicio/retrato-de-frente.webp</image:loc>
+      <image:title>Links úteis | Dr. Raphael Serra Cruz</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.drserracruz.com.br/lesoes-ligamentares</loc>
+    <lastmod>2026-04-29T01:29:58.319Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.drserracruz.com.br/imagens/inicio/mostrando-exame-na-tela.webp</image:loc>
+      <image:title>Lesões ligamentares do joelho | Dr. Raphael Serra Cruz</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.drserracruz.com.br/meniscos</loc>
+    <lastmod>2026-04-29T01:29:58.319Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.drserracruz.com.br/imagens/inicio/examinando-paciente.webp</image:loc>
+      <image:title>Lesões de menisco | Tratamento e cirurgia | Dr. Raphael Serra Cruz</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.drserracruz.com.br/artrose</loc>
+    <lastmod>2026-04-29T01:29:58.319Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.drserracruz.com.br/imagens/inicio/examinando-paciente.webp</image:loc>
+      <image:title>Artrose do joelho | Tratamento e artroplastia | Dr. Raphael Serra Cruz</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.drserracruz.com.br/cartilagem</loc>
+    <lastmod>2026-04-29T01:29:58.319Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.drserracruz.com.br/imagens/inicio/mostrando-exame-na-tela.webp</image:loc>
+      <image:title>Lesões de cartilagem do joelho | Microfratura e transplante | Dr. Raphael Serra Cruz</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.drserracruz.com.br/trauma-do-esporte</loc>
+    <lastmod>2026-04-29T01:29:58.319Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.drserracruz.com.br/imagens/inicio/dr-raphael-serra-cruz-rio-open-tenis.webp</image:loc>
+      <image:title>Trauma esportivo no joelho | Ortopedista | Dr. Raphael Serra Cruz</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.drserracruz.com.br/condromalacia-patelar</loc>
+    <lastmod>2026-04-29T01:29:58.319Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.drserracruz.com.br/imagens/inicio/retrato-de-frente.webp</image:loc>
+      <image:title>Condromalácia patelar | Dor anterior do joelho | Dr. Raphael Serra Cruz</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.drserracruz.com.br/blog</loc>
+    <lastmod>2026-04-29T01:29:58.319Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.drserracruz.com.br/imagens/blog/telemedicina-europa-hero.webp</image:loc>
+      <image:title>Blog | Ortopedia e joelho | Dr. Raphael Serra Cruz</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.drserracruz.com.br/blog/ortopedista-brasileiro-na-europa-telemedicina</loc>
+    <lastmod>2026-03-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.drserracruz.com.br/imagens/blog/telemedicina-europa-hero.webp</image:loc>
+      <image:title>Ortopedista Brasileiro na Europa: Acesso Rápido a Especialista em Joelho via Telemedicina</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.drserracruz.com.br/blog/dr-raphael-serra-cruz-contribuicoes-e-legado</loc>
+    <lastmod>2025-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.drserracruz.com.br/imagens/blog/legado.webp</image:loc>
+      <image:title>Dr. Raphael Serra Cruz — Contribuições e Legado</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.drserracruz.com.br/blog/experiencia-no-esporte-medico-atp-rio-open-de-tenis</loc>
+    <lastmod>2025-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.drserracruz.com.br/imagens/blog/atp-rio-open.webp</image:loc>
+      <image:title>Experiência no esporte: Médico ATP Rio Open de tênis</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.drserracruz.com.br/blog/experiencia-no-esporte-clube-de-regatas-do-flamengo</loc>
+    <lastmod>2025-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.drserracruz.com.br/imagens/blog/flamengo.webp</image:loc>
+      <image:title>Experiência no Esporte: Clube de Regatas do Flamengo!</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.drserracruz.com.br/blog/premiacoes-nacionais-e-internacionais-dr-raphael-serra-cruz</loc>
+    <lastmod>2025-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.drserracruz.com.br/imagens/blog/premiacoes.webp</image:loc>
+      <image:title>Premiações Nacionais e Internacionais — Dr. Raphael Serra Cruz</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.drserracruz.com.br/blog/international-fellowship-usa-divisor-de-aguas-na-carreira-medica</loc>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.drserracruz.com.br/imagens/blog/fellowship-usa.webp</image:loc>
+      <image:title>International Fellowship (USA) — divisor de águas na carreira médica</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.drserracruz.com.br/blog/o-inicio-da-carreira-do-dr-raphael-serra-cruz</loc>
+    <lastmod>2025-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.drserracruz.com.br/imagens/blog/inicio-carreira-formacao.webp</image:loc>
+      <image:title>O início da carreira do Dr. Raphael Serra Cruz</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.drserracruz.com.br/blog/conheca-o-dr-raphael-serra-cruz-medico-ortopedista-especialista-em-joelho</loc>
+    <lastmod>2025-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.drserracruz.com.br/imagens/blog/conheca-apresentacao.webp</image:loc>
+      <image:title>Conheça o Dr. Raphael Serra Cruz — médico ortopedista, especialista em joelho</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.drserracruz.com.br/blog/dr-raphael-serra-cruz-jornada-lyonesa-cirurgia-do-joelho-sao-paulo</loc>
+    <lastmod>2025-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.drserracruz.com.br/imagens/blog/jornada-lyonesa-cartaz.webp</image:loc>
+      <image:title>Dr. Raphael Serra Cruz confirma presença na Jornada Lyonesa de Cirurgia do Joelho em São Paulo</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.drserracruz.com.br/blog/lesao-do-menisco-precisa-operar</loc>
+    <lastmod>2022-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.drserracruz.com.br/imagens/blog/lesao-menisco-hero.webp</image:loc>
+      <image:title>Lesão do menisco: precisa operar?</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.drserracruz.com.br/blog/o-que-e-lesao-de-menisco</loc>
+    <lastmod>2024-03-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.drserracruz.com.br/imagens/inicio/examinando-paciente.webp</image:loc>
+      <image:title>O que é Lesão de Menisco e como tratar?</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.drserracruz.com.br/blog/tratamentos-para-artrose-no-joelho</loc>
+    <lastmod>2024-04-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.drserracruz.com.br/imagens/inicio/mostrando-exame-na-tela.webp</image:loc>
+      <image:title>Principais Tratamentos para Artrose no Joelho</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.drserracruz.com.br/blog/quando-procurar-um-ortopedista</loc>
+    <lastmod>2024-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.drserracruz.com.br/imagens/blog/retrato-braco-cruzado.webp</image:loc>
+      <image:title>Quando procurar um Ortopedista e Traumatologista?</image:title>
+    </image:image>
   </url>
 </urlset>

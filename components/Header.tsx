@@ -11,9 +11,13 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         <div className="flex items-center">
           <Link to="/">
-            <img 
-              src="/imagens/marca/retrato-raphael-serra-cruz.webp" 
-              alt="Dr. Raphael Serra Cruz" 
+            <img
+              src="/imagens/marca/retrato-raphael-serra-cruz.webp"
+              alt="Dr. Raphael Serra Cruz"
+              width={480}
+              height={205}
+              decoding="async"
+              fetchPriority="high"
               className="h-12 md:h-16 w-auto"
             />
           </Link>

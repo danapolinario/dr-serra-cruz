@@ -24,13 +24,17 @@ const MateriaisPacientes: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="bg-white rounded-xl shadow-sm p-8 flex flex-col items-center text-center">
                 <h2 className="text-2xl font-bold text-slate-800 mb-6">Manual FIFA 11+<br/>(Português)</h2>
-                <img 
-                  src="/imagens/materiais-pacientes/capa-manual-fifa-11.webp" 
-                  alt="Manual FIFA 11+ Português" 
+                <img
+                  src="/imagens/materiais-pacientes/capa-manual-fifa-11.webp"
+                  alt="Manual FIFA 11+ Português"
+                  width={722}
+                  height={1024}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full max-w-xs h-auto object-contain mb-8 rounded shadow-sm border border-slate-100"
                 />
                 <a 
-                  href="https://www.drserracruz.com.br/wp-content/uploads/2025/08/MANUAL-FIFA-11-PORTUGUES.pdf" 
+                  href="/documentos/manual-fifa-11-portugues.pdf" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="bg-blue-700 text-white px-8 py-3 rounded-full hover:bg-blue-800 transition font-medium flex items-center gap-2"
@@ -41,13 +45,17 @@ const MateriaisPacientes: React.FC = () => {
 
               <div className="bg-white rounded-xl shadow-sm p-8 flex flex-col items-center text-center">
                 <h2 className="text-2xl font-bold text-slate-800 mb-6">Manual FIFA 11+<br/>(Inglês)</h2>
-                <img 
-                  src="/imagens/materiais-pacientes/capa-poster-fifa-11.webp" 
-                  alt="Manual FIFA 11+ Inglês" 
+                <img
+                  src="/imagens/materiais-pacientes/capa-poster-fifa-11.webp"
+                  alt="Manual FIFA 11+ Inglês"
+                  width={724}
+                  height={1024}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full max-w-xs h-auto object-contain mb-8 rounded shadow-sm border border-slate-100"
                 />
                 <a 
-                  href="https://www.drserracruz.com.br/wp-content/uploads/2025/08/POSTER-FIFA-11-INGLES.pdf" 
+                  href="/documentos/poster-fifa-11-ingles.pdf" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="bg-blue-700 text-white px-8 py-3 rounded-full hover:bg-blue-800 transition font-medium flex items-center gap-2"

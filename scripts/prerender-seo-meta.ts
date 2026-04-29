@@ -23,15 +23,39 @@ function absoluteUrl(siteUrl: string, path: string): string {
   return `${siteUrl}${p}`;
 }
 
+const OG_IMAGE_WIDTH = 1200;
+const OG_IMAGE_HEIGHT = 630;
+
+function imageMimeType(path: string): string {
+  const ext = path.split('.').pop()?.toLowerCase() ?? '';
+  switch (ext) {
+    case 'webp':
+      return 'image/webp';
+    case 'png':
+      return 'image/png';
+    case 'jpg':
+    case 'jpeg':
+      return 'image/jpeg';
+    case 'gif':
+      return 'image/gif';
+    case 'svg':
+      return 'image/svg+xml';
+    default:
+      return 'image/jpeg';
+  }
+}
+
 export type PrerenderSeoPayload = {
   title: string;
   description: string;
   canonicalUrl: string;
   ogType: 'website' | 'article';
   ogImageUrl: string;
+  ogImageType: string;
   ogImageAlt: string;
   articlePublishedTime?: string;
   articleModifiedTime?: string;
+  noindex?: boolean;
 };
 
 export function resolvePrerenderSeo(routePath: string): PrerenderSeoPayload | null {
@@ -45,6 +69,7 @@ export function resolvePrerenderSeo(routePath: string): PrerenderSeoPayload | nu
       pathname: '/',
       ogType: 'website',
       ogImagePath: s.ogImagePath ?? DEFAULT_OG_PATH,
+      noindex: s.noindex,
     });
   }
 
@@ -57,6 +82,7 @@ export function resolvePrerenderSeo(routePath: string): PrerenderSeoPayload | nu
       pathname: '/blog',
       ogType: 'website',
       ogImagePath: img.startsWith('/') ? img : `/${img}`,
+      noindex: s.noindex,
     });
   }
 
@@ -86,6 +112,7 @@ export function resolvePrerenderSeo(routePath: string): PrerenderSeoPayload | nu
     pathname: routePath,
     ogType: 'website',
     ogImagePath: s.ogImagePath ?? DEFAULT_OG_PATH,
+    noindex: s.noindex,
   });
 }
 
@@ -99,6 +126,7 @@ function buildPayload(
     ogImagePath: string;
     articlePublishedTime?: string;
     articleModifiedTime?: string;
+    noindex?: boolean;
   },
 ): PrerenderSeoPayload {
   const canonicalUrl = opts.pathname === '/' ? `${base}/` : `${base}${opts.pathname}`;
@@ -109,16 +137,21 @@ function buildPayload(
     canonicalUrl,
     ogType: opts.ogType,
     ogImageUrl: absoluteUrl(base, opts.ogImagePath),
+    ogImageType: imageMimeType(opts.ogImagePath),
     ogImageAlt: opts.title,
     articlePublishedTime: opts.articlePublishedTime,
     articleModifiedTime: opts.articleModifiedTime,
+    noindex: opts.noindex,
   };
 }
 
 function stripPreviousSeo($: CheerioAPI) {
   $('head title').remove();
   $('head meta[name="description"]').remove();
+  $('head meta[name="author"]').remove();
+  $('head meta[name="format-detection"]').remove();
   $('head link[rel="canonical"]').remove();
+  $('head link[rel="alternate"][hreflang]').remove();
   $('head meta[property^="og:"]').remove();
   $('head meta[property^="article:"]').remove();
   $('head meta[name^="twitter:"]').remove();
@@ -150,12 +183,27 @@ function appendMeta($: CheerioAPI, payload: PrerenderSeoPayload) {
   };
 
   metaTag({ name: 'description', content: payload.description });
+  metaTag({ name: 'author', content: 'Dr. Raphael Serra Cruz' });
+  metaTag({ name: 'format-detection', content: 'telephone=no' });
 
   const canonical = $('<link rel="canonical" />');
   canonical.attr('href', payload.canonicalUrl);
   chainAfter(canonical);
 
-  metaTag({ name: 'robots', content: 'index, follow' });
+  const altPtBr = $('<link rel="alternate" />');
+  altPtBr.attr('hreflang', 'pt-BR');
+  altPtBr.attr('href', payload.canonicalUrl);
+  chainAfter(altPtBr);
+
+  const altDefault = $('<link rel="alternate" />');
+  altDefault.attr('hreflang', 'x-default');
+  altDefault.attr('href', payload.canonicalUrl);
+  chainAfter(altDefault);
+
+  metaTag({
+    name: 'robots',
+    content: payload.noindex ? 'noindex, nofollow' : 'index, follow',
+  });
 
   metaTag({ property: 'og:type', content: payload.ogType });
   metaTag({ property: 'og:title', content: payload.title });
@@ -164,12 +212,17 @@ function appendMeta($: CheerioAPI, payload: PrerenderSeoPayload) {
   metaTag({ property: 'og:locale', content: 'pt_BR' });
   metaTag({ property: 'og:site_name', content: 'Dr. Raphael Serra Cruz' });
   metaTag({ property: 'og:image', content: payload.ogImageUrl });
+  metaTag({ property: 'og:image:secure_url', content: payload.ogImageUrl });
+  metaTag({ property: 'og:image:type', content: payload.ogImageType });
+  metaTag({ property: 'og:image:width', content: String(OG_IMAGE_WIDTH) });
+  metaTag({ property: 'og:image:height', content: String(OG_IMAGE_HEIGHT) });
   metaTag({ property: 'og:image:alt', content: payload.ogImageAlt });
 
   metaTag({ name: 'twitter:card', content: 'summary_large_image' });
   metaTag({ name: 'twitter:title', content: payload.title });
   metaTag({ name: 'twitter:description', content: payload.description });
   metaTag({ name: 'twitter:image', content: payload.ogImageUrl });
+  metaTag({ name: 'twitter:image:alt', content: payload.ogImageAlt });
 
   if (payload.articlePublishedTime) {
     metaTag({ property: 'article:published_time', content: payload.articlePublishedTime });

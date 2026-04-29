@@ -58,6 +58,10 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
         '@type': 'Organization',
         name: 'Dr. Raphael Serra Cruz',
         url: SITE_URL,
+        logo: {
+          '@type': 'ImageObject',
+          url: absoluteUrl('/imagens/marca/retrato-raphael-serra-cruz.webp'),
+        },
       },
       mainEntityOfPage: {
         '@type': 'WebPage',
