@@ -1,10 +1,31 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import FloatingWhatsApp from '../components/FloatingWhatsApp';
 import { SeoHead } from '../src/components/SeoHead';
+import { JsonLdScript } from '../src/components/JsonLdScript';
+import { buildMedicalConditionLd, buildMedicalProcedureLd, buildFaqPageLd } from '../src/seo/medicalSchema';
 import { STATIC_PAGE_SEO } from '../src/seo/pageSeo';
 import { WHATSAPP_AGENDAR_HREF } from '../src/config/whatsapp';
+
+const meniscusFaqItems = [
+  {
+    question: 'O que são os meniscos?',
+    answer:
+      'São estruturas de fibrocartilagem entre fêmur e tíbia que distribuem carga, estabilizam e lubrificam mecanicamente o joelho.',
+  },
+  {
+    question: 'Quando é indicada a sutura meniscal?',
+    answer:
+      'Em lesões com bom perfil de cicatrização (zona vascular periférica) e pacientes ativos, prioriza-se preservar o menisco sempre que possível.',
+  },
+  {
+    question: 'Como é a recuperação após meniscectomia ou sutura?',
+    answer:
+      'Na meniscectomia parcial costuma ser mais rápida; na sutura há proteção com muletas e brace por várias semanas antes da progressão de carga guiada pela equipe.',
+  },
+];
 
 const Meniscos: React.FC = () => {
   const [activeTab, setActiveTab] = useState<number | null>(1);
@@ -17,6 +38,37 @@ const Meniscos: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <SeoHead title={seo.title} description={seo.description} path="/meniscos" ogImagePath={seo.ogImagePath} />
+      <JsonLdScript
+        id="ld-condition-meniscos"
+        data={buildMedicalConditionLd({
+          name: 'Lesão meniscal',
+          alternateName: 'Rotura de menisco',
+          description:
+            'Lesões dos meniscos medial ou lateral do joelho — trauma ou degeneração — com dor, derrame e sensação de travamento.',
+          signOrSymptom: ['Dor na linha articular', 'Derrame articular', 'Travamento', 'Estalo'],
+          possibleTreatment: ['Tratamento conservador', 'Meniscectomia parcial', 'Sutura meniscal'],
+          urlPath: '/meniscos',
+        })}
+      />
+      <JsonLdScript
+        id="ld-proc-meniscectomia"
+        data={buildMedicalProcedureLd({
+          name: 'Meniscectomia parcial artroscópica',
+          bodyLocation: 'Joelho',
+          procedureType: 'Artroscopia',
+          urlPath: '/meniscos',
+        })}
+      />
+      <JsonLdScript
+        id="ld-proc-sutura-meniscal"
+        data={buildMedicalProcedureLd({
+          name: 'Sutura meniscal',
+          bodyLocation: 'Joelho',
+          procedureType: 'Artroscopia',
+          urlPath: '/meniscos',
+        })}
+      />
+      <JsonLdScript id="ld-faq-meniscos" data={buildFaqPageLd(meniscusFaqItems)} />
       <Header />
       <main className="pt-20 flex-grow bg-slate-50">
         <section 
@@ -193,6 +245,21 @@ const Meniscos: React.FC = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="py-10 bg-slate-100 border-y border-slate-200">
+          <div className="container mx-auto px-4 max-w-5xl text-center text-slate-700">
+            <p className="text-base leading-relaxed">
+              No blog:{' '}
+              <Link to="/blog/o-que-e-lesao-de-menisco" className="text-blue-700 font-semibold hover:underline">
+                O que é lesão de menisco
+              </Link>
+              {' · '}
+              <Link to="/blog/lesao-do-menisco-precisa-operar" className="text-blue-700 font-semibold hover:underline">
+                Lesão do menisco: precisa operar?
+              </Link>
+            </p>
           </div>
         </section>
 

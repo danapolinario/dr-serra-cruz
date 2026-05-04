@@ -1,16 +1,57 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import FloatingWhatsApp from '../components/FloatingWhatsApp';
 import { SeoHead } from '../src/components/SeoHead';
+import { JsonLdScript } from '../src/components/JsonLdScript';
+import { buildServiceLd, buildMedicalProcedureLd, buildFaqPageLd } from '../src/seo/medicalSchema';
 import { STATIC_PAGE_SEO } from '../src/seo/pageSeo';
 import { WHATSAPP_AGENDAR_HREF } from '../src/config/whatsapp';
+
+const traumaFaqItems = [
+  {
+    question: 'Quando avaliar um trauma esportivo no joelho?',
+    answer:
+      'Após entorse com edema importante, incapacidade de apoiar o pé bloqueio ou dor intensa, deve-se buscar avaliação ortopédica precoce.',
+  },
+  {
+    question: 'Imagem sempre é necessária?',
+    answer:
+      'Depende da história clínica e do exame físico; o especialista define se RM, radiografia ou ultrassom são adequados ao caso.',
+  },
+  {
+    question: 'Como é o retorno ao esporte?',
+    answer:
+      'Baseado em critérios funcionais — força simétrica, amplitude completa e ausência de dor nos gestos específicos da modalidade.',
+  },
+];
 
 const TraumaDoEsporte: React.FC = () => {
   const seo = STATIC_PAGE_SEO['/trauma-do-esporte'];
   return (
     <div className="flex flex-col min-h-screen">
       <SeoHead title={seo.title} description={seo.description} path="/trauma-do-esporte" ogImagePath={seo.ogImagePath} />
+      <JsonLdScript
+        id="ld-service-trauma-esporte"
+        data={buildServiceLd({
+          name: 'Avaliação de trauma esportivo do joelho',
+          description:
+            'Diagnóstico e tratamento de lesões ligamentares, meniscais e cartilagíneas em atletas amadores e profissionais.',
+          urlPath: '/trauma-do-esporte',
+          serviceType: 'Ortopedia esportiva',
+        })}
+      />
+      <JsonLdScript
+        id="ld-proc-artroscopia-trauma"
+        data={buildMedicalProcedureLd({
+          name: 'Artroscopia do joelho',
+          bodyLocation: 'Joelho',
+          procedureType: 'Cirurgia minimamente invasiva',
+          urlPath: '/trauma-do-esporte',
+        })}
+      />
+      <JsonLdScript id="ld-faq-trauma" data={buildFaqPageLd(traumaFaqItems)} />
       <Header />
       <main className="pt-20 flex-grow bg-slate-50">
         <section
@@ -205,6 +246,25 @@ const TraumaDoEsporte: React.FC = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="py-10 bg-slate-100 border-y border-slate-200">
+          <div className="container mx-auto px-4 max-w-5xl text-center text-slate-700">
+            <p className="text-base leading-relaxed">
+              Leia mais:{' '}
+              <Link to="/blog/experiencia-no-esporte-medico-atp-rio-open-de-tenis" className="text-blue-700 font-semibold hover:underline">
+                Rio Open / ATP
+              </Link>
+              {' · '}
+              <Link to="/blog/experiencia-no-esporte-clube-de-regatas-do-flamengo" className="text-blue-700 font-semibold hover:underline">
+                Experiência no Flamengo
+              </Link>
+              {' · '}
+              <Link to="/lesoes-ligamentares" className="text-blue-700 font-semibold hover:underline">
+                Lesões ligamentares
+              </Link>
+            </p>
           </div>
         </section>
 

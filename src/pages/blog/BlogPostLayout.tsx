@@ -38,6 +38,17 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
   const publishedIso = meta?.datePublishedIso
     ? `${meta.datePublishedIso}T12:00:00-03:00`
     : undefined;
+  const reviewedIso = meta?.dateReviewedIso
+    ? `${meta.dateReviewedIso}T12:00:00-03:00`
+    : undefined;
+  const modifiedIso = reviewedIso ?? publishedIso;
+  const reviewedDisplay = meta?.dateReviewedIso
+    ? new Date(`${meta.dateReviewedIso}T12:00:00-03:00`).toLocaleDateString('pt-BR', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+      })
+    : null;
   const heroPath = meta?.image ?? heroImage;
 
   const articleLd = useMemo(
@@ -47,7 +58,21 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
       headline: title,
       description,
       datePublished: publishedIso,
-      dateModified: publishedIso,
+      dateModified: modifiedIso,
+      ...(reviewedIso
+        ? {
+            lastReviewed: reviewedIso,
+            reviewedBy: {
+              '@type': 'Person',
+              name: 'Dr. Raphael Serra Cruz',
+              jobTitle: 'Ortopedista',
+              url: SITE_URL,
+            },
+          }
+        : {}),
+      ...(meta?.schemaAbout
+        ? { about: { '@type': 'MedicalCondition', name: meta.schemaAbout } }
+        : {}),
       image: absoluteUrl(heroPath),
       author: {
         '@type': 'Person',
@@ -68,7 +93,7 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
         '@id': `${SITE_URL}${path}`,
       },
     }),
-    [title, description, publishedIso, heroPath, path],
+    [title, description, publishedIso, modifiedIso, reviewedIso, heroPath, path, meta?.schemaAbout],
   );
 
   const breadcrumbLd = useMemo(
@@ -98,7 +123,7 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
         ogType="article"
         ogImagePath={heroPath}
         articlePublishedTime={publishedIso}
-        articleModifiedTime={publishedIso}
+        articleModifiedTime={modifiedIso}
       />
       <JsonLdScript id={`ld-article-${postId}`} data={articleLd} />
       <JsonLdScript id={`ld-breadcrumb-${postId}`} data={breadcrumbLd} />
@@ -109,11 +134,19 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
             <header className="mb-12 text-center">
               <span className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-4 block">{category}</span>
               <h1 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">{title}</h1>
-              <div className="flex items-center justify-center gap-4 text-slate-500 text-sm">
+              <div className="flex flex-col items-center justify-center gap-2 text-slate-500 text-sm sm:flex-row sm:gap-4">
                 <span>Por Dr. Raphael Serra Cruz</span>
-                <span>•</span>
+                <span className="hidden sm:inline">•</span>
                 <span>{date}</span>
               </div>
+              {reviewedDisplay ? (
+                <p className="mt-4 text-sm text-slate-500 max-w-2xl mx-auto leading-relaxed">
+                  Revisado em{' '}
+                  <time dateTime={meta?.dateReviewedIso}>{reviewedDisplay}</time>
+                  {' por Dr. Raphael Serra Cruz'}
+                  {meta?.reviewerCredentials ? ` · ${meta.reviewerCredentials}` : ''}.
+                </p>
+              ) : null}
             </header>
 
             <img

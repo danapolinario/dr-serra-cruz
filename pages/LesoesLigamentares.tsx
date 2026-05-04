@@ -1,10 +1,31 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import FloatingWhatsApp from '../components/FloatingWhatsApp';
 import { SeoHead } from '../src/components/SeoHead';
+import { JsonLdScript } from '../src/components/JsonLdScript';
+import { buildMedicalConditionLd, buildMedicalProcedureLd, buildFaqPageLd } from '../src/seo/medicalSchema';
 import { STATIC_PAGE_SEO } from '../src/seo/pageSeo';
 import { WHATSAPP_AGENDAR_HREF } from '../src/config/whatsapp';
+
+const ligamentosFaqItems = [
+  {
+    question: 'Quais são os principais ligamentos do joelho?',
+    answer:
+      'Os mais frequentemente lesionados em esporte são o ligamento cruzado anterior (LCA), ligamento cruzado posterior (LCP), ligamentos colaterais e as estruturas do canto póstero-lateral.',
+  },
+  {
+    question: 'Quando a reconstrução do LCA é indicada?',
+    answer:
+      'Em pacientes com instabilidade funcional relevante e expectativa de retorno a pivotagem ou esportes de alta demanda, após avaliação individualizada.',
+  },
+  {
+    question: 'Quanto tempo leva o retorno ao futebol após LCA?',
+    answer:
+      'Os critérios são funcionais; muitos protocolos orientam pelo menos nove meses antes de esportes de alto risco, conforme evolução da reabilitação.',
+  },
+];
 
 const LesoesLigamentares: React.FC = () => {
   const [activeTab, setActiveTab] = useState<number | null>(1);
@@ -17,6 +38,37 @@ const LesoesLigamentares: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <SeoHead title={seo.title} description={seo.description} path="/lesoes-ligamentares" ogImagePath={seo.ogImagePath} />
+      <JsonLdScript
+        id="ld-condition-lca"
+        data={buildMedicalConditionLd({
+          name: 'Lesão do ligamento cruzado anterior',
+          alternateName: 'Ruptura de LCA',
+          description:
+            'Instabilidade traumática frequente em esportes com mudanças de direção; pode associar-se a lesões meniscais e multiligamentares.',
+          signOrSymptom: ['Edema agudo', 'Dor', 'Sensação de falha ("estalo")', 'Instabilidade em pivotagem'],
+          possibleTreatment: ['Reabilitação dirigida', 'Reconstrução do LCA', 'Manejo de lesões associadas'],
+          urlPath: '/lesoes-ligamentares',
+        })}
+      />
+      <JsonLdScript
+        id="ld-proc-lca"
+        data={buildMedicalProcedureLd({
+          name: 'Reconstrução do LCA',
+          bodyLocation: 'Joelho',
+          procedureType: 'Cirurgia artroscópica',
+          urlPath: '/lesoes-ligamentares',
+        })}
+      />
+      <JsonLdScript
+        id="ld-proc-multiligamentar"
+        data={buildMedicalProcedureLd({
+          name: 'Reconstrução multiligamentar do joelho',
+          bodyLocation: 'Joelho',
+          procedureType: 'Cirurgia complexa',
+          urlPath: '/lesoes-ligamentares',
+        })}
+      />
+      <JsonLdScript id="ld-faq-ligamentos" data={buildFaqPageLd(ligamentosFaqItems)} />
       <Header />
       <main className="pt-20 flex-grow bg-slate-50">
         <section 
@@ -391,6 +443,21 @@ const LesoesLigamentares: React.FC = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="py-10 bg-slate-100 border-y border-slate-200">
+          <div className="container mx-auto px-4 max-w-5xl text-center text-slate-700">
+            <p className="text-base leading-relaxed">
+              No blog:{' '}
+              <Link to="/blog/quando-procurar-um-ortopedista" className="text-blue-700 font-semibold hover:underline">
+                Quando procurar um ortopedista
+              </Link>
+              {' · '}
+              <Link to="/blog/experiencia-no-esporte-medico-atp-rio-open-de-tenis" className="text-blue-700 font-semibold hover:underline">
+                Experiência no esporte e medicina do tênis
+              </Link>
+            </p>
           </div>
         </section>
 

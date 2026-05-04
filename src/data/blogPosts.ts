@@ -6,6 +6,11 @@ export interface BlogPostMeta {
   date: string;
   /** ISO 8601 (data publicada) para JSON-LD e metadados */
   datePublishedIso: string;
+  /** Revisão médica (ISO) para E-E-A-T / schema.org */
+  dateReviewedIso?: string;
+  reviewerCredentials?: string;
+  /** Tema principal para schema.org `about` (MedicalCondition) */
+  schemaAbout?: string;
 }
 
 /** Ordenado do mais recente ao mais antigo para o índice do blog */
@@ -15,10 +20,11 @@ export const blogPosts: BlogPostMeta[] = [
     title: 'Ortopedista Brasileiro na Europa: Acesso Rápido a Especialista em Joelho via Telemedicina',
     excerpt:
       'Morar na Europa e precisar de um ortopedista para o joelho pode ser burocrático. Saiba como a telemedicina com especialista brasileiro agiliza diagnóstico e encaminhamento.',
-    image:
-      '/imagens/blog/telemedicina-europa-hero.webp',
+    image: '/imagens/blog/telemedicina-europa-hero.webp',
     date: '15 de Março de 2026',
     datePublishedIso: '2026-03-15',
+    dateReviewedIso: '2026-05-04',
+    reviewerCredentials: 'CRM-SP 239793 · RQE ortopedia 107916',
   },
   {
     id: 'dr-raphael-serra-cruz-contribuicoes-e-legado',
@@ -28,6 +34,8 @@ export const blogPosts: BlogPostMeta[] = [
     image: '/imagens/blog/legado.webp',
     date: '17 de Setembro de 2025',
     datePublishedIso: '2025-09-17',
+    dateReviewedIso: '2026-05-04',
+    reviewerCredentials: 'CRM-SP 239793 · RQE ortopedia 107916',
   },
   {
     id: 'experiencia-no-esporte-medico-atp-rio-open-de-tenis',
@@ -37,6 +45,8 @@ export const blogPosts: BlogPostMeta[] = [
     image: '/imagens/blog/atp-rio-open.webp',
     date: '8 de Setembro de 2025',
     datePublishedIso: '2025-09-08',
+    dateReviewedIso: '2026-05-04',
+    reviewerCredentials: 'CRM-SP 239793 · RQE ortopedia 107916',
   },
   {
     id: 'experiencia-no-esporte-clube-de-regatas-do-flamengo',
@@ -46,6 +56,8 @@ export const blogPosts: BlogPostMeta[] = [
     image: '/imagens/blog/flamengo.webp',
     date: '25 de Agosto de 2025',
     datePublishedIso: '2025-08-25',
+    dateReviewedIso: '2026-05-04',
+    reviewerCredentials: 'CRM-SP 239793 · RQE ortopedia 107916',
   },
   {
     id: 'premiacoes-nacionais-e-internacionais-dr-raphael-serra-cruz',
@@ -55,6 +67,8 @@ export const blogPosts: BlogPostMeta[] = [
     image: '/imagens/blog/premiacoes.webp',
     date: '21 de Agosto de 2025',
     datePublishedIso: '2025-08-21',
+    dateReviewedIso: '2026-05-04',
+    reviewerCredentials: 'CRM-SP 239793 · RQE ortopedia 107916',
   },
   {
     id: 'international-fellowship-usa-divisor-de-aguas-na-carreira-medica',
@@ -64,6 +78,8 @@ export const blogPosts: BlogPostMeta[] = [
     image: '/imagens/blog/fellowship-usa.webp',
     date: '17 de Agosto de 2025',
     datePublishedIso: '2025-08-17',
+    dateReviewedIso: '2026-05-04',
+    reviewerCredentials: 'CRM-SP 239793 · RQE ortopedia 107916',
   },
   {
     id: 'o-inicio-da-carreira-do-dr-raphael-serra-cruz',
@@ -73,6 +89,8 @@ export const blogPosts: BlogPostMeta[] = [
     image: '/imagens/blog/inicio-carreira-formacao.webp',
     date: '6 de Agosto de 2025',
     datePublishedIso: '2025-08-06',
+    dateReviewedIso: '2026-05-04',
+    reviewerCredentials: 'CRM-SP 239793 · RQE ortopedia 107916',
   },
   {
     id: 'conheca-o-dr-raphael-serra-cruz-medico-ortopedista-especialista-em-joelho',
@@ -82,6 +100,8 @@ export const blogPosts: BlogPostMeta[] = [
     image: '/imagens/blog/conheca-apresentacao.webp',
     date: '4 de Agosto de 2025',
     datePublishedIso: '2025-08-04',
+    dateReviewedIso: '2026-05-04',
+    reviewerCredentials: 'CRM-SP 239793 · RQE ortopedia 107916',
   },
   {
     id: 'dr-raphael-serra-cruz-jornada-lyonesa-cirurgia-do-joelho-sao-paulo',
@@ -92,6 +112,9 @@ export const blogPosts: BlogPostMeta[] = [
     image: '/imagens/blog/jornada-lyonesa-cartaz.webp',
     date: '28 de Julho de 2025',
     datePublishedIso: '2025-07-28',
+    dateReviewedIso: '2026-05-04',
+    reviewerCredentials: 'CRM-SP 239793 · RQE ortopedia 107916',
+    schemaAbout: 'Lesão meniscal',
   },
   {
     id: 'lesao-do-menisco-precisa-operar',
@@ -101,16 +124,21 @@ export const blogPosts: BlogPostMeta[] = [
     image: '/imagens/blog/lesao-menisco-hero.webp',
     date: '1 de Junho de 2022',
     datePublishedIso: '2022-06-01',
+    dateReviewedIso: '2026-05-04',
+    reviewerCredentials: 'CRM-SP 239793 · RQE ortopedia 107916',
+    schemaAbout: 'Lesão meniscal',
   },
   {
     id: 'o-que-e-lesao-de-menisco',
     title: 'O que é Lesão de Menisco e como tratar?',
     excerpt:
       'Entenda os sintomas, causas e as opções de tratamento para as lesões no menisco com o Dr. Raphael Serra Cruz, ortopedista especialista em joelho em Indaiatuba.',
-    image:
-      '/imagens/inicio/examinando-paciente.webp',
+    image: '/imagens/inicio/examinando-paciente.webp',
     date: '15 de Março de 2024',
     datePublishedIso: '2024-03-15',
+    dateReviewedIso: '2026-05-04',
+    reviewerCredentials: 'CRM-SP 239793 · RQE ortopedia 107916',
+    schemaAbout: 'Lesão meniscal',
   },
   {
     id: 'tratamentos-para-artrose-no-joelho',
@@ -120,15 +148,20 @@ export const blogPosts: BlogPostMeta[] = [
     image: '/imagens/inicio/mostrando-exame-na-tela.webp',
     date: '2 de Abril de 2024',
     datePublishedIso: '2024-04-02',
+    dateReviewedIso: '2026-05-04',
+    reviewerCredentials: 'CRM-SP 239793 · RQE ortopedia 107916',
+    schemaAbout: 'Osteoartrite do joelho',
   },
   {
     id: 'quando-procurar-um-ortopedista',
     title: 'Quando procurar um Ortopedista e Traumatologista?',
     excerpt:
       'Saiba identificar os sinais de alerta que indicam a necessidade de agendar uma consulta com um especialista em ortopedia e traumatologia.',
-    image:
-      '/imagens/blog/retrato-braco-cruzado.webp',
+    image: '/imagens/blog/retrato-braco-cruzado.webp',
     date: '20 de Abril de 2024',
     datePublishedIso: '2024-04-20',
+    dateReviewedIso: '2026-05-04',
+    reviewerCredentials: 'CRM-SP 239793 · RQE ortopedia 107916',
+    schemaAbout: 'Dor musculoesquelética',
   },
 ];

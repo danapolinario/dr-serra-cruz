@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import BlogPostLayout from './BlogPostLayout';
 
 const TratamentosParaArtroseNoJoelho: React.FC = () => (
@@ -14,6 +15,13 @@ const TratamentosParaArtroseNoJoelho: React.FC = () => (
       A artrose no joelho, também conhecida como osteoartrite, é uma condição degenerativa que afeta a cartilagem da articulação. Como <strong>Especialista em joelho</strong> atuando em <strong>Indaiatuba</strong>, o <strong>Dr. Raphael Serra Cruz</strong> destaca que, embora não tenha cura, existem diversos tratamentos que podem aliviar a dor e melhorar a qualidade de vida do paciente.
     </p>
 
+    <p className="mb-8 text-slate-700">
+      Para uma visão estruturada por estádio e opções cirúrgicas, consulte também a página{' '}
+      <Link to="/artrose" className="text-blue-700 font-semibold hover:underline">
+        Artrose do joelho — tratamento e cirurgia
+      </Link>
+      .
+    </p>
     <h2 className="text-2xl font-bold text-slate-800 mt-10 mb-4">O que é a Artrose no Joelho?</h2>
     <p className="mb-6">
       A artrose ocorre quando a cartilagem que reveste as extremidades dos ossos na articulação do joelho se desgasta gradualmente. Isso pode causar dor, inchaço, rigidez e dificuldade de movimentação. Fatores como idade, genética, obesidade e lesões prévias (como lesões de menisco ou ligamentos) aumentam o risco de desenvolver a doença.

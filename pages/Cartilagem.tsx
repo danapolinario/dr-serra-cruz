@@ -1,16 +1,68 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import FloatingWhatsApp from '../components/FloatingWhatsApp';
 import { SeoHead } from '../src/components/SeoHead';
+import { JsonLdScript } from '../src/components/JsonLdScript';
+import { buildMedicalConditionLd, buildMedicalProcedureLd, buildFaqPageLd } from '../src/seo/medicalSchema';
 import { STATIC_PAGE_SEO } from '../src/seo/pageSeo';
 import { WHATSAPP_AGENDAR_HREF } from '../src/config/whatsapp';
+
+const cartilagemFaqItems = [
+  {
+    question: 'O que são lesões condrais ou de cartilagem?',
+    answer:
+      'São falhas na superfície da cartilagem do joelho que causam dor, atrito e eventualmente degeneração — frequentemente tratadas com estratégias restaurativas ou de transição.',
+  },
+  {
+    question: 'O que é microfratura?',
+    answer:
+      'Procedimento artroscópico que estimula reparação fibrocartilaginosa em defeitos focais de cartilagem, dentro de critérios de tamanho e localização.',
+  },
+  {
+    question: 'Quando considerar transplante osteocondral?',
+    answer:
+      'Em defeitos maiores ou falha de outras técnicas, mediante avaliação com especialista em preservação cartilagínea.',
+  },
+];
 
 const Cartilagem: React.FC = () => {
   const seo = STATIC_PAGE_SEO['/cartilagem'];
   return (
     <div className="flex flex-col min-h-screen">
       <SeoHead title={seo.title} description={seo.description} path="/cartilagem" ogImagePath={seo.ogImagePath} />
+      <JsonLdScript
+        id="ld-condition-cartilagem"
+        data={buildMedicalConditionLd({
+          name: 'Lesão condral do joelho',
+          alternateName: 'Defeito de cartilagem articular',
+          description:
+            'Perda focal ou difusa da cartilagem do joelho com dor mecânica e impacto funcional — tratamentos conservadores ou cirúrgicos restaurativos.',
+          signOrSymptom: ['Dor à carga', 'Inchaço intermitente', 'Sensação de atrito'],
+          possibleTreatment: ['Reabilitação', 'Microfratura', 'Transplante osteocondral', 'Matrizes de colágeno/hidrogel'],
+          urlPath: '/cartilagem',
+        })}
+      />
+      <JsonLdScript
+        id="ld-proc-microfratura"
+        data={buildMedicalProcedureLd({
+          name: 'Microfratura da cartilagem do joelho',
+          bodyLocation: 'Joelho',
+          procedureType: 'Artroscopia',
+          urlPath: '/cartilagem',
+        })}
+      />
+      <JsonLdScript
+        id="ld-proc-oats"
+        data={buildMedicalProcedureLd({
+          name: 'Transplante osteocondral autólogo (OATS)',
+          bodyLocation: 'Joelho',
+          procedureType: 'Cirurgia restaurativa',
+          urlPath: '/cartilagem',
+        })}
+      />
+      <JsonLdScript id="ld-faq-cartilagem" data={buildFaqPageLd(cartilagemFaqItems)} />
       <Header />
       <main className="pt-20 flex-grow bg-slate-50">
         <section
@@ -124,6 +176,21 @@ const Cartilagem: React.FC = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="py-10 bg-slate-100 border-y border-slate-200">
+          <div className="container mx-auto px-4 max-w-5xl text-center text-slate-700">
+            <p className="text-base leading-relaxed">
+              Contexto relacionado:{' '}
+              <Link to="/blog/tratamentos-para-artrose-no-joelho" className="text-blue-700 font-semibold hover:underline">
+                Tratamentos para artrose no joelho
+              </Link>
+              {' · '}
+              <Link to="/meniscos" className="text-blue-700 font-semibold hover:underline">
+                Lesões de menisco
+              </Link>
+            </p>
           </div>
         </section>
 

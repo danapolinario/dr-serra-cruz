@@ -1,16 +1,68 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import FloatingWhatsApp from '../components/FloatingWhatsApp';
 import { SeoHead } from '../src/components/SeoHead';
+import { JsonLdScript } from '../src/components/JsonLdScript';
+import { buildMedicalConditionLd, buildMedicalProcedureLd, buildFaqPageLd } from '../src/seo/medicalSchema';
 import { STATIC_PAGE_SEO } from '../src/seo/pageSeo';
 import { WHATSAPP_AGENDAR_HREF } from '../src/config/whatsapp';
+
+const artroseFaqItems = [
+  {
+    question: 'O que é osteoartrite do joelho?',
+    answer:
+      'É o desgaste progressivo da cartilagem articular com dor, rigidez e, em fases avançadas, deformidade ou limitação importante dos movimentos.',
+  },
+  {
+    question: 'Quais são opções antes da cirurgia?',
+    answer:
+      'Educação, exercícios, perda de peso quando indicada, infiltrações e medicações sob orientação médica compõem o arsenal conservador.',
+  },
+  {
+    question: 'Quando considerar prótese ou artroplastia parcial?',
+    answer:
+      'Quando a dor e a limitação funcionais impactam a qualidade de vida apesar do tratamento conservador, e os compartimentos acometidos são compatíveis com a técnica.',
+  },
+];
 
 const Artrose: React.FC = () => {
   const seo = STATIC_PAGE_SEO['/artrose'];
   return (
     <div className="flex flex-col min-h-screen">
       <SeoHead title={seo.title} description={seo.description} path="/artrose" ogImagePath={seo.ogImagePath} />
+      <JsonLdScript
+        id="ld-condition-artrose"
+        data={buildMedicalConditionLd({
+          name: 'Osteoartrite do joelho',
+          alternateName: 'Artrose do joelho',
+          description:
+            'Degeneração da cartilagem do joelho com dor, rigidez e perda progressiva de função — tratamentos conservadores e cirúrgicos conforme o estádio.',
+          signOrSymptom: ['Dor mecânica', 'Rigidez matinal', 'Inchaço', 'Perda de amplitude'],
+          possibleTreatment: ['Exercícios e educação', 'Infiltrações', 'Artroplastia parcial ou total'],
+          urlPath: '/artrose',
+        })}
+      />
+      <JsonLdScript
+        id="ld-proc-viscosuplementacao"
+        data={buildMedicalProcedureLd({
+          name: 'Viscossuplementação do joelho',
+          bodyLocation: 'Joelho',
+          procedureType: 'Infiltração intra-articular',
+          urlPath: '/artrose',
+        })}
+      />
+      <JsonLdScript
+        id="ld-proc-artroplastia"
+        data={buildMedicalProcedureLd({
+          name: 'Artroplastia do joelho',
+          bodyLocation: 'Joelho',
+          procedureType: 'Cirurgia reconstrutiva',
+          urlPath: '/artrose',
+        })}
+      />
+      <JsonLdScript id="ld-faq-artrose" data={buildFaqPageLd(artroseFaqItems)} />
       <Header />
       <main className="pt-20 flex-grow bg-slate-50">
         <section
@@ -134,6 +186,21 @@ const Artrose: React.FC = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="py-10 bg-slate-100 border-y border-slate-200">
+          <div className="container mx-auto px-4 max-w-5xl text-center text-slate-700">
+            <p className="text-base leading-relaxed">
+              Leia também:{' '}
+              <Link to="/blog/tratamentos-para-artrose-no-joelho" className="text-blue-700 font-semibold hover:underline">
+                Principais tratamentos para artrose no joelho
+              </Link>
+              {' · '}
+              <Link to="/blog/quando-procurar-um-ortopedista" className="text-blue-700 font-semibold hover:underline">
+                Quando procurar um ortopedista
+              </Link>
+            </p>
           </div>
         </section>
 

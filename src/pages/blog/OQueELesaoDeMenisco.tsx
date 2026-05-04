@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import BlogPostLayout from './BlogPostLayout';
 
 const OQueELesaoDeMenisco: React.FC = () => (
@@ -14,6 +15,13 @@ const OQueELesaoDeMenisco: React.FC = () => (
       Como <strong>Ortopedista</strong> e <strong>Especialista em joelho</strong> em <strong>Indaiatuba</strong>, recebo frequentemente pacientes com queixas de dor no joelho. Uma das causas mais comuns é a lesão de menisco. Mas o que exatamente é isso e como podemos tratar?
     </p>
 
+    <p className="mb-6 text-slate-700">
+      Para anatomia detalhada, tratamentos e recuperação em formato de página clínica, veja também{' '}
+      <Link to="/meniscos" className="text-blue-700 font-semibold hover:underline">
+        Lesões de menisco — página dedicada
+      </Link>
+      .
+    </p>
     <h2 className="text-2xl font-bold text-slate-800 mt-10 mb-4">O que são os Meniscos?</h2>
     <p className="mb-6">
       Os meniscos são estruturas de fibrocartilagem em formato de "C" localizadas dentro da articulação do joelho, entre o fêmur e a tíbia. Cada joelho possui dois meniscos: o medial (na parte interna) e o lateral (na parte externa). Eles funcionam como amortecedores, distribuindo o peso e estabilizando a articulação.

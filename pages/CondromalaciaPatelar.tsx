@@ -1,16 +1,59 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import FloatingWhatsApp from '../components/FloatingWhatsApp';
 import { SeoHead } from '../src/components/SeoHead';
+import { JsonLdScript } from '../src/components/JsonLdScript';
+import { buildMedicalConditionLd, buildMedicalProcedureLd, buildFaqPageLd } from '../src/seo/medicalSchema';
 import { STATIC_PAGE_SEO } from '../src/seo/pageSeo';
 import { WHATSAPP_AGENDAR_HREF } from '../src/config/whatsapp';
+
+const condromalaciaFaqItems = [
+  {
+    question: 'O que é condromalácia patelar?',
+    answer:
+      'Alteração da cartilagem da superfície patelar ou do sulco femoral associada a dor anterior do joelho e sobrecarga femoropatelar.',
+  },
+  {
+    question: 'Tratamento conservador funciona?',
+    answer:
+      'Na maioria dos casos sim — educação, controle de carga, correção biomecânica e fisioterapia são pilares antes de opções cirúrgicas.',
+  },
+  {
+    question: 'Quando a cirurgia é discutida?',
+    answer:
+      'Em casos selecionados com lesão condral irreversível ou instabilidade patelar refratárias, sempre com planejamento individualizado.',
+  },
+];
 
 const CondromalaciaPatelar: React.FC = () => {
   const seo = STATIC_PAGE_SEO['/condromalacia-patelar'];
   return (
     <div className="flex flex-col min-h-screen">
       <SeoHead title={seo.title} description={seo.description} path="/condromalacia-patelar" ogImagePath={seo.ogImagePath} />
+      <JsonLdScript
+        id="ld-condition-condromalacia"
+        data={buildMedicalConditionLd({
+          name: 'Condromalácia patelar',
+          alternateName: 'Dor femoropatelar',
+          description:
+            'Síndrome de dor anterior do joelho relacionada à sobrecarga da articulação patelofemoral e alterações na cartilagem patelar.',
+          signOrSymptom: ['Dor anterior ao subir escadas', 'Dor prolongada sentado', 'Sensação de instabilidade patelar'],
+          possibleTreatment: ['Fisioterapia e exercícios', 'Ajuste biomecânico', 'Viscossuplementação selecionada', 'Cirurgia em casos refratários'],
+          urlPath: '/condromalacia-patelar',
+        })}
+      />
+      <JsonLdScript
+        id="ld-proc-realignamento"
+        data={buildMedicalProcedureLd({
+          name: 'Tratamento cirúrgico da instabilidade patelar',
+          bodyLocation: 'Joelho',
+          procedureType: 'Cirurgia de realinhamento',
+          urlPath: '/condromalacia-patelar',
+        })}
+      />
+      <JsonLdScript id="ld-faq-condromalacia" data={buildFaqPageLd(condromalaciaFaqItems)} />
       <Header />
       <main className="pt-20 flex-grow bg-slate-50">
         <section
@@ -104,6 +147,22 @@ const CondromalaciaPatelar: React.FC = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="py-10 bg-slate-100 border-y border-slate-200">
+          <div className="container mx-auto px-4 max-w-5xl text-center text-slate-700">
+            <p className="text-base leading-relaxed">
+              Veja também{' '}
+              <Link to="/blog/quando-procurar-um-ortopedista" className="text-blue-700 font-semibold hover:underline">
+                quando procurar um ortopedista
+              </Link>
+              {' e a página '}
+              <Link to="/cartilagem" className="text-blue-700 font-semibold hover:underline">
+                lesões de cartilagem
+              </Link>
+              .
+            </p>
           </div>
         </section>
 

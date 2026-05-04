@@ -37,3 +37,17 @@ export function getAllPrerenderPaths(root) {
   const blog = extractBlogIdsFromRepo(root).map((id) => `/blog/${id}`);
   return [...STATIC_PATHS, ...blog];
 }
+
+/**
+ * Rewrites Vercel: cada rota válida → `{path}/index.html` (HTML pré-renderizado em dist).
+ * A raiz `/` não precisa — serve `dist/index.html`.
+ */
+export function getRouteRewrites(root) {
+  const paths = getAllPrerenderPaths(root);
+  return paths
+    .filter((p) => p !== '/')
+    .map((p) => ({
+      source: p,
+      destination: `${p}/index.html`,
+    }));
+}

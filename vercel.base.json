@@ -1,0 +1,102 @@
+{
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
+        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "source": "/imagens/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "source": "/documentos/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=2592000" }]
+    },
+    {
+      "source": "/sitemap.xml",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600" }]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }]
+    }
+  ],
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "statusCode": 301 },
+    { "source": "/index.php", "destination": "/", "statusCode": 301 },
+    { "source": "/index.htm", "destination": "/", "statusCode": 301 },
+
+    { "source": "/feed", "destination": "/blog", "statusCode": 301 },
+    { "source": "/feed/", "destination": "/blog", "statusCode": 301 },
+    { "source": "/comments/feed", "destination": "/blog", "statusCode": 301 },
+    { "source": "/comments/feed/", "destination": "/blog", "statusCode": 301 },
+
+    { "source": "/page/:path*", "destination": "/blog", "statusCode": 301 },
+    { "source": "/tag/:path*", "destination": "/blog", "statusCode": 301 },
+    { "source": "/category/:path*", "destination": "/blog", "statusCode": 301 },
+    { "source": "/author/:path*", "destination": "/sobre", "statusCode": 301 },
+
+    { "source": "/3-dicas-para-prevenir-lesoes", "destination": "/blog/quando-procurar-um-ortopedista", "statusCode": 301 },
+    { "source": "/galeria-dr-serra-cruz", "destination": "/sobre", "statusCode": 301 },
+    { "source": "/lesoes-e-tratamentos", "destination": "/meniscos", "statusCode": 301 },
+    { "source": "/tendinopatias", "destination": "/meniscos", "statusCode": 301 },
+    { "source": "/a-realizacao-de-um-sonho-participar-de-uma-olimpiada", "destination": "/blog/international-fellowship-usa-divisor-de-aguas-na-carreira-medica", "statusCode": 301 },
+
+    { "source": "/afinal-o-que-e-a-condropatia-patelar", "destination": "/condromalacia-patelar", "statusCode": 301 },
+    { "source": "/lesao-do-menisco-precisa-operar", "destination": "/blog/lesao-do-menisco-precisa-operar", "statusCode": 301 },
+    { "source": "/ortopedista-de-indaiatuba-cuidara-dos-atletas-do-rio-open-torneio-internacional-de-tenis-no-rio-de-janeiro", "destination": "/blog/experiencia-no-esporte-medico-atp-rio-open-de-tenis", "statusCode": 301 },
+    { "source": "/flamengo-bate-palmeiras-nos-penalties-e-e-bi-campeao-da-libertadores-sub-20", "destination": "/blog/experiencia-no-esporte-clube-de-regatas-do-flamengo", "statusCode": 301 },
+    { "source": "/joao-fonseca-e-campeao-em-phoenix-e-passa-a-60-do-ranking-atp", "destination": "/blog/experiencia-no-esporte-medico-atp-rio-open-de-tenis", "statusCode": 301 },
+    { "source": "/futebol-e-medicina-o-brasil-mostrando-sua-forca-no-cenario-global-:rest*", "destination": "/blog/experiencia-no-esporte-clube-de-regatas-do-flamengo", "statusCode": 301 },
+    { "source": "/dr-raphael-serra-cruz-confirma-presenca-na-jornada-lyonesa-de-cirurgia-do-joelho-em-sao-paulo", "destination": "/blog/dr-raphael-serra-cruz-jornada-lyonesa-cirurgia-do-joelho-sao-paulo", "statusCode": 301 },
+    { "source": "/ortopedista-de-indaiatuba-com-passagem-pela-franca-coordena-mesa-de-discussoes-na-xi-jornada-lyonesa-de-cirurgia-do-joelho-em-sao-paulo", "destination": "/blog/dr-raphael-serra-cruz-jornada-lyonesa-cirurgia-do-joelho-sao-paulo", "statusCode": 301 },
+    { "source": "/conheca-o-dr-raphael-serra-cruz-medico-ortopedista-especialista-em-joelho", "destination": "/blog/conheca-o-dr-raphael-serra-cruz-medico-ortopedista-especialista-em-joelho", "statusCode": 301 },
+    { "source": "/o-inicio-da-carreira-do-dr-raphael-serra-cruz", "destination": "/blog/o-inicio-da-carreira-do-dr-raphael-serra-cruz", "statusCode": 301 },
+    { "source": "/experiencias-internacionais-em-busca-do-state-of-the-art", "destination": "/blog/international-fellowship-usa-divisor-de-aguas-na-carreira-medica", "statusCode": 301 },
+    { "source": "/international-fellowship-usa-divisor-de-aguas-na-carreira-medica", "destination": "/blog/international-fellowship-usa-divisor-de-aguas-na-carreira-medica", "statusCode": 301 },
+    { "source": "/premiacoes-nacionais-e-internacionais-dr-raphael-serra-cruz", "destination": "/blog/premiacoes-nacionais-e-internacionais-dr-raphael-serra-cruz", "statusCode": 301 },
+    { "source": "/experiencia-no-esporte-clube-de-regatas-do-flamengo", "destination": "/blog/experiencia-no-esporte-clube-de-regatas-do-flamengo", "statusCode": 301 },
+    { "source": "/experiencia-no-esporte-medico-atp-rio-open-de-tenis", "destination": "/blog/experiencia-no-esporte-medico-atp-rio-open-de-tenis", "statusCode": 301 },
+    { "source": "/dr-raphael-serra-cruz-contribuicoes-e-legado", "destination": "/blog/dr-raphael-serra-cruz-contribuicoes-e-legado", "statusCode": 301 },
+    { "source": "/um-privilegio-no-mundo-do-tenis-alcaraz-e-joao-fonseca-de-promessas-a-idolos", "destination": "/blog/experiencia-no-esporte-medico-atp-rio-open-de-tenis", "statusCode": 301 },
+    { "source": "/medicina-de-alta-performance-no-maior-palco-do-tenis-sul-americano", "destination": "/blog/experiencia-no-esporte-medico-atp-rio-open-de-tenis", "statusCode": 301 },
+    { "source": "/ortopedista-brasileiro-na-europa-acesso-rapido-a-especialista-em-joelho-via-telemedicina", "destination": "/blog/ortopedista-brasileiro-na-europa-telemedicina", "statusCode": 301 },
+
+    { "source": "/lesoes-e-tratamentos/lesoes-de-cartilagem", "destination": "/cartilagem", "statusCode": 301 },
+    { "source": "/lesoes-e-tratamentos/lesoes-ligamentares-complexas", "destination": "/lesoes-ligamentares", "statusCode": 301 },
+    { "source": "/lesoes-e-tratamentos/lesoes-ligamentares", "destination": "/lesoes-ligamentares", "statusCode": 301 },
+    { "source": "/lesoes-e-tratamentos/lesoes-meniscais", "destination": "/meniscos", "statusCode": 301 },
+    { "source": "/lesoes-e-tratamentos/lesoes-patelo-femorais", "destination": "/condromalacia-patelar", "statusCode": 301 },
+    { "source": "/resumos", "destination": "/artigos", "statusCode": 301 },
+    { "source": "/links-uteis", "destination": "/links", "statusCode": 301 },
+
+    { "source": "/wp-content/uploads/2021/09/Vertical-Continuous-Meniscal-Suture-Technique.pdf", "destination": "/documentos/vertical-continuous-meniscal-suture-technique.pdf", "statusCode": 301 },
+    { "source": "/wp-content/uploads/2021/09/Serra-Cruz-R_Arthroscopy-Techniques_2019_Surgical-Technique-for-Chronic-Proximal-Patellar-Tendinopathy-Jumpers-Knee_AT_2019.pdf", "destination": "/documentos/surgical-technique-chronic-proximal-patellar-tendinopathy-jumpers-knee.pdf", "statusCode": 301 },
+    { "source": "/wp-content/uploads/2021/09/Serra-Cruz-R_OJSM_2016_Concentrated-Bone-MArrow-Aspirtate-Concentrate-for-the-treatment-of-Chondral-Injuries-and-OA-of-the-Knee.pdf", "destination": "/documentos/concentrated-bone-marrow-aspirate-chondral-injuries-knee.pdf", "statusCode": 301 },
+    { "source": "/wp-content/uploads/2021/09/Serra-Cruz-R_Arthroscopy-Techniques_2016_Inside-Out-Meniscal-Repair_Medial-and-Lateral-Approach.pdf", "destination": "/documentos/inside-out-meniscal-repair.pdf", "statusCode": 301 },
+    { "source": "/wp-content/uploads/2021/09/Serra-Cruz-R_Arthroscopy-Techniques_2016_Fresh-Osteochondral-Allograft-Transplantation-for-Treatment-of-Articular-Cartilage-Defects-of-the-Knee.pdf", "destination": "/documentos/fresh-osteochondral-allograft-transplantation.pdf", "statusCode": 301 },
+    { "source": "/wp-content/uploads/2021/09/Serra-Cruz-R_Arthroscopy-Techniques_2016_Anatomic-Fibular-Collateral-Ligament-Reconstruction.pdf", "destination": "/documentos/anatomic-fibular-collateral-ligament-reconstruction.pdf", "statusCode": 301 },
+    { "source": "/wp-content/uploads/2021/09/Serra-Cruz-R_Arthroscopy-Techniques_2016_Medial-Meniscal-Allograft-Transplantation_the-bone-plug-technique.pdf", "destination": "/documentos/medial-meniscal-allograft-bone-plug.pdf", "statusCode": 301 },
+    { "source": "/wp-content/uploads/2021/09/Serra-Cruz-R_Arthroscopy-Techniques_2016_Superficial-Medial-Collateral-Ligament-of-the-Knee_Anatomic-Augmentation-With-Semitendinosus-and-Gracilis-Tendon-Autografts.pdf", "destination": "/documentos/superficial-medial-collateral-ligament-augmentation.pdf", "statusCode": 301 },
+    { "source": "/wp-content/uploads/2021/09/Serra-Cruz-R_Arthroscopy-Techniques_2016_Lateral-Meniscal-Allograft-Transplantation_The-Bone-Trough-Technique.pdf", "destination": "/documentos/lateral-meniscal-allograft-bone-trough.pdf", "statusCode": 301 },
+    { "source": "/wp-content/uploads/2021/09/Serra-Cruz-R_Arthroscopy-Techniques_2016_Anterolateral-Biplanar-Proximal-Tibial-Opening-Wedge-Osteotomy.pdf", "destination": "/documentos/anterolateral-biplanar-proximal-tibial-opening-wedge-osteotomy.pdf", "statusCode": 301 },
+    { "source": "/wp-content/uploads/2021/09/Serra-Cruz-R_Arthroscopy-Techniques_2016_Anatomic-Posterolateral-Corner-Reconstruction.pdf", "destination": "/documentos/anatomic-posterolateral-corner-reconstruction.pdf", "statusCode": 301 },
+    { "source": "/wp-content/uploads/2021/09/Serra-Cruz-R_Arthroscopy-Techniques_2016_Medial-Opening-Wedge-Proximal-Tibial-Osteotomy.pdf", "destination": "/documentos/medial-opening-wedge-proximal-tibial-osteotomy.pdf", "statusCode": 301 },
+    { "source": "/wp-content/uploads/2021/09/Serra-Cruz-R_RBO_2016_Compreendendo-as-lesoes-das-raizes-posteriores-dos-meniscos.pdf", "destination": "/documentos/compreendendo-lesoes-raizes-posteriores-meniscos.pdf", "statusCode": 301 },
+    { "source": "/wp-content/uploads/2021/09/Serra-Cruz-R_Tecnicas-em-Ortopedia_2016_Reparo-de-lesoes-das-raizes-posteriores-dos-meniscos_TO_2016.pdf", "destination": "/documentos/reparo-lesoes-raizes-posteriores-meniscos.pdf", "statusCode": 301 },
+    { "source": "/wp-content/uploads/2025/08/MANUAL-FIFA-11-PORTUGUES.pdf", "destination": "/documentos/manual-fifa-11-portugues.pdf", "statusCode": 301 },
+    { "source": "/wp-content/uploads/2025/08/POSTER-FIFA-11-INGLES.pdf", "destination": "/documentos/poster-fifa-11-ingles.pdf", "statusCode": 301 }
+  ],
+  "rewrites": []
+}

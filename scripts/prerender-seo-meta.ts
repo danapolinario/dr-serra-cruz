@@ -92,6 +92,7 @@ export function resolvePrerenderSeo(routePath: string): PrerenderSeoPayload | nu
     if (!post) return null;
     const title = `${post.title} | Dr. Raphael Serra Cruz`;
     const iso = `${post.datePublishedIso}T12:00:00-03:00`;
+    const modifiedIso = `${post.dateReviewedIso ?? post.datePublishedIso}T12:00:00-03:00`;
     const img = post.image.startsWith('/') ? post.image : `/${post.image}`;
     return buildPayload(base, {
       title,
@@ -100,7 +101,7 @@ export function resolvePrerenderSeo(routePath: string): PrerenderSeoPayload | nu
       ogType: 'article',
       ogImagePath: img,
       articlePublishedTime: iso,
-      articleModifiedTime: iso,
+      articleModifiedTime: modifiedIso,
     });
   }
 

@@ -35,6 +35,25 @@ function fileMtimeIso(relPath: string): string | null {
   }
 }
 
+/** Ficheiro fonte por rota — lastmod mais fiável que pageSeo.ts global */
+const STATIC_PATH_TO_FILE: Record<string, string> = {
+  '/': 'pages/Home.tsx',
+  '/sobre': 'pages/Sobre.tsx',
+  '/artigos': 'pages/Artigos.tsx',
+  '/capitulos-de-livros': 'pages/CapitulosLivros.tsx',
+  '/palestras-e-congressos': 'pages/PalestrasCongressos.tsx',
+  '/materiais-para-pacientes': 'pages/MateriaisPacientes.tsx',
+  '/premiacoes': 'pages/Premiacoes.tsx',
+  '/links': 'pages/LinksUteis.tsx',
+  '/lesoes-ligamentares': 'pages/LesoesLigamentares.tsx',
+  '/meniscos': 'pages/Meniscos.tsx',
+  '/artrose': 'pages/Artrose.tsx',
+  '/cartilagem': 'pages/Cartilagem.tsx',
+  '/trauma-do-esporte': 'pages/TraumaDoEsporte.tsx',
+  '/condromalacia-patelar': 'pages/CondromalaciaPatelar.tsx',
+  '/blog': 'src/pages/blog/BlogIndex.tsx',
+};
+
 const STATIC_PATHS_ORDER = [
   '/',
   '/sobre',
@@ -66,9 +85,10 @@ const todayIso = new Date().toISOString();
 
 const staticEntries: UrlEntry[] = STATIC_PATHS_ORDER.filter((p) => !STATIC_PAGE_SEO[p]?.noindex).map((p) => {
   const seo = STATIC_PAGE_SEO[p];
+  const srcFile = STATIC_PATH_TO_FILE[p] ?? 'src/seo/pageSeo.ts';
   return {
     loc: abs(p),
-    lastmod: fileMtimeIso('src/seo/pageSeo.ts') ?? todayIso,
+    lastmod: fileMtimeIso(srcFile) ?? todayIso,
     changefreq: p === '/' ? 'weekly' : 'monthly',
     priority: p === '/' ? '1.0' : '0.8',
     imageLoc: seo?.ogImagePath ? abs(seo.ogImagePath) : undefined,

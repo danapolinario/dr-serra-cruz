@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import BlogPostLayout from './BlogPostLayout';
 
 const JornadaLyonesaCirurgiaJoelhoSaoPaulo: React.FC = () => (
@@ -12,6 +13,17 @@ const JornadaLyonesaCirurgiaJoelhoSaoPaulo: React.FC = () => (
   >
     <p className="mb-6">
       No próximo dia 31 de julho, Dr. Raphael Serra Cruz irá participar como debatedor na mais conceituada jornada de cirurgia do joelho do Brasil: a Jornada Lyonesa. Dr. Raphael irá compartilhar seus conhecimentos na área debatendo casos clínicos que serão apresentados pelos moderadores, explicando seu racional para diagnóstico, tratamento e reabilitação de casos de lesões meniscais.
+    </p>
+    <p className="mb-6 text-slate-700">
+      Recursos sobre menisco para pacientes:{' '}
+      <Link to="/meniscos" className="text-blue-700 font-semibold hover:underline">
+        página «Lesões de menisco»
+      </Link>
+      {' e '}
+      <Link to="/blog/lesao-do-menisco-precisa-operar" className="text-blue-700 font-semibold hover:underline">
+        Lesão do menisco: precisa operar?
+      </Link>
+      .
     </p>
     <p className="mb-6">
       Parte de sua expertise é fruto do estágio que realizou em 2012 em Lyon com o cirurgião francês Bertrand Sonnery-Cottet. Após o estágio, Dr. Raphael manteve o contato científico-acadêmico com os franceses, sempre compartilhando experiências e inclusive publicando trabalhos científicos, como o capítulo sobre lesões em rampa meniscal escrito no livro “O menisco”, o maior compêndio sobre lesões meniscais já escrito no Brasil, e o artigo “Ramp Lesions: An unrecognized Posteromedial Instability?”, publicado na revista britânica <em>Clinics in Sports Medicine</em>. Este artigo permaneceu durante várias semanas ranqueado como número 1 entre os artigos mais lidos no mundo no site deste periódico, confirmando a relevância do estudo realizado.

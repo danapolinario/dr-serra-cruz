@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import BlogPostLayout from './BlogPostLayout';
 
 const LesaoDoMeniscoPrecisaOperar: React.FC = () => (
@@ -12,6 +13,17 @@ const LesaoDoMeniscoPrecisaOperar: React.FC = () => (
   >
     <p className="lead text-xl text-slate-600 mb-8">
       Certamente algumas lesões meniscais são passíveis de cicatrização sem intervenção cirúrgica. Em geral, lesões isoladas (sem outras lesões que gerem instabilidade), pequenas, localizadas nas regiões mais bem vascularizadas dos meniscos (chamadas de zona periférica ou vermelha-vermelha), têm potencial de cicatrização mesmo sem cirurgia. Nestes casos, pode ser necessário um período com restrição de movimentos que evitem a sobrecarga na articulação durante a fase de cicatrização, bem como uma fisioterapia muito bem aplicada.
+    </p>
+    <p className="mb-6 text-slate-700">
+      Veja também a página clínica sobre{' '}
+      <Link to="/meniscos" className="text-blue-700 font-semibold hover:underline">
+        lesões de menisco e tratamentos
+      </Link>{' '}
+      e o artigo{' '}
+      <Link to="/blog/o-que-e-lesao-de-menisco" className="text-blue-700 font-semibold hover:underline">
+        O que é lesão de menisco
+      </Link>
+      .
     </p>
     <p className="mb-6">
       Para saber se uma lesão indica a necessidade de cirurgia, o ideal é consultar um especialista em joelho. Existem diversos parâmetros que devem ser colocados em discussão para se optar pela cirurgia ou não — por exemplo, a necessidade de retorno rápido ou não às atividades, as demandas e expectativas de cada paciente, o padrão de lesão, o eixo do membro, o tempo decorrente desde a lesão, entre outros. Mesmo optando pela cirurgia, ainda existem as opções de sutura ou meniscectomia parcial (retirada do tecido lesionado). Cada conduta tem prós e contras.
