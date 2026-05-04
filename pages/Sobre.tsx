@@ -5,7 +5,8 @@ import FloatingWhatsApp from '../components/FloatingWhatsApp';
 import CertificatesGallery from '../components/CertificatesGallery';
 import { SeoHead } from '../src/components/SeoHead';
 import { STATIC_PAGE_SEO } from '../src/seo/pageSeo';
-import { WHATSAPP_AGENDAR_HREF } from '../src/config/whatsapp';
+import ScheduleWhatsAppLink from '../src/components/ScheduleWhatsAppLink';
+import { trackNavClick } from '../src/analytics/gtag';
 
 const Sobre: React.FC = () => {
   const seo = STATIC_PAGE_SEO['/sobre'];
@@ -100,12 +101,16 @@ const Sobre: React.FC = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-20">
-              <a href="/#contato" className="bg-slate-800 text-white px-8 py-3 rounded-full text-center hover:bg-slate-700 transition font-medium">
+              <a
+                href="/#contato"
+                className="bg-slate-800 text-white px-8 py-3 rounded-full text-center hover:bg-slate-700 transition font-medium"
+                onClick={() => trackNavClick('/#contato', 'Locais de Atendimento')}
+              >
                 Locais de Atendimento
               </a>
-              <a href={WHATSAPP_AGENDAR_HREF} target="_blank" rel="noopener noreferrer" className="bg-blue-700 text-white px-8 py-3 rounded-full text-center hover:bg-blue-800 transition font-medium">
+              <ScheduleWhatsAppLink className="bg-blue-700 text-white px-8 py-3 rounded-full text-center hover:bg-blue-800 transition font-medium">
                 Agende uma Consulta
-              </a>
+              </ScheduleWhatsAppLink>
             </div>
 
             {/* A Carreira */}

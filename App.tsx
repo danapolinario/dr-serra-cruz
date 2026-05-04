@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
+import AnalyticsRouteTracker from './src/components/AnalyticsRouteTracker';
 
 const Home = lazy(() => import('./pages/Home'));
 const Sobre = lazy(() => import('./pages/Sobre'));
@@ -45,6 +46,7 @@ const PageLoader: React.FC = () => (
 const App: React.FC = () => {
   return (
     <Router>
+      <AnalyticsRouteTracker />
       <ScrollToTop />
       <Suspense fallback={<PageLoader />}>
         <Routes>

@@ -7,7 +7,7 @@ import { SeoHead } from '../src/components/SeoHead';
 import { JsonLdScript } from '../src/components/JsonLdScript';
 import { buildMedicalConditionLd, buildMedicalProcedureLd, buildFaqPageLd } from '../src/seo/medicalSchema';
 import { STATIC_PAGE_SEO } from '../src/seo/pageSeo';
-import { WHATSAPP_AGENDAR_HREF } from '../src/config/whatsapp';
+import ScheduleWhatsAppLink from '../src/components/ScheduleWhatsAppLink';
 
 const meniscusFaqItems = [
   {
@@ -270,15 +270,10 @@ const Meniscos: React.FC = () => {
             <p className="text-slate-600 mb-8 text-lg">
               Especialista em Cirurgia do Joelho e Traumatologia Esportiva em Indaiatuba-SP.
             </p>
-            <a
-              href={WHATSAPP_AGENDAR_HREF}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-green-600 text-white px-8 py-4 rounded-full hover:bg-green-700 transition font-medium text-lg shadow-lg shadow-green-600/20"
-            >
+            <ScheduleWhatsAppLink className="inline-flex items-center gap-2 bg-green-600 text-white px-8 py-4 rounded-full hover:bg-green-700 transition font-medium text-lg shadow-lg shadow-green-600/20">
               <i className="fab fa-whatsapp text-xl"></i>
               Agendar via WhatsApp
-            </a>
+            </ScheduleWhatsAppLink>
           </div>
         </section>
       </main>

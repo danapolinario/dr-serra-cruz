@@ -4,9 +4,24 @@ import Footer from '../components/Footer';
 import FloatingWhatsApp from '../components/FloatingWhatsApp';
 import { SeoHead } from '../src/components/SeoHead';
 import { STATIC_PAGE_SEO } from '../src/seo/pageSeo';
+import { trackOutboundClick } from '../src/analytics/gtag';
 
 const LinksUteis: React.FC = () => {
   const seo = STATIC_PAGE_SEO['/links'];
+
+  const captureOutbound = (e: React.MouseEvent<HTMLDivElement>) => {
+    const a = (e.target as HTMLElement).closest('a');
+    if (!a || !(a instanceof HTMLAnchorElement)) return;
+    const href = a.getAttribute('href')?.trim();
+    if (!href || href.startsWith('#') || href.startsWith('mailto:')) return;
+    if (!/^https?:\/\//i.test(href)) return;
+    trackOutboundClick({
+      link_url: href,
+      link_text: (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 120),
+      source_page: '/links',
+    });
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <SeoHead title={seo.title} description={seo.description} path="/links" ogImagePath={seo.ogImagePath} />
@@ -19,7 +34,7 @@ const LinksUteis: React.FC = () => {
         </section>
 
         <section className="py-16">
-          <div className="container mx-auto px-4 max-w-5xl">
+          <div className="container mx-auto px-4 max-w-5xl" onClickCapture={captureOutbound}>
             
             <div className="mb-12">
               <h2 className="text-2xl font-bold text-slate-800 mb-6 border-b pb-2">SOCIEDADES</h2>

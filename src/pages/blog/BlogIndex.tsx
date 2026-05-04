@@ -6,6 +6,7 @@ import FloatingWhatsApp from '../../../components/FloatingWhatsApp';
 import { blogPosts } from '../../data/blogPosts';
 import { SeoHead } from '../../components/SeoHead';
 import { STATIC_PAGE_SEO } from '../../seo/pageSeo';
+import { trackEvent } from '../../analytics/gtag';
 
 const BlogIndex: React.FC = () => {
   const seo = STATIC_PAGE_SEO['/blog'];
@@ -51,10 +52,17 @@ const BlogIndex: React.FC = () => {
                       </Link>
                     </h2>
                     <p className="text-slate-600 mb-4 line-clamp-3 flex-grow">{post.excerpt}</p>
-                    <Link
-                      to={`/blog/${post.id}`}
-                      className="text-blue-700 font-semibold hover:text-blue-800 flex items-center gap-2 mt-auto"
-                    >
+                  <Link
+                    to={`/blog/${post.id}`}
+                    className="text-blue-700 font-semibold hover:text-blue-800 flex items-center gap-2 mt-auto"
+                    onClick={() =>
+                      trackEvent('blog_post_click', {
+                        post_id: post.id,
+                        post_title: post.title.slice(0, 100),
+                        section: 'blog_index',
+                      })
+                    }
+                  >
                       Ler artigo completo <i className="fas fa-arrow-right text-sm"></i>
                     </Link>
                   </div>

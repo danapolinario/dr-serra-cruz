@@ -1,5 +1,6 @@
 import React from 'react';
-import { WHATSAPP_AGENDAR_HREF } from '../src/config/whatsapp';
+import ScheduleWhatsAppLink from '../src/components/ScheduleWhatsAppLink';
+import { trackMapsClick, trackContactChannel } from '../src/analytics/gtag';
 
 /** Consulta no Google Maps (embed sem API key; alinha o pin ao endereço). */
 function mapEmbedSrc(enderecoParaBusca: string): string {
@@ -52,6 +53,7 @@ const Contact: React.FC = () => {
                 rel="noopener noreferrer"
                 className="group relative block aspect-[4/3] w-full shrink-0 overflow-hidden bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
                 aria-label={`Abrir ${local.nome} no Google Maps em nova aba`}
+                onClick={() => trackMapsClick(local.nome, local.mapaUrl)}
               >
                 <img
                   src={local.imagem}
@@ -71,6 +73,7 @@ const Contact: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mb-4 inline-flex w-fit items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-800"
+                  onClick={() => trackMapsClick(local.nome, local.mapaUrl)}
                 >
                   <i className="fa-solid fa-up-right-from-square text-xs" aria-hidden />
                   Abrir no Google Maps
@@ -99,7 +102,7 @@ const Contact: React.FC = () => {
                 <div>
                   <h4 className="font-bold text-slate-900">Telefone / WhatsApp</h4>
                   <p className="mt-1 text-slate-600">
-                    <a href="tel:+5519998321140" className="hover:text-blue-700">
+                    <a href="tel:+5519998321140" className="hover:text-blue-700" onClick={() => trackContactChannel('phone')}>
                       (19) 99832-1140
                     </a>
                   </p>
@@ -112,7 +115,11 @@ const Contact: React.FC = () => {
                 <div>
                   <h4 className="font-bold text-slate-900">E-mail</h4>
                   <p className="mt-1 break-all text-sm text-slate-600">
-                    <a href="mailto:contato@drserracruz.com.br" className="hover:text-blue-700">
+                    <a
+                      href="mailto:contato@drserracruz.com.br"
+                      className="hover:text-blue-700"
+                      onClick={() => trackContactChannel('email')}
+                    >
                       contato@drserracruz.com.br
                     </a>
                   </p>
@@ -120,15 +127,13 @@ const Contact: React.FC = () => {
               </div>
             </div>
             <div className="mt-auto border-t border-slate-100 pt-8">
-              <a
-                href={WHATSAPP_AGENDAR_HREF}
-                target="_blank"
-                rel="noopener noreferrer"
+              <ScheduleWhatsAppLink
+                placement="contact_section"
                 className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-blue-700 px-6 py-4 text-center text-base font-bold text-white shadow-lg shadow-blue-900/20 transition hover:bg-blue-800"
               >
                 <i className="fa-brands fa-whatsapp text-xl" aria-hidden />
                 Agendar consulta
-              </a>
+              </ScheduleWhatsAppLink>
             </div>
           </div>
         </div>

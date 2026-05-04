@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
-import { WHATSAPP_AGENDAR_HREF } from '../src/config/whatsapp';
+import ScheduleWhatsAppLink from '../src/components/ScheduleWhatsAppLink';
+import { trackScrollCta } from '../src/analytics/gtag';
 
 const HERO_SLIDE_MS = 5000;
 
@@ -43,18 +44,17 @@ const Hero: React.FC = () => {
               Atendimento humanizado e especializado em patologias do joelho e trauma esportivo geral pelo <span className="font-semibold text-slate-800 underline decoration-blue-500 underline-offset-4">Dr. Raphael Serra Cruz</span>.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-12">
-              <a
-                href={WHATSAPP_AGENDAR_HREF}
-                target="_blank"
-                rel="noopener noreferrer"
+              <ScheduleWhatsAppLink
+                placement="hero"
                 className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white px-10 py-5 rounded-full text-lg font-bold flex items-center justify-center gap-3 transition-all transform hover:scale-105 shadow-xl shadow-green-600/20"
               >
                 <i className="fa-brands fa-whatsapp text-2xl"></i>
                 Agendar pelo WhatsApp
-              </a>
+              </ScheduleWhatsAppLink>
               <a
                 href="#sobre"
                 className="w-full sm:w-auto px-8 py-4 text-slate-700 font-semibold flex items-center justify-center gap-2 hover:text-blue-700 transition group"
+                onClick={() => trackScrollCta('sobre', 'hero')}
               >
                 Conheça a Trajetória <i className="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
               </a>

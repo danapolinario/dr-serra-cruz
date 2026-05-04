@@ -1,5 +1,6 @@
 
 import React from 'react';
+import TrackedExternalLink from '../src/components/TrackedExternalLink';
 
 const InstagramSection: React.FC = () => {
   return (
@@ -19,15 +20,19 @@ const InstagramSection: React.FC = () => {
           </p>
 
           <div className="flex flex-col items-center gap-8">
-            <a 
-              href="https://www.instagram.com/dr.serracruz/" 
-              target="_blank"
-              rel="noopener noreferrer"
+            <TrackedExternalLink
+              href="https://www.instagram.com/dr.serracruz/"
+              eventName="social_click"
+              eventParams={{
+                network: 'instagram',
+                link_url: 'https://www.instagram.com/dr.serracruz/',
+                placement: 'home_instagram_section',
+              }}
               className="w-full sm:w-auto bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] text-white px-12 py-5 rounded-full font-bold shadow-xl hover:shadow-pink-500/20 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3 text-lg"
             >
               <i className="fa-brands fa-instagram text-2xl"></i>
               Seguir @dr.serracruz
-            </a>
+            </TrackedExternalLink>
 
             <div className="flex flex-col items-center">
               <div className="flex -space-x-3 mb-2">
