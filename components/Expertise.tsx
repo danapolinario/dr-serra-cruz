@@ -3,8 +3,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const CARD_IMG = {
-  mostrandoExame: '/imagens/inicio/cards/card-mostrando-exame-na-tela.webp',
+  lesoesLigamentares: '/imagens/inicio/cards/lesoes-ligamentares-dr-raphael-serra-cruz.webp',
   examinando: '/imagens/inicio/cards/card-examinando-paciente.webp',
+  artrose: '/imagens/inicio/cards/card-mostrando-exame-na-tela.webp',
+  condromalacia: '/imagens/inicio/cards/condromalacia-dr-raphael-serra-cruz.webp',
+  menisco: '/imagens/inicio/cards/menisco-dr-raphael-serra-cruz.webp',
+  cartilagem: '/imagens/inicio/cards/cartilagem-dr-raphael-serra-cruz.webp',
   rioOpen: '/imagens/inicio/cards/trauma-do-esporte-dr-raphael-serra-cruz.jpg',
   retrato: '/imagens/inicio/cards/card-retrato-de-frente.webp',
 } as const;
@@ -23,35 +27,35 @@ const Expertise: React.FC = () => {
       icon: 'fa-solid fa-bone',
       desc: 'De tratamentos não-cirúrgicos a reconstruções complexas de todos os ligamentos do joelho.',
       link: '/lesoes-ligamentares',
-      cardImage: CARD_IMG.mostrandoExame,
+      cardImage: CARD_IMG.lesoesLigamentares,
     },
     {
       title: 'Meniscos',
       icon: 'fa-solid fa-wave-square',
       desc: 'Foco em preservação meniscal, desde protocolos conservadores a todos os tipos de sutura.',
       link: '/meniscos',
-      cardImage: CARD_IMG.examinando,
+      cardImage: CARD_IMG.menisco,
     },
     {
       title: 'Cartilagem',
       icon: 'fa-solid fa-microscope',
       desc: 'Tratamentos específicos: membrana de colágeno (AMIC - Chondro-Gide), matriz de hidrogel 3D (CareS-1S) transplante osteocondral autólogo e osteotomias.',
       link: '/cartilagem',
-      cardImage: CARD_IMG.mostrandoExame,
+      cardImage: CARD_IMG.cartilagem,
     },
     {
       title: 'Condromalácia patelar',
       icon: 'fa-solid fa-circle-dot',
       desc: 'Abordagem diferenciada com foco em diagnósticos biomecânicos e protocolos individualizados.',
       link: '/condromalacia-patelar',
-      cardImage: CARD_IMG.retrato,
+      cardImage: CARD_IMG.condromalacia,
     },
     {
       title: 'Artrose',
       icon: 'fa-solid fa-person-walking-with-cane',
       desc: 'Viscosuplementação com ácido hialurônico, atroplastias convencionais (unicompartimental e total) e robótica.',
       link: '/artrose',
-      cardImage: CARD_IMG.examinando,
+      cardImage: CARD_IMG.artrose,
     }
   ];
 

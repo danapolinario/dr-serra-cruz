@@ -14,7 +14,7 @@ const Cartilagem: React.FC = () => {
       <Header />
       <main className="pt-20 flex-grow bg-slate-50">
         <section
-          style={{ backgroundImage: 'url(/imagens/inicio/mostrando-exame-na-tela.webp)' }}
+          style={{ backgroundImage: 'url(/imagens/inicio/cards/cartilagem-dr-raphael-serra-cruz-full.webp)' }}
           className="relative bg-blue-900 text-white py-40 bg-cover bg-center flex items-center"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-blue-900 via-blue-900/80 to-transparent"></div>
