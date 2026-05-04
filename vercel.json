@@ -218,6 +218,28 @@
   ],
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p"
+        }
+      ],
+      "destination": "/api/wp-legacy",
+      "statusCode": 307
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "s"
+        }
+      ],
+      "destination": "/api/wp-legacy",
+      "statusCode": 307
+    },
+    {
       "source": "/index.html",
       "destination": "/",
       "statusCode": 301
@@ -632,26 +654,6 @@
     {
       "source": "/blog/quando-procurar-um-ortopedista",
       "destination": "/blog/quando-procurar-um-ortopedista/index.html"
-    },
-    {
-      "source": "/",
-      "has": [
-        {
-          "type": "query",
-          "key": "p"
-        }
-      ],
-      "destination": "/api/wp-legacy"
-    },
-    {
-      "source": "/",
-      "has": [
-        {
-          "type": "query",
-          "key": "s"
-        }
-      ],
-      "destination": "/api/wp-legacy"
     },
     {
       "source": "/(.*)",

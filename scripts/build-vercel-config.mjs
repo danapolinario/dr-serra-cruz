@@ -1,6 +1,7 @@
 /**
- * Monta vercel.json = vercel.base.json + rewrites dinâmicos (rotas válidas + wp-legacy + catch-all 404)
+ * Monta vercel.json = vercel.base.json + rewrites dinâmicos (rotas válidas + catch-all 404)
  * + headers de Cache-Control para HTML nas rotas da app (sem sobrescrever /assets|imagens|documentos).
+ * Legacy ?p= / ?s= ficam em vercel.base.json como redirects 307 → /api/wp-legacy.
  *
  * Executar sempre que STATIC_PATHS ou posts mudarem: npm run vercel:config
  * A Vercel lê vercel.json antes do build — este ficheiro deve estar commitado após gerar.
@@ -34,27 +35,11 @@ function main() {
     { source: '/wp-admin/:path*', destination: '/api/gone' },
   ];
 
-  const wpLegacyRewrites = [
-    {
-      source: '/',
-      has: [{ type: 'query', key: 'p' }],
-      destination: '/api/wp-legacy',
-    },
-    {
-      source: '/',
-      has: [{ type: 'query', key: 's' }],
-      destination: '/api/wp-legacy',
-    },
-  ];
+  /** Legacy ?p= / ?s= tratados em vercel.base.json como redirects 307 → /api/wp-legacy (antes do estático /). */
 
   const catchAll = [{ source: '/(.*)', destination: '/api/not-found' }];
 
-  base.rewrites = [
-    ...wpBlockedRewrites,
-    ...routeRewrites,
-    ...wpLegacyRewrites,
-    ...catchAll,
-  ];
+  base.rewrites = [...wpBlockedRewrites, ...routeRewrites, ...catchAll];
 
   const htmlHeaders = [];
 

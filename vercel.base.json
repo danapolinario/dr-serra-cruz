@@ -33,6 +33,18 @@
     }
   ],
   "redirects": [
+    {
+      "source": "/",
+      "has": [{ "type": "query", "key": "p" }],
+      "destination": "/api/wp-legacy",
+      "statusCode": 307
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "query", "key": "s" }],
+      "destination": "/api/wp-legacy",
+      "statusCode": 307
+    },
     { "source": "/index.html", "destination": "/", "statusCode": 301 },
     { "source": "/index.php", "destination": "/", "statusCode": 301 },
     { "source": "/index.htm", "destination": "/", "statusCode": 301 },
