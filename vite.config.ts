@@ -79,14 +79,45 @@ function googleReviewsDevApi(): Plugin {
   };
 }
 
+function spaFallback(): Plugin {
+  return {
+    name: 'spa-fallback',
+    configureServer(server) {
+      server.middlewares.use((req, _res, next) => {
+        const pathname = (req.url ?? '').split('?')[0] ?? '';
+        if (req.method !== 'GET' && req.method !== 'HEAD') return next();
+        if (
+          pathname.startsWith('/api/') ||
+          pathname.startsWith('/@') ||
+          pathname.startsWith('/node_modules/') ||
+          pathname.startsWith('/imagens/') ||
+          pathname.startsWith('/documentos/') ||
+          pathname.includes('.') ||
+          pathname === '/favicon.png' ||
+          pathname === '/sitemap.xml' ||
+          pathname === '/robots.txt'
+        ) {
+          return next();
+        }
+        if (pathname !== '/' && pathname !== '/index.html') {
+          req.url = '/';
+        }
+        next();
+      });
+    },
+  };
+}
+
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
   return {
+    appType: 'spa',
     server: {
-      port: 3000,
+      port: Number(process.env.PORT) || 3000,
       host: '0.0.0.0',
+      strictPort: true,
     },
-    plugins: [googleReviewsDevApi(), tailwindcss(), react()],
+    plugins: [googleReviewsDevApi(), spaFallback(), tailwindcss(), react()],
     define: {
       'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),

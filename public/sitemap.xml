@@ -143,7 +143,7 @@
   </url>
   <url>
     <loc>https://www.drserracruz.com.br/blog</loc>
-    <lastmod>2026-05-04T18:41:40.262Z</lastmod>
+    <lastmod>2026-05-04T18:44:17.485Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -242,23 +242,13 @@
     </image:image>
   </url>
   <url>
-    <loc>https://www.drserracruz.com.br/blog/lesao-do-menisco-precisa-operar</loc>
-    <lastmod>2022-06-01</lastmod>
+    <loc>https://www.drserracruz.com.br/blog/quando-procurar-um-ortopedista</loc>
+    <lastmod>2024-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://www.drserracruz.com.br/imagens/blog/lesao-menisco-hero.webp</image:loc>
-      <image:title>Lesão do menisco: precisa operar?</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.drserracruz.com.br/blog/o-que-e-lesao-de-menisco</loc>
-    <lastmod>2024-03-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.drserracruz.com.br/imagens/inicio/examinando-paciente.webp</image:loc>
-      <image:title>O que é Lesão de Menisco e como tratar?</image:title>
+      <image:loc>https://www.drserracruz.com.br/imagens/blog/retrato-braco-cruzado.webp</image:loc>
+      <image:title>Quando procurar um Ortopedista e Traumatologista?</image:title>
     </image:image>
   </url>
   <url>
@@ -272,13 +262,23 @@
     </image:image>
   </url>
   <url>
-    <loc>https://www.drserracruz.com.br/blog/quando-procurar-um-ortopedista</loc>
-    <lastmod>2024-04-20</lastmod>
+    <loc>https://www.drserracruz.com.br/blog/o-que-e-lesao-de-menisco</loc>
+    <lastmod>2024-03-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://www.drserracruz.com.br/imagens/blog/retrato-braco-cruzado.webp</image:loc>
-      <image:title>Quando procurar um Ortopedista e Traumatologista?</image:title>
+      <image:loc>https://www.drserracruz.com.br/imagens/inicio/examinando-paciente.webp</image:loc>
+      <image:title>O que é Lesão de Menisco e como tratar?</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.drserracruz.com.br/blog/lesao-do-menisco-precisa-operar</loc>
+    <lastmod>2022-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.drserracruz.com.br/imagens/blog/lesao-menisco-hero.webp</image:loc>
+      <image:title>Lesão do menisco: precisa operar?</image:title>
     </image:image>
   </url>
 </urlset>

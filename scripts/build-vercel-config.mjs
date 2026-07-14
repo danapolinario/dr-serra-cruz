@@ -27,6 +27,12 @@ function main() {
 
   const routeRewrites = getRouteRewrites(root);
 
+  /** Admin SPA — em dev o Vite serve `/`; em produção `dist/index.html` */
+  const adminRewrites = [
+    { source: '/admin', destination: '/' },
+    { source: '/admin/:path*', destination: '/' },
+  ];
+
   /** Rewrites para superfícies WP descontinuadas → 410 (handler gone) */
   const wpBlockedRewrites = [
     { source: '/wp-json/:path*', destination: '/api/gone' },
@@ -37,9 +43,17 @@ function main() {
 
   /** Legacy ?p= / ?s= tratados em vercel.base.json como redirects 307 → /api/wp-legacy (antes do estático /). */
 
-  const catchAll = [{ source: '/(.*)', destination: '/api/not-found' }];
+  /**
+   * 404 real só para rotas “de página” (sem extensão de ficheiro, sem /@vite, etc.).
+   * Evita interceptar /index.tsx, /@vite/client e outros assets do Vite em `vercel dev`.
+   */
+  const catchAll = [
+    { source: '/:a([^/.@]+)/:b([^/.@]+)/:c([^/.@]+)', destination: '/api/not-found' },
+    { source: '/:a([^/.@]+)/:b([^/.@]+)', destination: '/api/not-found' },
+    { source: '/:a([^/.@]+)', destination: '/api/not-found' },
+  ];
 
-  base.rewrites = [...wpBlockedRewrites, ...routeRewrites, ...catchAll];
+  base.rewrites = [...wpBlockedRewrites, ...routeRewrites, ...adminRewrites, ...catchAll];
 
   const htmlHeaders = [];
 
@@ -64,6 +78,22 @@ function main() {
   htmlHeaders.push({
     source: '/blog/:slug+',
     headers: [{ key: 'Cache-Control', value: HTML_CACHE }],
+  });
+
+  htmlHeaders.push({
+    source: '/admin',
+    headers: [
+      { key: 'Cache-Control', value: 'no-store' },
+      { key: 'X-Robots-Tag', value: 'noindex, nofollow' },
+    ],
+  });
+
+  htmlHeaders.push({
+    source: '/admin/:path*',
+    headers: [
+      { key: 'Cache-Control', value: 'no-store' },
+      { key: 'X-Robots-Tag', value: 'noindex, nofollow' },
+    ],
   });
 
   base.headers = [...(base.headers ?? []), ...htmlHeaders];

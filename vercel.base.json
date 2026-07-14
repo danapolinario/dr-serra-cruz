@@ -1,4 +1,8 @@
 {
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "devCommand": "vite --port $PORT",
+  "outputDirectory": "dist",
   "trailingSlash": false,
   "headers": [
     {
@@ -70,7 +74,8 @@
     { "source": "/ortopedista-de-indaiatuba-cuidara-dos-atletas-do-rio-open-torneio-internacional-de-tenis-no-rio-de-janeiro", "destination": "/blog/experiencia-no-esporte-medico-atp-rio-open-de-tenis", "statusCode": 301 },
     { "source": "/flamengo-bate-palmeiras-nos-penalties-e-e-bi-campeao-da-libertadores-sub-20", "destination": "/blog/experiencia-no-esporte-clube-de-regatas-do-flamengo", "statusCode": 301 },
     { "source": "/joao-fonseca-e-campeao-em-phoenix-e-passa-a-60-do-ranking-atp", "destination": "/blog/experiencia-no-esporte-medico-atp-rio-open-de-tenis", "statusCode": 301 },
-    { "source": "/futebol-e-medicina-o-brasil-mostrando-sua-forca-no-cenario-global-:rest*", "destination": "/blog/experiencia-no-esporte-clube-de-regatas-do-flamengo", "statusCode": 301 },
+    { "source": "/futebol-e-medicina-o-brasil-mostrando-sua-forca-no-cenario-global-%e2%9a%bd%f0%9f%a9%ba%f0%9f%87%a7%f0%9f%87%b7", "destination": "/blog/experiencia-no-esporte-clube-de-regatas-do-flamengo", "statusCode": 301 },
+    { "source": "/futebol-e-medicina-o-brasil-mostrando-sua-forca-no-cenario-global-%e2%9a%bd%f0%9f%a9%ba%f0%9f%87%a7%f0%9f%87%b7/", "destination": "/blog/experiencia-no-esporte-clube-de-regatas-do-flamengo", "statusCode": 301 },
     { "source": "/dr-raphael-serra-cruz-confirma-presenca-na-jornada-lyonesa-de-cirurgia-do-joelho-em-sao-paulo", "destination": "/blog/dr-raphael-serra-cruz-jornada-lyonesa-cirurgia-do-joelho-sao-paulo", "statusCode": 301 },
     { "source": "/ortopedista-de-indaiatuba-com-passagem-pela-franca-coordena-mesa-de-discussoes-na-xi-jornada-lyonesa-de-cirurgia-do-joelho-em-sao-paulo", "destination": "/blog/dr-raphael-serra-cruz-jornada-lyonesa-cirurgia-do-joelho-sao-paulo", "statusCode": 301 },
     { "source": "/conheca-o-dr-raphael-serra-cruz-medico-ortopedista-especialista-em-joelho", "destination": "/blog/conheca-o-dr-raphael-serra-cruz-medico-ortopedista-especialista-em-joelho", "statusCode": 301 },

@@ -1,3 +1,5 @@
+import dynamicPostsJson from './dynamicPosts.json';
+
 export interface BlogPostMeta {
   id: string;
   title: string;
@@ -14,7 +16,7 @@ export interface BlogPostMeta {
 }
 
 /** Ordenado do mais recente ao mais antigo para o índice do blog */
-export const blogPosts: BlogPostMeta[] = [
+export const staticBlogPosts: BlogPostMeta[] = [
   {
     id: 'ortopedista-brasileiro-na-europa-telemedicina',
     title: 'Ortopedista Brasileiro na Europa: Acesso Rápido a Especialista em Joelho via Telemedicina',
@@ -165,3 +167,23 @@ export const blogPosts: BlogPostMeta[] = [
     schemaAbout: 'Dor musculoesquelética',
   },
 ];
+
+export interface DynamicBlogPostData extends BlogPostMeta {
+  category: string;
+  contentHtml: string;
+  heroAlt: string;
+}
+
+function sortByPublishedDate(posts: BlogPostMeta[]): BlogPostMeta[] {
+  return [...posts].sort((a, b) =>
+    (b.datePublishedIso ?? '').localeCompare(a.datePublishedIso ?? ''),
+  );
+}
+
+/** Lista mesclada: posts estáticos + dinâmicos (gerados no build a partir do Neon). */
+export const blogPosts: BlogPostMeta[] = sortByPublishedDate([
+  ...staticBlogPosts,
+  ...(dynamicPostsJson as BlogPostMeta[]),
+]);
+
+export const dynamicBlogPosts = dynamicPostsJson as DynamicBlogPostData[];

@@ -37,6 +37,10 @@ const JornadaLyonesaCirurgiaJoelhoSaoPaulo = lazy(
   () => import('./src/pages/blog/JornadaLyonesaCirurgiaJoelhoSaoPaulo'),
 );
 const LesaoDoMeniscoPrecisaOperar = lazy(() => import('./src/pages/blog/LesaoDoMeniscoPrecisaOperar'));
+const DynamicBlogPost = lazy(() => import('./src/pages/blog/DynamicBlogPost'));
+const AdminLogin = lazy(() => import('./src/pages/admin/AdminLogin'));
+const AdminPostsList = lazy(() => import('./src/pages/admin/AdminPostsList'));
+const AdminPostEditor = lazy(() => import('./src/pages/admin/AdminPostEditor'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 const PageLoader: React.FC = () => (
@@ -99,6 +103,11 @@ const App: React.FC = () => {
             element={<JornadaLyonesaCirurgiaJoelhoSaoPaulo />}
           />
           <Route path="/blog/lesao-do-menisco-precisa-operar" element={<LesaoDoMeniscoPrecisaOperar />} />
+          <Route path="/blog/:slug" element={<DynamicBlogPost />} />
+          <Route path="/admin" element={<AdminLogin />} />
+          <Route path="/admin/posts" element={<AdminPostsList />} />
+          <Route path="/admin/posts/novo" element={<AdminPostEditor />} />
+          <Route path="/admin/posts/:id" element={<AdminPostEditor />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>

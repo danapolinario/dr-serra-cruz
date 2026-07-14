@@ -22,7 +22,7 @@ export const STATIC_PATHS = [
   '/blog',
 ];
 
-export function extractBlogIdsFromRepo(root) {
+export function extractStaticBlogIds(root) {
   const blogTs = readFileSync(join(root, 'src/data/blogPosts.ts'), 'utf8');
   const ids = [];
   for (const m of blogTs.matchAll(/^\s*id:\s*'([^']+)'/gm)) {
@@ -30,6 +30,24 @@ export function extractBlogIdsFromRepo(root) {
     ids.push(m[1]);
   }
   return ids;
+}
+
+export function extractDynamicBlogIds(root) {
+  const jsonPath = join(root, 'src/data/dynamicPosts.json');
+  try {
+    const data = JSON.parse(readFileSync(jsonPath, 'utf8'));
+    if (!Array.isArray(data)) return [];
+    return data.map((p) => p.id).filter(Boolean);
+  } catch {
+    return [];
+  }
+}
+
+/** IDs estáticos + dinâmicos (fonte para sitemap, rewrites e pré-render). */
+export function extractBlogIdsFromRepo(root) {
+  const staticIds = extractStaticBlogIds(root);
+  const dynamicIds = extractDynamicBlogIds(root);
+  return [...staticIds, ...dynamicIds];
 }
 
 /** Todas as URLs a pré-renderizar (estáticas + posts do blog). */

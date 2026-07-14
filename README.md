@@ -24,3 +24,48 @@ View your app in AI Studio: https://ai.studio/apps/22acbd0d-ab7f-4c86-b75b-e0761
    `npm run dev`
 
 Em desenvolvimento, `npm run dev` serve `GET /api/google-reviews` via middleware do Vite (mesmo contrato da função serverless na Vercel).
+
+## Blog dinâmico (Neon + painel admin)
+
+O site mantém os **14 posts estáticos** existentes. Posts novos são criados em `/admin`, salvos no **Neon Postgres** e publicados via **Deploy Hook** (rebuild na Vercel em ~3 min), preservando o pipeline de pré-render e SEO.
+
+### Provisionamento na Vercel
+
+1. **Neon Postgres** — Vercel → *Storage* → *Create Database* → Neon. Isso define `DATABASE_URL` automaticamente.
+2. Aplicar o schema (uma vez):
+   ```bash
+   npm run db:schema
+   ```
+   (Usa o driver Neon — não precisa de `psql` instalado.)
+3. **Vercel Blob** — *Storage* → Blob → cria `BLOB_READ_WRITE_TOKEN`.
+4. **Deploy Hook** — *Settings* → *Git* → *Deploy Hooks* → crie um hook e copie a URL para `VERCEL_DEPLOY_HOOK_URL`.
+5. Variáveis em *Settings → Environment Variables* (Production):
+   - `DATABASE_URL` (Neon)
+   - `ADMIN_PASSWORD_HASH` — gere com `npm run admin:password -- "sua-senha"`
+   - `SESSION_SECRET` — string aleatória com pelo menos 16 caracteres
+   - `BLOB_READ_WRITE_TOKEN`
+   - `VERCEL_DEPLOY_HOOK_URL`
+
+### Painel admin
+
+- URL: `https://www.drserracruz.com.br/admin`
+- Login com a senha configurada em `ADMIN_PASSWORD_HASH`
+- Criar/editar posts com editor rico (TipTap), upload de imagem hero (Blob) e campos E-E-A-T
+- **Salvar rascunho** — grava no banco sem rebuild
+- **Publicar** — grava como `published` e dispara o Deploy Hook; o post entra no ar após o build (~3 min)
+
+### Desenvolvimento local do admin
+
+As rotas `/api/auth`, `/api/posts`, `/api/upload` e `/api/publish` são serverless functions. Para testar o painel localmente com o banco:
+
+```bash
+npx vercel dev
+```
+
+Configure `.env` / `.env.local` com as mesmas variáveis (ver [.env.example](.env.example)). O `npm run dev` sozinho serve o frontend, mas **não** expõe as APIs do admin (apenas `/api/google-reviews`).
+
+Se a porta 3000 estiver ocupada por um processo antigo, encerre-o antes (`lsof -i :3000` / fechar o terminal anterior). O `vercel dev` usa o Vite na mesma porta.
+
+### Build
+
+O script `npm run fetch-posts` roda antes do build, busca posts `published` no Neon e grava `src/data/dynamicPosts.json`. Sem `DATABASE_URL`, o build continua com lista vazia de posts dinâmicos.

@@ -70,7 +70,7 @@ const DYNAMIC_PATTERN_SAMPLES = [
   { label: '/category/:path*', sourcePath: '/category/noticias', expectedFinalPath: '/blog' },
   { label: '/author/:path*', sourcePath: '/author/exemplo', expectedFinalPath: '/sobre' },
   {
-    label: 'slug WP com sufixo (:rest*)',
+    label: 'slug WP com sufixo (emojis URL-encoded)',
     sourcePath:
       '/futebol-e-medicina-o-brasil-mostrando-sua-forca-no-cenario-global-%e2%9a%bd%f0%9f%a9%ba%f0%9f%87%a7%f0%9f%87%b7',
     expectedFinalPath: '/blog/experiencia-no-esporte-clube-de-regatas-do-flamengo',

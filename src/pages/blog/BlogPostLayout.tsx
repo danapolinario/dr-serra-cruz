@@ -6,7 +6,7 @@ import RelatedPosts from '../../components/RelatedPosts';
 import BlogConsultationCta from '../../components/BlogConsultationCta';
 import { SeoHead } from '../../components/SeoHead';
 import { JsonLdScript } from '../../components/JsonLdScript';
-import { blogPosts } from '../../data/blogPosts';
+import { blogPosts, type BlogPostMeta } from '../../data/blogPosts';
 import { SITE_URL, absoluteUrl, truncateMeta } from '../../config/site';
 
 interface BlogPostLayoutProps {
@@ -16,6 +16,8 @@ interface BlogPostLayoutProps {
   heroImage: string;
   heroAlt: string;
   postId: string;
+  /** Metadados explícitos (posts dinâmicos); se omitido, busca em blogPosts */
+  meta?: BlogPostMeta;
   children: React.ReactNode;
 }
 
@@ -26,13 +28,17 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
   heroImage,
   heroAlt,
   postId,
+  meta: metaProp,
   children,
 }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const meta = useMemo(() => blogPosts.find((p) => p.id === postId), [postId]);
+  const meta = useMemo(
+    () => metaProp ?? blogPosts.find((p) => p.id === postId),
+    [metaProp, postId],
+  );
   const path = `/blog/${postId}`;
   const description = truncateMeta(meta?.excerpt ?? title);
   const publishedIso = meta?.datePublishedIso
