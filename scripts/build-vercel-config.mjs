@@ -44,13 +44,17 @@ function main() {
   /** Legacy ?p= / ?s= tratados em vercel.base.json como redirects 307 → /api/wp-legacy (antes do estático /). */
 
   /**
-   * 404 real só para rotas “de página” (sem extensão de ficheiro, sem /@vite, etc.).
-   * Evita interceptar /index.tsx, /@vite/client e outros assets do Vite em `vercel dev`.
+   * 404 real só para rotas “de página” (sem extensão, sem /@vite, sem /api/*).
+   * O segmento `a` exclui `api` para não desviar serverless functions para /api/not-found.
    */
+  const reservedFirstSegment = '(?!api$|assets$|imagens$|documentos$)[^/.@]+';
   const catchAll = [
-    { source: '/:a([^/.@]+)/:b([^/.@]+)/:c([^/.@]+)', destination: '/api/not-found' },
-    { source: '/:a([^/.@]+)/:b([^/.@]+)', destination: '/api/not-found' },
-    { source: '/:a([^/.@]+)', destination: '/api/not-found' },
+    {
+      source: `/:a(${reservedFirstSegment})/:b([^/.@]+)/:c([^/.@]+)`,
+      destination: '/api/not-found',
+    },
+    { source: `/:a(${reservedFirstSegment})/:b([^/.@]+)`, destination: '/api/not-found' },
+    { source: `/:a(${reservedFirstSegment})`, destination: '/api/not-found' },
   ];
 
   base.rewrites = [...wpBlockedRewrites, ...routeRewrites, ...adminRewrites, ...catchAll];

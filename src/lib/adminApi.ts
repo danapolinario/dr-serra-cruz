@@ -34,11 +34,22 @@ export function toInputDate(value: string | null | undefined): string {
 }
 
 async function parseJson<T>(res: Response): Promise<T> {
-  const data = await res.json();
+  const text = await res.text();
+  let data: T;
+  try {
+    data = JSON.parse(text) as T;
+  } catch {
+    const preview = text.trim().slice(0, 80).replace(/\s+/g, ' ');
+    throw new Error(
+      res.ok
+        ? `Resposta inválida da API (${preview})`
+        : `Erro ${res.status} na API (${preview})`,
+    );
+  }
   if (!res.ok) {
     throw new Error((data as { error?: string }).error ?? `Erro ${res.status}`);
   }
-  return data as T;
+  return data;
 }
 
 export async function checkAuth(): Promise<boolean> {

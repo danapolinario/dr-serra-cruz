@@ -691,6 +691,10 @@
       "destination": "/blog/quando-procurar-um-ortopedista/index.html"
     },
     {
+      "source": "/blog/international-fellowship-usa-divisor-de-aguas-na-carreira-medica2",
+      "destination": "/blog/international-fellowship-usa-divisor-de-aguas-na-carreira-medica2/index.html"
+    },
+    {
       "source": "/admin",
       "destination": "/"
     },
@@ -699,15 +703,15 @@
       "destination": "/"
     },
     {
-      "source": "/:a([^/.@]+)/:b([^/.@]+)/:c([^/.@]+)",
+      "source": "/:a((?!api$|assets$|imagens$|documentos$)[^/.@]+)/:b([^/.@]+)/:c([^/.@]+)",
       "destination": "/api/not-found"
     },
     {
-      "source": "/:a([^/.@]+)/:b([^/.@]+)",
+      "source": "/:a((?!api$|assets$|imagens$|documentos$)[^/.@]+)/:b([^/.@]+)",
       "destination": "/api/not-found"
     },
     {
-      "source": "/:a([^/.@]+)",
+      "source": "/:a((?!api$|assets$|imagens$|documentos$)[^/.@]+)",
       "destination": "/api/not-found"
     }
   ]
