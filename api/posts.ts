@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { neon } from '@neondatabase/serverless';
 import { jwtVerify } from 'jose';
-import DOMPurify from 'isomorphic-dompurify';
+import sanitizeHtmlLib from 'sanitize-html';
 
 /**
  * CRUD de posts do blog — protegido por cookie JWT.
@@ -72,9 +72,34 @@ async function isAuthenticated(req: VercelRequest): Promise<boolean> {
 }
 
 function sanitizeHtml(html: string): string {
-  return DOMPurify.sanitize(html, {
-    USE_PROFILES: { html: true },
-    ADD_ATTR: ['target', 'rel'],
+  return sanitizeHtmlLib(html, {
+    allowedTags: [
+      'p',
+      'br',
+      'strong',
+      'b',
+      'em',
+      'i',
+      'u',
+      's',
+      'h2',
+      'h3',
+      'h4',
+      'ul',
+      'ol',
+      'li',
+      'blockquote',
+      'a',
+      'img',
+    ],
+    allowedAttributes: {
+      a: ['href', 'target', 'rel'],
+      img: ['src', 'alt', 'title'],
+    },
+    allowedSchemes: ['http', 'https', 'mailto'],
+    transformTags: {
+      a: sanitizeHtmlLib.simpleTransform('a', { rel: 'noopener noreferrer' }),
+    },
   });
 }
 
@@ -141,12 +166,13 @@ function parseBody(req: VercelRequest): Record<string, unknown> {
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  const sql = getSql();
-  if (!sql) {
-    return res.status(503).json({ error: 'DATABASE_URL não configurado' });
-  }
+  try {
+    const sql = getSql();
+    if (!sql) {
+      return res.status(503).json({ error: 'DATABASE_URL não configurado' });
+    }
 
-  if (req.method === 'GET') {
+    if (req.method === 'GET') {
     if (!(await requireAuth(req, res))) return;
 
     const id = typeof req.query.id === 'string' ? req.query.id : null;
@@ -263,6 +289,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(200).json({ ok: true });
   }
 
-  res.setHeader('Allow', 'GET, POST, PUT, DELETE');
-  return res.status(405).json({ error: 'Method not allowed' });
+    res.setHeader('Allow', 'GET, POST, PUT, DELETE');
+    return res.status(405).json({ error: 'Method not allowed' });
+  } catch (e) {
+    console.error('[posts]', e);
+    return res.status(500).json({ error: 'Erro interno ao processar posts' });
+  }
 }
